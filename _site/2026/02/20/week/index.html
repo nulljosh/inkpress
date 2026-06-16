@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>
+    Boot to Prompt
+  </title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Boot to Prompt | nulljosh</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Boot to Prompt" />
+<meta name="author" content="Joshua Trommel" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes, thoughts, and project updates" />
+<meta property="og:description" content="Notes, thoughts, and project updates" />
+<link rel="canonical" href="https://journal.heyitsmejosh.com/2026/02/20/week/" />
+<meta property="og:url" content="https://journal.heyitsmejosh.com/2026/02/20/week/" />
+<meta property="og:site_name" content="nulljosh" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-20T12:00:00-08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Boot to Prompt" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Joshua Trommel"},"dateModified":"2026-02-20T12:00:00-08:00","datePublished":"2026-02-20T12:00:00-08:00","description":"Notes, thoughts, and project updates","headline":"Boot to Prompt","mainEntityOfPage":{"@type":"WebPage","@id":"https://journal.heyitsmejosh.com/2026/02/20/week/"},"url":"https://journal.heyitsmejosh.com/2026/02/20/week/"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://journal.heyitsmejosh.com/feed.xml" title="nulljosh" /><link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#111">
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script>
+  (function() {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+  window.addEventListener('load', function() {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    btn.setAttribute('aria-pressed', document.documentElement.getAttribute('data-theme') === 'dark');
+    btn.addEventListener('click', function() {
+      var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.classList.add('transition');
+      setTimeout(function() { document.documentElement.classList.remove('transition'); }, 400);
+      document.documentElement.setAttribute('data-theme', t);
+      btn.setAttribute('aria-pressed', String(t === 'dark'));
+      localStorage.setItem('theme', t);
+    });
+  });
+</script>
+
+</head>
+<body>
+  <main class="page-content" aria-label="Content">
+    <div class="w">
+      <a href="/" class="back-link">back</a>
+<article class="glass-card">
+  <h1 class="post-title">Boot to Prompt</h1>
+  
+
+<p class="post-meta">
+  <time datetime="2026-02-20T12:00:00-0800">February 2026</time>
+  &middot; 3 min
+</p>
+
+  <p><img src="/assets/2026-02-20-week.svg" alt="The Operating System and the Dream" /></p>
+
+<p>Finished the second phase of my custom operating system this week. Phase 1 was the boot sequence. Phase 2 is everything that makes it a real OS: a timer ticking a hundred times per second, a keyboard driver that turns raw key presses into actual characters, formatted text output built from nothing, and a working command line with help, clear, echo, time, and reboot. Backspace works. Reboot actually reboots. Every piece of it written from scratch, no libraries. It boots up in a virtual machine and drops you at a prompt.</p>
+
+<p>The financial terminal turned into more of a situation monitor. Wrote a paper documenting every algorithm in the trading simulator. Went from fifty-eight to a hundred tradeable assets. Added the ability to send trade signals to real brokers. Switched to a map-first layout with redesigned pins. Built <a href="https://github.com/nulljosh/apps">Dose</a>, a personal substance tracker and reference guide, from scratch in one sitting. Merged the health tracker and the AI doctor into Dose, killed the snake game, and moved trading docs into the main project. Three fewer repos to think about.</p>
+
+<p>Wednesday was an eighteen-hour session. Fixed a week-long bug where a missing config value was blocking login before anything else could run. Licensed all thirty projects under MIT. Shipped two programming languages as open source with browser playgrounds. <a href="https://github.com/nulljosh/tally">Tally</a> got BC government blue, a public benefits screener covering ten programs, and tighter security.</p>
+
+<p>Had the dream again. Same one since I was five, once or twice a month. Always corridors. Chasing a faceless figure. When I catch them they turn around and it’s me. Then they start chasing me. No exit, just the reversal. The Jungian read is the shadow self – you chase it to close the gap, but the gap is internal. The corridor is transition, always between places, never arrived. What I can’t rationalize is the consistency across twenty years. It was there at five. Logging it.</p>
+
+<p>The fastest way to not think about yourself is to build something complicated enough to require all your attention.</p>
+
+<p>Been going to the gym a few times this week. Hit a personal best. The discipline is compounding.</p>
+
+<p>Fixed the morning call system after finding out it had been silently crashing because the scheduler was pointed at an old file location. Renamed Callie to Fony. Recovered three projects from their live sites after the source code went missing during consolidation. The AI model finished three hundred training rounds with near-zero error – and still outputs garbage. Something is wrong with how the data is being fed in. Near-zero loss after three hundred rounds and the output is still noise. That gap between metric and result is where the actual work is, and it is not a small gap.</p>
+
+</article>
+
+      <button title="Toggle Theme" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+  <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor">
+    <circle cx="16" cy="16" r="14" fill="none" stroke="currentcolor" stroke-width="4"></circle>
+    <path d="
+             M 16 0
+             A 16 16 0 0 0 16 32
+             z">
+    </path>
+  </svg>
+</button>
+
+    </div>
+  </main>
+</body>
+</html>

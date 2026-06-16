@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>
+    Glass
+  </title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Glass | nulljosh</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Glass" />
+<meta name="author" content="Joshua Trommel" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes, thoughts, and project updates" />
+<meta property="og:description" content="Notes, thoughts, and project updates" />
+<link rel="canonical" href="https://journal.heyitsmejosh.com/2026/05/22/week/" />
+<meta property="og:url" content="https://journal.heyitsmejosh.com/2026/05/22/week/" />
+<meta property="og:site_name" content="nulljosh" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-05-22T13:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Glass" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Joshua Trommel"},"dateModified":"2026-05-22T13:00:00-07:00","datePublished":"2026-05-22T13:00:00-07:00","description":"Notes, thoughts, and project updates","headline":"Glass","mainEntityOfPage":{"@type":"WebPage","@id":"https://journal.heyitsmejosh.com/2026/05/22/week/"},"url":"https://journal.heyitsmejosh.com/2026/05/22/week/"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://journal.heyitsmejosh.com/feed.xml" title="nulljosh" /><link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#111">
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script>
+  (function() {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+  window.addEventListener('load', function() {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    btn.setAttribute('aria-pressed', document.documentElement.getAttribute('data-theme') === 'dark');
+    btn.addEventListener('click', function() {
+      var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.classList.add('transition');
+      setTimeout(function() { document.documentElement.classList.remove('transition'); }, 400);
+      document.documentElement.setAttribute('data-theme', t);
+      btn.setAttribute('aria-pressed', String(t === 'dark'));
+      localStorage.setItem('theme', t);
+    });
+  });
+</script>
+
+</head>
+<body>
+  <main class="page-content" aria-label="Content">
+    <div class="w">
+      <a href="/" class="back-link">back</a>
+<article class="glass-card">
+  <h1 class="post-title">Glass</h1>
+  
+
+<p class="post-meta">
+  <time datetime="2026-05-22T13:00:00-0700">May 2026</time>
+  &middot; 3 min
+</p>
+
+  <p><img src="/assets/2026-05-22-week.svg" alt="2026-05-22" /></p>
+
+<p>Charters got liquid glass and shipped iOS. Brief’s authentication got rebuilt and CASE-0002 got its full treatment. Two new apps landed Saturday – Echo and Beep. Snow leopard pass ran across every project in the codebase. Busy week.</p>
+
+<h2 id="monday">monday</h2>
+
+<p>Brief’s authentication got rebuilt. Magic link was fragile, replaced it with a standard password flow and two-step login. Paul Kent and DLA Law both passed, marked as declined, two new referrals added – Harding and Chantler. The lawyer contact section also picked up biometric cooldown logic.</p>
+
+<h2 id="tuesday">tuesday</h2>
+
+<p>Life got new content. Conscience, MDMA, LSD, and Concerta sections added across web and iOS. The iOS side had broken section-to-chart mappings that I traced down and fixed – small thing but it was causing silent data gaps.</p>
+
+<h2 id="wednesday">wednesday</h2>
+
+<p>Charters hit v1.1.0. The web version got the liquid glass treatment – Geist font, monochrome palette – then the iOS app came together the same day with fifteen countries and full data parity. Compare mode landed alongside it.</p>
+
+<h2 id="thursday">thursday</h2>
+
+<p>Applied to Capilano University for the BLS Paralegal diploma. Got the details documented in school notes and dotfiles. Brief picked up lawyer contact details and biometric cooldown logic.</p>
+
+<h2 id="friday">friday</h2>
+
+<p>Brief CASE-0002 continued – synced scenarios and comparables with updated projections, removed the Supabase journal, fixed the macOS toolbar label. Then an A+ cleanup pass: CASE-0002 bleed fixes, white theme, dead code removed. Tally got a blob migration fix – legacy path fallback restored and the payment amount regex broadened. Snow leopard pass started across the codebase.</p>
+
+<h2 id="saturday">saturday</h2>
+
+<p>Two new apps. Echo is a native on-device Whisper transcription app for iOS and macOS – file import, drag and drop, waveform feedback, language selection, light/dark adaptive, no server required. Beep is a fully native SwiftUI Compass card app – Face ID biometric login, real SPA backend with balance and trips, two-step auth on both iOS and web. Renamed from compass-ios. Snow leopard pass finished across the remaining twenty-plus projects in the monorepo. Vitest suites added for wiretext and grapher.</p>
+
+<h2 id="sunday">sunday</h2>
+
+<p>Beep picked up a final WKWebView bridge fix – switched to continuation-based JS evaluation, which clears the blank dashboard that showed up on Face ID return. Portfolio’s GitHub stats panel broke when the CORS proxies went stale; replaced with server-side fetching via GitHub Actions. Cameron Ward officially confirmed not practising – marked declined in Brief.</p>
+
+<h2 id="apps">apps</h2>
+
+<p><a href="https://github.com/nulljosh/apps">apps</a> (echo, beep, charters, brief, life, tally): two new apps shipped (echo, beep), codebase-wide quality pass, brief CASE-0002 complete.</p>
+
+<h2 id="nulljoshgithubio">nulljosh.github.io</h2>
+
+<p><a href="https://github.com/nulljosh/nulljosh.github.io">Portfolio</a>: Brief updates tracking lawyer statuses, CASE-0002 phase two, CapU enrollment documented, GitHub stats fetching moved server-side.</p>
+
+</article>
+
+      <button title="Toggle Theme" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+  <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor">
+    <circle cx="16" cy="16" r="14" fill="none" stroke="currentcolor" stroke-width="4"></circle>
+    <path d="
+             M 16 0
+             A 16 16 0 0 0 16 32
+             z">
+    </path>
+  </svg>
+</button>
+
+    </div>
+  </main>
+</body>
+</html>

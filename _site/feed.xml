@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://journal.heyitsmejosh.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://journal.heyitsmejosh.com/" rel="alternate" type="text/html" /><updated>2026-06-16T15:52:49-07:00</updated><id>https://journal.heyitsmejosh.com/feed.xml</id><title type="html">nulljosh</title><subtitle>Notes, thoughts, and project updates</subtitle><author><name>Joshua Trommel</name></author><entry><title type="html">Fixes and Shipping</title><link href="https://journal.heyitsmejosh.com/2026/06/14/week/" rel="alternate" type="text/html" title="Fixes and Shipping" /><published>2026-06-14T09:00:00-07:00</published><updated>2026-06-14T09:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/06/14/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/06/14/week/"><![CDATA[<p><img src="/assets/2026-06-14-week.svg" alt="2026-06-14" /></p>
+
+<p>Focused on shipping and fixes. Epiphany hit the App Store, five follow-up bug fixes rolled out, and the rest of the portfolio caught up on neglected corners.</p>
+
+<h2 id="sunday">sunday</h2>
+
+<p>Epiphany went live on the App Store after months of revision cycles. The build that shipped removed the Visa debt warning, fixed the portfolio calculation, and locked down the watchOS widget to work offline. TestFlight beta opened the same day for public testing.</p>
+
+<h2 id="monday">monday</h2>
+
+<p>Tally hit 3.5.0 with the PWD deadline bump and personal account reference categories for RDSP and CDB. The app no longer guesses at benefit types — it reads directly from BC Self-Serve.</p>
+
+<h2 id="tuesday">tuesday</h2>
+
+<p>Fixed the iOS refresh animation. Network errors on pull-down now display properly instead of disappearing, and retries handle cancelled and timeout cases correctly.</p>
+
+<h2 id="wednesday">wednesday</h2>
+
+<p>Spark’s manual deployment path is ready. Supabase migrations are queued, the service-role key is rotated, and the daemon install is next. Two blockers remain before the prod push.</p>
+
+<h2 id="thursday">thursday</h2>
+
+<p>Echo got the DNS plumbing finished. Cloudflare DNS updated with the CNAME to nulljosh.github.io, and the relay is ready to unblock OpenSky for Epiphany flights.</p>
+
+<h2 id="friday">friday</h2>
+
+<p>SnapTrade sync validation deployed. The fix from earlier in the week went live in production, and OpenSky relay is the next verification step.</p>
+
+<h2 id="apps">apps</h2>
+
+<p><a href="https://github.com/nulljosh/apps">apps</a>: epiphany on App Store (Visa debt gone, portfolio fixed, watchOS offline), tally 3.5.0 (PWD deadline + account refs), iOS refresh animation (network errors + retries), spark deployment path (migrations + rotated key-role), echo DNS + OpenSky relay, snaptrade sync fix live.</p>
+
+<h2 id="nulljoshgithubio">nulljosh.github.io</h2>
+
+<p><a href="https://github.com/nulljosh/nulljosh.github.io">Portfolio</a>: Epiphany now listed as App Store product.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Groundwork</title><link href="https://journal.heyitsmejosh.com/2026/06/07/week/" rel="alternate" type="text/html" title="Groundwork" /><published>2026-06-07T09:00:00-07:00</published><updated>2026-06-07T09:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/06/07/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/06/07/week/"><![CDATA[<p><img src="/assets/2026-06-07-week.svg" alt="2026-06-07" /></p>
+
+<p>Quieter than the week before. The changes went deeper instead of wider: real databases replacing placeholders, auth flows finished end to end, and courses with actual structure.</p>
+
+<h2 id="sunday">sunday</h2>
+
+<p>bcgd flipped from a static site to a real operations platform, Supabase now backing the inventory and order data. That brings it from a landing page to something usable. Grapher picked up visible zoom controls across web, iOS, and macOS. Charters got the App Store mobile scroll fix. Beep hit bot detection on the transit site and reverted to the iframe approach for now.</p>
+
+<h2 id="monday">monday</h2>
+
+<p>Tally got smarter about monthly reporting. It now reads whether you already submitted a report from BC Self-Serve instead of guessing, and the manual toggle was tightened so it stops re-adding what was already removed. Brief got an amendment to the first case, adding the ICBC claim, mother’s assistance during the incident, and the high-function PTSD dimension.</p>
+
+<h2 id="wednesday">wednesday</h2>
+
+<p>Dose got a password reset flow on web. Both sides: the forgot-password request and the recovery page that handles the link from the email. It was missing before.</p>
+
+<h2 id="thursday">thursday</h2>
+
+<p>The iOS side of Dose caught up. Sign-up, forgot password, and password reset through the deep link all connect now. Auth wired into the sync flow and the settings screen. Tally removed a fake debt triage section and replaced the reporting banner with an Already Filed button.</p>
+
+<h2 id="weekend">weekend</h2>
+
+<p>Lingo shipped its first real academic course. A full calculus sequence replaced the flat question bank, structured with a proper skill tree. School linked the Pre-Calc cram sheets for modules two through four directly from the dashboard.</p>
+
+<p>Reconnected with Jayda for the first time in about ten years. Three days together, a couple of drives out to Vancouver to catch the sunset. Fun, but also exhausting in a way that’s hard to explain. The whole stretch was one long memory lane, and what it mostly reminded me of is how much I value my own space, energy, and peace now.</p>
+
+<p>The bigger move was submitting the application to Capilano University for Paralegal Studies. That’s the next concrete step toward practicing law.</p>
+
+<h2 id="apps">apps</h2>
+
+<p><a href="https://github.com/nulljosh/apps">apps</a>: bcgd Supabase backend (v4.0.0), dose password reset plus iOS auth, lingo calculus course (v1.4.0), school cram sheet links, tally report detection and UI cleanup, brief CASE-0001 ICBC amendment, charters scroll, grapher zoom controls.</p>
+
+<h2 id="nulljoshgithubio">nulljosh.github.io</h2>
+
+<p><a href="https://github.com/nulljosh/nulljosh.github.io">Portfolio</a>: lingo added to projects list.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Fold</title><link href="https://journal.heyitsmejosh.com/2026/05/29/week/" rel="alternate" type="text/html" title="Fold" /><published>2026-05-29T09:00:00-07:00</published><updated>2026-05-29T09:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/05/29/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/05/29/week/"><![CDATA[<p><img src="/assets/2026-05-29-week.svg" alt="2026-05-29" /></p>
+
+<p>Structural week. I folded most of my projects into one monorepo, moved the journal onto Vercel, and rolled a shared design system across every web app. Brief picked up a third case, and the weekend turned into a long Epiphany sprint with Life and Echo coming up behind it.</p>
+
+<h2 id="monday">monday</h2>
+
+<p>Brief A+ pass. Priority cards, a sorted checklist, Harding and Chantler promoted to the top. Marked Arvay Finlay declined after Robin Gage passed on the 25th. Tally moved the PWD deadline to the June 18 extension date. Added TLS inspection detection so the school app shows a real error on locked-down WiFi instead of failing silently. Expanded the portfolio reading list to 80 ranked books.</p>
+
+<h2 id="tuesday">tuesday</h2>
+
+<p>Brief got a full v6 redesign, a clean single-case layout. Raised the RCMP damages ceiling to four or five million with new comparables. Activated the third case with a municipal liability and section 285 countdown, officer name held pending ATIP. A slim print mode took the brief PDF from thirty pages down to seven. Pulled in the Surrey Memorial records and updated the evidence checklist.</p>
+
+<h2 id="wednesday">wednesday</h2>
+
+<p>Shipped the CFA palette across every web app, cream, red, yellow, charcoal. NYC got sound effects on macOS, haptics on iOS, and difficulty levels on web. Wiretext shipped PNG export and component search on all three platforms. Added Supabase auth and moved my profile onto a real account. Security pass too: pulled a tracked Vercel token, hardened the session cookie, fixed some CORS. App icons landed on every iOS app.</p>
+
+<h2 id="thursday">thursday</h2>
+
+<p>The big one. Folded school, cadence, epiphany, and bcgd into the apps monorepo, then moved the journal onto Vercel from inside it. Brief shipped v6.2.0 with an auto-deploy hook and resilient init. Renamed the macOS journal app and fixed a half-rendered icon.</p>
+
+<h2 id="friday">friday</h2>
+
+<p>The longest day of the week. Tally got a real internationalization pass, a translation pipeline plus a locale runtime, shipped as v3.4.0. Epiphany got the most attention: I moved the stock data off the retired endpoint onto the FMP stable API everywhere, web plus the iOS and macOS clients, brought the blob cache back, got the test suite green again, and refreshed the whitepaper. Started wiring a SnapTrade broker sync so the holdings can come from a real account instead of being typed in.</p>
+
+<p>Brief kept moving. The third case got its web port, I reconciled the first case across web, iOS, and macOS, propagated the section 19 limitation, and pulled the damages ceiling back to a defensible two to three million from the looser number earlier in the week. Brief now auto-deploys on every change.</p>
+
+<p>School got a polish pass. True white light mode across every page, a device-auto theme that follows the system, a low-ink print mode, and JSON schema validation on the grades and quizzes data so a bad edit fails loudly instead of silently. NYC now starts paused so the player drives from the first frame. The portfolio picked up a library checkout tracker with a due-date countdown. Captured the PDF task lists into the project roadmaps and redacted some PII out of a tally fixture along the way.</p>
+
+<h2 id="saturday">saturday</h2>
+
+<p>A full day on Epiphany. The map took a Gotham pass: locked the grayscale, dropped the toggle, and raised the marker caps about threefold, then I split places from events so the cards read cleaner and killed the flicker that was making it stutter. News is cached now, the macro view pulls a full set of twelve FRED series through a keyless path, and there is a real PDF spending importer. Live flight tracking went in through OpenSky on proper OAuth2 auth, with the timeout pushed out so the planes actually load on a cold start. Stock detail on iOS and macOS shows a Buy, Hold, or Sell call at a glance, fundamentals load again through a crumb-authenticated path so price to earnings and market cap populate, and the native apps follow system light and dark on their own. Pulled the AI features back out since there is no key in play and pointed the roadmap at the free API setup instead.</p>
+
+<p>Life came together, the therapy document for Amanda. Applied the latest edits across web and iOS, culled four redundant charts so the views earn their space, and did a parity and privacy cleanup so both platforms read the same.</p>
+
+<p>Echo reached the submission line. The App Store prep and packages are assembled and a privacy policy page is up for review. Tally rode along with its own submission package and an i18n test suite on top of the translation pipeline. Lingo picked up a skill-tree path and a Computers track.</p>
+
+<h2 id="apps">apps</h2>
+
+<p><a href="https://github.com/nulljosh/apps">apps</a>: monorepo fold, journal Vercel cutover, brief v6.2.0 plus CASE-0003 and a $2-3M ceiling, CFA palette, Supabase auth, tally i18n through v3.4.1 with a submission package, epiphany shipping hard from the FMP migration through the Gotham map, OpenSky flights, cached news, twelve FRED series, Buy/Hold/Sell calls and SnapTrade sync, life on web and iOS for Amanda, echo at the App Store submission line, school theme and schema work, NYC, lingo, and wiretext feature drops, iOS icons across the board.</p>
+
+<h2 id="nulljoshgithubio">nulljosh.github.io</h2>
+
+<p><a href="https://github.com/nulljosh/nulljosh.github.io">Portfolio</a>: CFA design system sitewide, true-white light mode, a library checkout tracker, brief case corrections, reading list expanded to 80 titles, Currently section updated.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Glass</title><link href="https://journal.heyitsmejosh.com/2026/05/22/week/" rel="alternate" type="text/html" title="Glass" /><published>2026-05-22T13:00:00-07:00</published><updated>2026-05-22T13:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/05/22/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/05/22/week/"><![CDATA[<p><img src="/assets/2026-05-22-week.svg" alt="2026-05-22" /></p>
+
+<p>Charters got liquid glass and shipped iOS. Brief’s authentication got rebuilt and CASE-0002 got its full treatment. Two new apps landed Saturday – Echo and Beep. Snow leopard pass ran across every project in the codebase. Busy week.</p>
+
+<h2 id="monday">monday</h2>
+
+<p>Brief’s authentication got rebuilt. Magic link was fragile, replaced it with a standard password flow and two-step login. Paul Kent and DLA Law both passed, marked as declined, two new referrals added – Harding and Chantler. The lawyer contact section also picked up biometric cooldown logic.</p>
+
+<h2 id="tuesday">tuesday</h2>
+
+<p>Life got new content. Conscience, MDMA, LSD, and Concerta sections added across web and iOS. The iOS side had broken section-to-chart mappings that I traced down and fixed – small thing but it was causing silent data gaps.</p>
+
+<h2 id="wednesday">wednesday</h2>
+
+<p>Charters hit v1.1.0. The web version got the liquid glass treatment – Geist font, monochrome palette – then the iOS app came together the same day with fifteen countries and full data parity. Compare mode landed alongside it.</p>
+
+<h2 id="thursday">thursday</h2>
+
+<p>Applied to Capilano University for the BLS Paralegal diploma. Got the details documented in school notes and dotfiles. Brief picked up lawyer contact details and biometric cooldown logic.</p>
+
+<h2 id="friday">friday</h2>
+
+<p>Brief CASE-0002 continued – synced scenarios and comparables with updated projections, removed the Supabase journal, fixed the macOS toolbar label. Then an A+ cleanup pass: CASE-0002 bleed fixes, white theme, dead code removed. Tally got a blob migration fix – legacy path fallback restored and the payment amount regex broadened. Snow leopard pass started across the codebase.</p>
+
+<h2 id="saturday">saturday</h2>
+
+<p>Two new apps. Echo is a native on-device Whisper transcription app for iOS and macOS – file import, drag and drop, waveform feedback, language selection, light/dark adaptive, no server required. Beep is a fully native SwiftUI Compass card app – Face ID biometric login, real SPA backend with balance and trips, two-step auth on both iOS and web. Renamed from compass-ios. Snow leopard pass finished across the remaining twenty-plus projects in the monorepo. Vitest suites added for wiretext and grapher.</p>
+
+<h2 id="sunday">sunday</h2>
+
+<p>Beep picked up a final WKWebView bridge fix – switched to continuation-based JS evaluation, which clears the blank dashboard that showed up on Face ID return. Portfolio’s GitHub stats panel broke when the CORS proxies went stale; replaced with server-side fetching via GitHub Actions. Cameron Ward officially confirmed not practising – marked declined in Brief.</p>
+
+<h2 id="apps">apps</h2>
+
+<p><a href="https://github.com/nulljosh/apps">apps</a> (echo, beep, charters, brief, life, tally): two new apps shipped (echo, beep), codebase-wide quality pass, brief CASE-0002 complete.</p>
+
+<h2 id="nulljoshgithubio">nulljosh.github.io</h2>
+
+<p><a href="https://github.com/nulljosh/nulljosh.github.io">Portfolio</a>: Brief updates tracking lawyer statuses, CASE-0002 phase two, CapU enrollment documented, GitHub stats fetching moved server-side.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Filed</title><link href="https://journal.heyitsmejosh.com/2026/05/15/week/" rel="alternate" type="text/html" title="Filed" /><published>2026-05-15T13:00:00-07:00</published><updated>2026-05-15T13:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/05/15/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/05/15/week/"><![CDATA[<p><img src="/assets/2026-05-15-week.svg" alt="May 15" /></p>
+
+<p>The brief went native. A full Swift app in a week – dark launch screen, tabs, damage tables, Wang v. AG Canada in the comparables. The web version got the same treatment: global comparables, father’s witness statement, limitation defense, Ward framework, per-head stack. It’s a real tool now.</p>
+
+<h2 id="sunday">sunday</h2>
+
+<p>Tally hit v3.5.0. Message read state now syncs cross-platform – iOS reads what web marked, web reads what iOS marked. The MessagesView got a full redesign. Avatar disk cache added so it stops refetching on every render. Three commits to land stable message IDs before the read state could work at all.</p>
+
+<h2 id="monday">monday</h2>
+
+<p>Dose got a vibe pass. Plus Jakarta Sans headings, warm dark palette – <code class="language-plaintext highlighter-rouge">#161514</code> base, <code class="language-plaintext highlighter-rouge">#edebe8</code> text. Auto dark/light mode and an iOS build fix. Nimble picked up natural language query improvements and version display in macOS Settings.</p>
+
+<h2 id="tuesday">tuesday</h2>
+
+<p>Life integrated 2019-2024 personal history across web and iOS. That data was always in my head; now it’s in the app. Langley Hospital corrected (not Lions Gate – different hospital, different incident). Fuse removed from apps, claude-usage dropped, roost and spark vision expanded in the README.</p>
+
+<h2 id="wednesday--thursday">wednesday – thursday</h2>
+
+<p>Brief iOS v1.0.0. Built from scratch in Swift: three tabs (overview, grounds, money), comparable cases table, risk color coding, a scales icon, dark launch screen. Fixed Swift 6 <code class="language-plaintext highlighter-rouge">@Observable</code> issues, ShapeStyle extension, <code class="language-plaintext highlighter-rouge">UIRequiresFullScreen</code>. Wang v. AG Canada landed in the native comparables table the same day it went into the web version.</p>
+
+<p>Web brief kept moving in parallel: global comparable awards added, father’s witness statement with legal annotations, risks and evidence gaps section, lawyers section, wrist injury documented, draft email template, limitation defense analysis integrated, Ward framework for general damages, per-head stack for household claims. Roadmap for v3 multi-user auth drafted.</p>
+
+<h2 id="friday">friday</h2>
+
+<p>Applied to Capilano University for the paralegal diploma. Suiting up.</p>
+
+<h2 id="apps">apps</h2>
+
+<p><a href="https://github.com/nulljosh/apps">apps</a> (brief-ios, tally, dose, nimble, life): 20+ commits across the week. Brief was the anchor – every other app got a pass while it was building.</p>
+
+<h2 id="nulljoshgithubio">nulljosh.github.io</h2>
+
+<p><a href="https://github.com/nulljosh/nulljosh.github.io">Portfolio</a> brief page expanded heavily. It started as a layout experiment two weeks ago; it’s now the most complete documentation of the case that exists anywhere.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Hardened</title><link href="https://journal.heyitsmejosh.com/2026/05/08/week/" rel="alternate" type="text/html" title="Hardened" /><published>2026-05-08T13:00:00-07:00</published><updated>2026-05-08T13:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/05/08/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/05/08/week/"><![CDATA[<p><img src="/assets/2026-05-08-week.svg" alt="May 8" /></p>
+
+<p>The brief page is a different thing now. Two cases, per-violation breakdowns, sidebar on desktop, the right fonts. The rest of the week: tally marks on the iOS splash, school tracker rebuilt in the tally style, and the Trakt key’s unproductive round trip through a server proxy.</p>
+
+<h2 id="tuesday">tuesday</h2>
+
+<p>Tally iOS redesign. Three commits. Full UI overhaul – orange replaces system blue everywhere, solid cards replace the blur material, notification read-state now syncs from the server on mount. Landing page rebuilt as a hero splash. Then a simplification pass. Finished with the avatar – went from node-graph to pixel-art and back to node-graph before landing on the Anthropic dot-proximity style. iOS home now matches the web: payment progress bar, monthly/next-payment stats grid.</p>
+
+<p>Journal got GitHub Actions CI. ship.sh simplified down to the bits that matter.</p>
+
+<h2 id="wednesday">wednesday</h2>
+
+<p>Brief page on the portfolio got a full redesign. Two cases merged in – Two Daryls and a charter rights settlement analysis. Rebuilt the layout around them: tabs per case, accordion for the legal grounds, per-violation damages breakdown. Inter Tight headers, JetBrains Mono for citations, paper texture. It reads like a legal tool now instead of a code project page.</p>
+
+<h2 id="thursday">thursday</h2>
+
+<p>Brief’s desktop layout finally has the right shape. The page had been single-column since it launched – fine on mobile but flat on a wide monitor. Sticky hero on the left, case panel beside it.</p>
+
+<p>iOS: dark login screen now, tally marks on the splash. They work better as a launch image than a plain logo – they’re part of what the app does, not just a symbol standing in for it. Pre-Calc 12 switched from online self-paced to a spring structured class finishing mid-June, so the school tracker got updated.</p>
+
+<h2 id="apps">apps</h2>
+
+<p>Grapher landed – Desmos-style graphing calculator, no external dependencies. PIN auth moved per-user, stored in an encrypted Blob profile instead of shared state. Messages sync was out of step with report status and account info – fixed all three together.</p>
+
+<h2 id="nulljoshgithubio">nulljosh.github.io</h2>
+
+<p>The Trakt API key was hardcoded in client JavaScript. Pulled it out and wrote a serverless proxy at <code class="language-plaintext highlighter-rouge">/api/trakt</code>. Then Cloudflare blocked the server IP and the stat went blank. Restored it client-side. Net: the key is slightly more exposed but the stat actually works. Will revisit.</p>
+
+<p>Projects trimmed to four shipped – fuse, bcgd, nimble, nyc, wiretext removed from the list. Tighter.</p>
+
+<h2 id="saturday">saturday</h2>
+
+<p>School dashboard caught up to the rest – orange accent, solid cards, the same weight as tally. It was the only app in the suite still on system blue. A&amp;P 12 done and hidden. Pre-Calc blended reads correctly.</p>
+
+<p>The Trakt proxy that went in early in the week was out by Saturday. Three commits to get back to where we started. Net zero on that one, minus the hours. The brief redesign was a proper afternoon. The iOS splash was fast – tally marks make more sense as a launch image than a plain logo.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Fresh Coat</title><link href="https://journal.heyitsmejosh.com/2026/05/01/week/" rel="alternate" type="text/html" title="Fresh Coat" /><published>2026-05-01T13:00:00-07:00</published><updated>2026-05-01T13:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/05/01/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/05/01/week/"><![CDATA[<p><img src="/assets/2026-05-01-week.svg" alt="May 1" /></p>
+
+<p>Steady week. Two real builds – a tally design overhaul and Fuse calendar feeds. Everything else was cleanup and fixes.</p>
+
+<h2 id="appstally">apps/tally</h2>
+
+<p>Full design replacement on Thursday. The phone-frame shell went first – it was constraining the layout and hardcoding amounts that should have been live. New stack: Space Grotesk type, parchment palette with clrs.cc orange accent, a desktop layout that actually uses the viewport. Body background now matches the theme, Screen shell capped at 430px max-width on desktop, centering flex that was squishing content removed.</p>
+
+<p>Data fixes in the same pass. Pay date was stale. Messages section was generating duplicates – deduped. PWD step 3 (medical assessment) marked done. Badge clears on view.</p>
+
+<h2 id="appsfuse">apps/fuse</h2>
+
+<p>v1.1.0 landed Friday. The main addition: Google Calendar integration. Paste a secret ICS URL in the new Settings tab and Fuse fetches it through a Vercel proxy to get around CORS. A lightweight ICS parser handles UTC, floating, and all-day dates. Refetch fires via a custom window event when the feed changes. Font swapped from -apple-system to Geist, self-hosted woff2. Bottom nav picked up a Settings tab. Calendar feeds make the app feel like it was built for something. Before that it was countdowns into a void.</p>
+
+<h2 id="nulljoshgithubio">nulljosh.github.io</h2>
+
+<p>Vibe clone from ashwingopalsamy.in on Thursday. Warmer palette: #161514 dark, #ebebeb light. Plus Jakarta Sans for headings. Blue accent (#2558d9 dark / #5b8dee light). Heatmap cells scale to the blue. Box-shadows removed, links de-italicized, section labels use the accent color.</p>
+
+<h2 id="cadence">cadence</h2>
+
+<p>Per-repo breakdown in the stats view – individual commit counts per repo instead of aggregate totals. Swift fix on the API layer.</p>
+
+<h2 id="vercel">vercel</h2>
+
+<p>Hit the 12-function limit in the apps monorepo. <code class="language-plaintext highlighter-rouge">comment-counts.js</code> was a one-query endpoint in its own file. Merged it into <code class="language-plaintext highlighter-rouge">comments.js</code>. Under the limit.</p>
+
+<h2 id="appslife">apps/life</h2>
+
+<p>Therapy session notes logged Monday. Religion section extended with the theodicy argument. Autism section added the lifespan gap data (16 years shorter on average, 9x suicide rate) and the gut-brain axis mechanics. GI section updated. Housing history expanded – the door removal at 16. All mirrored to iOS.</p>
+
+<h2 id="friday">friday</h2>
+
+<p>May 1. Most of this week was polish. Nothing brand new except Fuse calendar feeds, and that one moved fast – scaffold to shipped in a day. Tally looks completely different from last week. The portfolio keeps cycling through design iterations but the content is more accurate than it’s been.</p>
+
+<p>Pre-calc test prep is overdue. Getting to it this weekend.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Loose Ends</title><link href="https://journal.heyitsmejosh.com/2026/04/26/week/" rel="alternate" type="text/html" title="Loose Ends" /><published>2026-04-26T13:00:00-07:00</published><updated>2026-04-26T13:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/04/26/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/04/26/week/"><![CDATA[<p><img src="/assets/2026-04-26-week.svg" alt="Apr 26" /></p>
+
+<p>Slow through Wednesday, then Thursday opened up. Wednesday I kept opening things and closing them. Nothing stuck – not a bad mood, just flat. Then Thursday I stopped waiting for it and started working anyway, and it came. Most of the real work landed in the last two days.</p>
+
+<h2 id="appstally">apps/tally</h2>
+
+<p>Tally moved into the <a href="https://github.com/nulljosh/apps">apps</a> monorepo a week ago. A few things broke in transit. Footer links still pointed at the old standalone GitHub repo – fixed to the monorepo path. iOS target had two variables declared <code class="language-plaintext highlighter-rouge">var</code> that were never mutated; flipped them to <code class="language-plaintext highlighter-rouge">let</code>, regenerated the xcodeproj so Xcode would finally see <code class="language-plaintext highlighter-rouge">SettingsView</code>. Added <code class="language-plaintext highlighter-rouge">ROADMAP.md</code> with a live brain dump: earning-per-hour drift, a scaling earnings graph, and a single config field for income bumps.</p>
+
+<p>v3.1.0 landed Thursday. Three additions: a DTC application tracker (filed April 2026, sitting at the CRA processing step), a CRA upcoming payments section with GST/HST $174.50 flagged for June 5, and a timing warning that blocks report submission before the 28th of the period. PWD bumped to week 8, decision pending. All four went into the web app and the iOS SwiftUI target at the same time.</p>
+
+<p>Design system pass followed. Amounts count up on first render, a bar tracks the 30-day cycle, the dot shifts amber near payday, paid amounts fade back. Tab switches fade. None of it was strictly necessary but the page stopped feeling static.</p>
+
+<h2 id="nulljoshgithubio">nulljosh.github.io</h2>
+
+<p>The <a href="https://github.com/nulljosh/nulljosh.github.io">portfolio</a> got a full rebuild Thursday. The carousel-plus-device-frame layout had become hard to maintain and broke in light mode.</p>
+
+<p>Replaced it with a typographic list: weight-200 hero, <code class="language-plaintext highlighter-rouge">prefers-color-scheme</code> auto light/dark with a manual toggle, GitHub contribution heatmap with click-to-expand year popovers, and a live stats strip (films, TV, code, writing, weather, coffee). Added Currently and Background sections. The <code class="language-plaintext highlighter-rouge">index.html</code> went from 2,081 lines to a net 655 added (1,426 removed). Cadence added to the project list while in there. Two follow-up fixes: flex-wrap on the items list to prevent overflow on mobile, and the Currently section brought in line with the items style.</p>
+
+<h2 id="appsroost">apps/roost</h2>
+
+<p><code class="language-plaintext highlighter-rouge">FavoritesContext</code> was running <code class="language-plaintext highlighter-rouge">Array.includes()</code> inside a filter memo – O(n) per listing on every render. Derived a <code class="language-plaintext highlighter-rouge">favoriteSet</code> via <code class="language-plaintext highlighter-rouge">useMemo</code>, swapped all lookups to <code class="language-plaintext highlighter-rouge">Set.has()</code>. Added <code class="language-plaintext highlighter-rouge">vercel.json</code> with security headers.</p>
+
+<p>The vibe pass followed: ported the portfolio dark editorial design over. Same treatment as spark – dark background, typographic hierarchy, flat colors.</p>
+
+<h2 id="appsspark">apps/spark</h2>
+
+<p>Got the same vibe pass as roost: portfolio dark editorial design applied end-to-end.</p>
+
+<h2 id="appsdose">apps/dose</h2>
+
+<p>Extracted <code class="language-plaintext highlighter-rouge">shortDate</code>, <code class="language-plaintext highlighter-rouge">shortTime</code>, and <code class="language-plaintext highlighter-rouge">longDate</code> into shared date utility functions. They were inline and duplicated across several views.</p>
+
+<h2 id="security">Security</h2>
+
+<p>Pass across dose, fuse, life, spark, and tally: added <code class="language-plaintext highlighter-rouge">X-Frame-Options</code>, <code class="language-plaintext highlighter-rouge">X-Content-Type-Options</code>, <code class="language-plaintext highlighter-rouge">Referrer-Policy</code>, <code class="language-plaintext highlighter-rouge">Permissions-Policy</code>, <code class="language-plaintext highlighter-rouge">X-XSS-Protection</code>, and HSTS to each <code class="language-plaintext highlighter-rouge">vercel.json</code>. Hardened <code class="language-plaintext highlighter-rouge">.gitignore</code> across the monorepo, dotfiles, and the portfolio repo to block <code class="language-plaintext highlighter-rouge">.env</code> variants from staging.</p>
+
+<h2 id="appslife">apps/life</h2>
+
+<p>The money line was behind – updated to call out trillion-dollar AI labs by name. Version bumped to 4.1.1.</p>
+
+<h2 id="dotfiles">dotfiles</h2>
+
+<p>General todos brain-dump committed. Ticked off two completed items: savings prompt and a stale downloads deletion script.</p>
+
+<h2 id="thursday">thursday</h2>
+
+<p>Pre-calc in the afternoon. Math test coming up, keeping it steady. The week started as loose-end cleanup and turned into a full build session by Thursday night.</p>
+
+<h2 id="friday">friday</h2>
+
+<p>Tally refactor: extracted <code class="language-plaintext highlighter-rouge">renderTracker()</code> and <code class="language-plaintext highlighter-rouge">TimelineCard</code> out of <code class="language-plaintext highlighter-rouge">ContentView.swift</code>. Duplicate scaffolding was spread across three tracker types. Collapsed to two functions.</p>
+
+<p>Submitted the remaining school assignments. Science project still needs to go in – that’s next week’s problem.</p>
+
+<p>Did a broader codebase cleanup pass. The <strong>Vercel hack</strong> earlier this week was a good forcing function. Hardened security headers, tightened <code class="language-plaintext highlighter-rouge">.gitignore</code> across everything, audited exposed env vars. Good to have it done.</p>
+
+<p>On the AI tooling side: <strong>Opus 4.7</strong> is a disappointment. <strong>GPT 5.5</strong> is decent but not a clear winner. Considering moving more work to Codex. Nothing decided yet.</p>
+
+<h2 id="monday">monday</h2>
+
+<p>claude-usage got the biggest update yet. Budget progress bars landed – each limit (session, weekly, extra) now shows $X/$Y with a bar that tracks spend. Then the entire dashboard was rebuilt as a 4-tab React UI from a design handoff. Tabs for Overview, Sessions, History, and Settings. The old single-page layout is gone.</p>
+
+<p>Roost got a pixel art avatar generator – deterministic 8x8 sprites from username hash, renders as SVG. Added a migration step to README for the avatar_url column.</p>
+
+<p>dose: Concerta added to the substances list.</p>
+
+<p>systems restructure: cleared all 21 legacy subsystem implementations (NullOS, nullC, voxel-engine, blockchain, bittorrent, container-runtime, physics-engine, and 14 others) from the repo. The implementations were years of from-scratch proofs-of-concept. Repo now holds only top-level config and docs. Crash last night corrupted the git index mid-commit – fixed with a manual object rehash on startup this morning, then pushed clean.</p>
+
+<h2 id="sunday">sunday</h2>
+
+<p>Cleared out a backlog of project notes that had piled up in Downloads as PDFs – one per repo, each just “next steps?” and a sentence or two. Triaged the lot, deleted <code class="language-plaintext highlighter-rouge">nulljosh/path</code> (stub repo, never used), updated roadmaps across <a href="https://github.com/nulljosh/apps">nyc-web</a>, <a href="https://github.com/nulljosh/bcgd">bcgd</a>, <a href="https://github.com/nulljosh/apps">spark</a>, dose, and tally with the outstanding items.</p>
+
+<p>Also found the cadence tracking question: the journal git history was squashed to a single commit earlier in the month, which nuked cadence’s commit graph for that repo. Nothing to fix – cadence tracks forward from here.</p>
+
+<p>School tracking updated. All Pre-Calc 12 learning guides done (units 1–7). Biology 12 all done – nine units, every project submitted. The <a href="https://github.com/nulljosh/apps">school</a> web dashboard now shows the full unit breakdown and the UVic transcript submission (Apr 23). Only thing left is the pre-calc module tests. Need 77%+ for UVic CS admission.</p>
+
+<p>Also redeployed bcgd/web – it had been redirecting to the Vercel login screen since Apr 14. Fixed with a fresh prod deploy. Laid out a prioritized multi-session roadmap covering NYC difficulty levels, epiphany critical fixes, cadence API wiring, tally payment chart, and a bcgd site clone.</p>
+
+<p>Portfolio got a second pass. Wiretext and Fuse added to the <a href="https://github.com/nulljosh/nulljosh.github.io">portfolio</a> project list, projects reordered by shipped quality, Currently section updated to match where things actually are.</p>
+
+<p>NYC city sim got a difficulty selector: Easy, Medium, Hard. Easy starts with generous resources, Hard starts constrained. Makes the game actually worth replaying from a blank slate.</p>
+
+<p>Tally CRA payments section got sparkline bars – a small horizontal bar behind each amount scaled relative to the largest payment. Pure visual, no data change.</p>
+
+<p>Cadence submodule ref bumped to pull an iOS/macOS API fix.</p>
+
+<p>Deleted <code class="language-plaintext highlighter-rouge">browser</code>, <code class="language-plaintext highlighter-rouge">browser-ios</code>, and <code class="language-plaintext highlighter-rouge">nyc-wallpaper</code> from the apps monorepo. All three were placeholder scaffolds with no active development. Dead weight, gone.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Cadence and Quiet</title><link href="https://journal.heyitsmejosh.com/2026/04/13/week/" rel="alternate" type="text/html" title="Cadence and Quiet" /><published>2026-04-13T13:00:00-07:00</published><updated>2026-04-13T13:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/04/13/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/04/13/week/"><![CDATA[<p><img src="/assets/2026-04-13-week.svg" alt="Apr 13" /></p>
+
+<p>New week, new app. Six repos touched. The code side of the week was clean. The rest was not. Main event: <a href="https://github.com/nulljosh/cadence">Cadence</a> from nothing to v1.0.0.</p>
+
+<h2 id="cadence">cadence</h2>
+
+<p>Code progress tracker. Pulls real git log from every repo in the code directory. Renders a 365-day heatmap, 30-day commit chart, stats grid, sortable project list. Node.js API, vanilla JS front. No frameworks. Scaffold, then Apple Liquid Glass, then live git via child process. On Vercel with serverless functions. There is something slightly recursive about building a tool that tracks your own building. The heatmap is made of the hours that made the heatmap.</p>
+
+<p>iOS and macOS SwiftUI targets share a network manager and model layer. Not wired to live data yet. Added to the apps monorepo and the portfolio. Today: dashboard footer with license + GitHub link, MIT file.</p>
+
+<h2 id="epiphany">epiphany</h2>
+
+<p>Compiler warnings cleared. A <code class="language-plaintext highlighter-rouge">nonisolated</code> annotation was blocking strict-concurrency builds. FlightFeed had an <code class="language-plaintext highlighter-rouge">internal</code> type the consumer couldn’t see. Made it public. Dead stubs and debug files removed.</p>
+
+<h2 id="tally">tally</h2>
+
+<p>Three new web modules: dispute filing, direct-to-consumer program lookup, legal resources. All wired to the existing data layer.</p>
+
+<h2 id="school">school</h2>
+
+<p>iOS companion merged into the monorepo. Standalone gone. Live subdomain was 404 because the deploy config had no output directory. One line.</p>
+
+<h2 id="apps--life">apps / life</h2>
+
+<p>Monday: Housing’s stale garage-door fact fixed on web and iOS. Missing <code class="language-plaintext highlighter-rouge">.gitignore</code> added for wiretext-ios.</p>
+
+<p>Friday was bigger. Expanded autism, mental health, and work-history sections. Geography map swapped from custom SVG to Leaflet (web) and MapKit (iOS), which killed the buggy scroll reveal and suppressed the Ukraine flag attribution. Dates corrected March to April. PWD status updated with a June 22 processing date. School percentages dropped. Mom’s birthday added. IQ dedup, doc bump. Friendships rewrite: trimmed the Alex recap, logged today’s call, noted a rumour from the old friend group. Mirrored to iOS, regenerated PDF.</p>
+
+<h2 id="bcgd">bcgd</h2>
+
+<p>Biggest bump in a while. Job costing, lead sources, customer CRM, fleet location tracking all in one push. README got a roadmap. Marketing site redirected to a Vercel login mid-week; fixed same day, tile back on the portfolio.</p>
+
+<h2 id="tally-1">tally</h2>
+
+<p>Now inside the apps monorepo. Root README and CLAUDE.md updated. Added a live countdown timer and earnings-per-hour rate. Both update in the background.</p>
+
+<h2 id="dose">dose</h2>
+
+<p>Substance library grew by 33 prescription meds. Schema unchanged.</p>
+
+<h2 id="portfolio">portfolio</h2>
+
+<p>Carousel rebuild. Seven active projects with nav buttons. Old Twitter link gone. Intro refreshed. Broken screenshots removed. bcgd tile restored.</p>
+
+<h2 id="spark">spark</h2>
+
+<p>Deployment fell over Tuesday. Next week.</p>
+
+<h2 id="epiphany-1">epiphany</h2>
+
+<p>Docs tidied. Dead API key cleanup marked done; stubs documented as dormant, not ghosts.</p>
+
+<h2 id="wednesday-apr-16">wednesday, apr 16</h2>
+
+<p>Snapshot. Therapy weekly. Gym 3-4x/week since December. 135-140 lbs. Finishing pre-calc at LEC. Science and English done. UVic comp sci, Vancouver Island.</p>
+
+<p>Building Epiphany (Palantir for normies), Tally (BC gov benefits), Spark (AI ideas db, eventually AI reddit with law integration), NYC sim. Helping dad with bcgd social, site, dashboard.</p>
+
+<p>Plan: gym, maybe light research, study for math tests. Bug hunt and security fixes on the weekend. Opus 4.7 is mid. Claude resets 6pm, then work. Beer and benefits until then.</p>
+
+<p>3.14159265358979323846264338327950288419716 9537</p>
+
+<h2 id="friday-apr-17">friday, apr 17</h2>
+
+<p>Another day, another scavenge to find something, anything to do. Somebody, anybody to talk to. But there’s nobody here. This planet is a disgusting fucking corpse. Walk to gym or don’t. Same results. Gym for four months, no difference. Only an injured shoulder. Haven’t had sex in years. Women hardly ever looked at me. And people will tell me to be positive or try harder.</p>
+
+<h2 id="saturday-apr-18">saturday, apr 18</h2>
+
+<p>Another boring day. Excruciating pain. Who would do this to another person. There is no God.</p>
+
+<p>Had a dream last night about being an airplane. No idea what that means.</p>
+
+<p>Light on code. Gym and calculus. Snow Leopard pass: reliability first, polish where it counts. Almost nothing hit git beyond the auto daily sync. Real housekeeping was here: tightened the one-post-per-week rule in <code class="language-plaintext highlighter-rouge">CLAUDE.md</code> to Friday or Sunday dates, merged the stray <code class="language-plaintext highlighter-rouge">2026-04-11-entry.md</code> in, fixed a stale SVG reference, regenerated weekly SVGs.</p>
+
+<p>Spent the evening downstairs with my brother. We smoked, talked, killed hours. When his girlfriend came home he asked me to leave through the front door and walk around the house rather than cut back through his suite, in case she was changing. A small ask. Reasonable on its face. But it sat with me longer than it should have.</p>
+
+<p>The whole night had been a chorus about how women are only good for one thing. Then the moment she walked in, the room reorganized itself around her comfort, and mine became the variable that absorbed the friction. She is the partner. I am the brother. Everyone understands the ranking, even when no one says it aloud.</p>
+
+<p>There is a paradox in shelter. What you guard most carefully tends to be the thing that eventually announces itself. Hide a thing precisely enough and you teach the people nearby to notice the hiding. I do not actually want to chat with his girlfriend. The request was not the problem. The problem is what the request quietly reveals: a hierarchy of proximity that contradicts the words spoken five minutes earlier. Humans are not logical creatures. They are loyal ones, and the loyalty does not always answer to the principle.</p>
+
+<h2 id="state-of-things">state of things</h2>
+
+<p>Fine. Gym almost every day, personal besting. School manageable. Small cough from the chronic, otherwise healthy.</p>
+
+<p>AI spend self-limits. A few hundred a month for bleeding edge is worth it. Claude’s models are good. The tooling is rough, the outages aren’t great, but Opus carries it.</p>
+
+<p>Steady. Solo most of the time, one friend on the phone weekly. Not complaining.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Everything Connected</title><link href="https://journal.heyitsmejosh.com/2026/04/05/week/" rel="alternate" type="text/html" title="Everything Connected" /><published>2026-04-05T13:00:00-07:00</published><updated>2026-04-05T13:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/04/05/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/04/05/week/"><![CDATA[<p><img src="/assets/2026-04-05-week.svg" alt="Platform Sprint" /></p>
+
+<h2 id="weekend">Weekend</h2>
+
+<p><a href="https://github.com/nulljosh/monica">Monica</a> took up most of the weekend. I renamed it from Opticon and immediately broke the live site. Spent a full day reading through error logs before realizing the actual problem was hidden behind a crash page. Ten minute fix once I could actually see what was wrong.</p>
+
+<p>After that things picked up. Built a daily brief so when you open the app you just see the important stuff right away – top movers, headlines, no clicking around. Put wildfires on the map next to earthquakes using NASA satellite data. The biggest thing was building a knowledge graph into it. Stocks, earthquakes, people, places – everything is connected now and you can search across all of it. Added an AI chat panel that can actually pull data from the app while you talk to it.</p>
+
+<p>On the money side, built out debt projections, income timelines, and a spending simulator. Found a bad bug where the app was making 30,000 server calls per user per day. Portfolio was showing $0 because it was forgetting to count account balances.</p>
+
+<p>The phone app went from rough to actually usable – spending predictions, simpler layout, dark mode that follows your phone settings, charts that stopped breaking on early morning checks. Fixed the map so it pulls from all its data sources instead of just three. Canadian weather alerts finally work. A bunch of construction data was being quietly thrown away.</p>
+
+<p><a href="https://github.com/nulljosh/spark">Spark</a> got threaded comments, then I went all in on the Apple side. Rebuilt the iPhone app with profiles, badges, and sorting. Built a Mac app, a watch app, and widgets for all three. Fixed a voting bug where it was counting things twice and locked down the database. Mac, iPhone, watch, widgets – same logic, four passes. The fourth pass is where you find all the places you made bad assumptions on the first.</p>
+
+<p><a href="https://github.com/nulljosh/tally">Tally</a> got a proper benefits guide for BC and Canada. Went back and fixed some of the existing info that was wrong. Built contacts sync with disability tracking. Same Apple sweep as Spark – Mac app, watch app with a countdown to your next payment, widgets. Your paid status and read messages actually save to your account now. Tightened up security across the board.</p>
+
+<p><a href="https://github.com/nulljosh/arthur">Arthur</a> got smaller. Compressed the model down so it actually fits on a normal computer – went from huge to 91MB. Had to retrain it from scratch because I realized it was learning wrong, reading text in both directions when it should only go forward. Upgraded how it breaks words apart. It can write grammatical sentences now. It cannot think. Fair result for a tiny model.</p>
+
+<p>Then on Saturday I turned Arthur into a live service. The exported model is 656MB at full precision, 168MB compressed. Vercel’s size limit is 100MB per file, so the full model does not fit. What does fit: a smaller version running in the browser through WebAssembly. A leftover folder was hiding the real server code, which took longer to find than it should have. Two pages now: one shows the architecture, the other takes a prompt and writes text back. The full model needs a bigger host. Live at <a href="https://arthur.heyitsmejosh.com">arthur.heyitsmejosh.com</a>.</p>
+
+<p>Later that evening I went through a list of things bugging me. Monica had a phantom green dot on the map floating 800 meters from the real location pin – a second marker at a hardcoded offset meant to show “local activity.” Pulled it. Fixed the mobile nav buttons too, they needed 5 to 20 taps to register because the touch targets were too small. Spark’s deploys were failing because the free plan caps at 12 server functions and Spark had grown past that with duplicate files. Cleaned those out. Arthur’s site was showing raw data instead of the actual page because the deploy was uploading the wrong folder. One-line fix. Had 29 projects on GitHub, 19 of which were archived and already folded into bigger projects months ago. Deleted all of them. Down to 10.</p>
+
+<p>Cleaned up my <a href="https://github.com/nulljosh/nulljosh.github.io">portfolio</a> site with new fonts and better mobile layout. Rebuilt the project showcase. Spent time making all my apps look consistent – same colors, same feel across web, phone, and desktop. Folded a bunch of standalone projects into bigger collections to stop the sprawl. Cleaned out dead projects.</p>
+
+<p>Saturday was gym, studying, homework. Found out Ben Poile deactivated his Twitter. Was going to send him the new Kanye album. No way to reach him now.</p>
+
+<h2 id="monday">Monday</h2>
+
+<p>Chatted with Alex for almost two hours – the usual stuff, the future, intelligence, how most people are not applying themselves and what it would take for people to actually be better. Then it got heavy. He started arguing parents should hit their kids more, that his dad throwing him on the couch at 12 was good discipline, good for his development. Biggest disagreement we have ever had. He is my oldest friend so it had to happen eventually. Kinda bummed me out though. I had to laugh a bit because what he described is nothing compared to what I went through at two years old, and what I went through is nothing compared to my grandpa, who is 80 with dementia and still cries about his dad beating him as a kid. Three generations of it. Hard to hear someone argue it builds character.</p>
+
+<p>Gym. School work. Mom’s birthday, called her. On the computer side, spent the day making everything look the same. Dose and Lingo got refreshed to match the portfolio site. Same with the NYC game where the phone, desktop, and web versions were all slightly different colors, now synced up. Updated school grades in Tally. Fixed something in Spark where background files were being treated as separate pages. Took Arthur off the portfolio since it is not ready to show. Updated a balance in Monica. Cleaned up leftover projects on Vercel from consolidation. Quiet Monday.</p>
+
+<p>Replaced all the charts in Monica with TradingView’s library. Nine chart types now – candlesticks, Heikin Ashi, bars, line, area, and more. Heikin Ashi is the default because it smooths out the noise. The data now includes open/high/low/close prices instead of just the closing number, so the time axis and candles actually render right.</p>
+
+<p>Brought the same charts to the phone and Mac apps. Both got the full nine-type picker using the same data.</p>
+
+<p>Added five games to <a href="https://github.com/nulljosh/apps">Lingo</a> – chess, 2048, memory match, minesweeper, and snake.</p>
+
+<p>Found a leaked API key in the Xcode build files and scrubbed it out.</p>
+
+<p>Spent the evening consolidating again. Moved bots into the <a href="https://github.com/nulljosh/systems">systems</a> monorepo, reorganized Dose, and cleaned up dead projects on Vercel. Down to 10 active repos. Also fixed the auto-commit watcher so it stops spamming empty lines into journal entries.</p>
+
+<h2 id="tuesday">Tuesday</h2>
+
+<p>Spent the afternoon vibing the portfolio’s Zinc aesthetic into Lingo across all three platforms.</p>
+
+<p>The web version got aligned to the portfolio’s monochrome palette, swapped bright icons for subdued colors, replaced the opacity-fade hover pattern with spring transitions, and added fade-up entrance animations. Fixed a dark-mode ripple bug and removed dead variables.</p>
+
+<p>iOS replaced every frosted material background with explicit Zinc colors through a new theme system. Stripped all accent colors in favor of primary and secondary label. The review pass caught that minesweeper’s monochrome number colors were nearly indistinguishable and 2048’s tile grays shared values for different tiles. Fixed both.</p>
+
+<p>macOS got a brand new app. Sidebar navigation with categories, shares all models from the iOS version. 44/44 tests pass.</p>
+
+<p>Removed emoji characters from source files across all projects. Six files touched. Everything now uses plain text or Font Awesome icons.</p>
+
+<h2 id="wednesday">Wednesday</h2>
+
+<p>Full day across four projects. Morning was fixing bugs from a punch list. Afternoon shifted to payments, real portfolio data, and more consolidation.</p>
+
+<p>The map in Monica was showing nothing on any layer even though settings showed everything enabled. A filter was silently rejecting every marker that did not have both a source label and a valid link. Removed the filter and replaced it with a simple location check. Flights were completely missing – the data source existed but the app never asked for it. Wired it up. Profile photos were not sticking after upload because the app kept the URL in temporary memory. Fixed it so the app refreshes after upload. Also fixed a bug where a network hiccup during login would sign you out entirely.</p>
+
+<p>Added a $1/week tier and updated the pricing page. Three tiers now with a clear feature breakdown. Pulled real portfolio data from Wealthsimple for the first time. Portfolio charts now show actual positions instead of placeholder data.</p>
+
+<p>Changed the <a href="https://github.com/nulljosh/spark">Spark</a> feed from a vertical list to a two-column grid on desktop, single column on mobile. Added six starter posts so the feed has content on first load.</p>
+
+<p>Moved the <a href="https://github.com/nulljosh/systems">jot</a> programming language into the systems monorepo. The old standalone repo is archived.</p>
+
+<h2 id="thursday">Thursday</h2>
+
+<p>Late night session clearing the brain dump backlog for Monica. Converted a scattered PDF of ideas into a prioritized plan, then worked through the top items in one sitting.</p>
+
+<p>Fixed two bugs. The watchlist was showing duplicate stars on certain stocks because the same ticker appeared in both the Watchlist section and the main All Markets list. Filtered them so each stock only shows once. Login errors on the mobile apps were also too vague, so added better messages that explain what actually went wrong.</p>
+
+<p>Two new features. Polymarket whale tracking now pulls large recent trades and surfaces the top traders and their moves in the Situation Monitor. Also brought the Tally payday countdown to the web version – it was previously only visible on the native apps.</p>
+
+<p>Housekeeping turned up fourteen stray code coverage files left behind by the test runner across every repo. Cleaned them all out and added ignore rules so they stop accumulating.</p>
+
+<h2 id="friday">Friday</h2>
+
+<p>Got the <a href="https://github.com/nulljosh/bcgd">BC Garage Doors</a> project properly set up. The landing page and the inventory dashboard were living in two separate places with no connection between them, so I merged them into one project and gave each its own subdomain.</p>
+
+<p>The landing page is now at bcgd.heyitsmejosh.com. It is the customer-facing site with the phone number, booking form, reviews, and service info. The inventory dashboard is at bcgd-dashboard.heyitsmejosh.com. That one tracks parts, stock levels, low-stock alerts, and order history for the shop. Both are live.</p>
+
+<p>After that, cleaned up the codebase again. Had 13 active repositories, which was too many. Merged the bots into the systems repo, moved bhaddie into the apps collection, and archived the old copies. Down to 10 repositories now. Also found a third duplicate copy of the dashboard hiding inside the apps folder under a different name and cleaned that up too.</p>
+
+<h2 id="saturday">Saturday</h2>
+
+<p>Housekeeping day. Ran the morning update and it failed on a repo called <code class="language-plaintext highlighter-rouge">core</code> that was deleted months ago when it got renamed to Arthur. The local directory was still sitting there pointing at a GitHub repo that no longer exists. Deleted it.</p>
+
+<p>Went through the rest of the morning-update script and found more rot. The skip list still referenced three repos that do not exist anymore from before consolidation. Two repos we do not own, <code class="language-plaintext highlighter-rouge">lil-agents</code> and <code class="language-plaintext highlighter-rouge">tradingview-mcp</code>, were failing with permission denied errors every single morning because the script tries to push everything it finds. Added those to the skip list along with <code class="language-plaintext highlighter-rouge">shannon</code>. Fixed the step counter too, it was showing 13 when there are 14 steps.</p>
+
+<p>Found that <a href="https://github.com/nulljosh/tally">Tally</a>’s backup copies were committing Puppeteer browser artifacts to git. Chrome leaves behind symlinks like <code class="language-plaintext highlighter-rouge">SingletonCookie</code> and <code class="language-plaintext highlighter-rouge">SingletonLock</code> in a <code class="language-plaintext highlighter-rouge">chrome-data/</code> folder and the auto-commit was happily adding them. Added the folder to <code class="language-plaintext highlighter-rouge">.gitignore</code> and cleaned them out of tracking.</p>
+
+<hr />
+
+<h2 id="monica">Monica</h2>
+
+<p>Spent the day on <a href="https://github.com/nulljosh/monica">Monica</a>. Started with a blank map, 33 GitHub repos, and a version number that was lying.</p>
+
+<p>The map had been empty for weeks. All 11 endpoints wired, markers working in isolation, production loading nothing. Traced it: fallback logic treated empty API responses as valid data. Traffic keys were dead. OpenSky rate-limited flights into a silent 502. Fixed the fallback chain and got markers rendering.</p>
+
+<p>Flattened nav to five top-level tabs. Merged the People panel’s three-tab picker into a single scrollable view. Dropped the $20/month tier. Wired real keys for TomTom, HERE, and Ticketmaster. Added CoinGecko and Reddit. Built a new icon. Deleted 23 dead repos. Called it v5.0.0 and pushed.</p>
+
+<p>Came back in the evening and it was broken. Stock detail crashed on duplicate timestamps, app defaulted to light mode, Settings still said v3.5.1. Fixed the chart crash, ripped out light mode, fixed fonts. Then found Monica was burning through Vercel’s free tier – 1.4M edge requests against a 1M limit, driven by 120-second polling across four endpoints. Moved everything to 5-minute intervals.</p>
+
+<p>Connected Blob store for avatars. Reset version to v1.0.0-beta. Calling it v5 when half the features were broken was dishonest.</p>
+
+<h2 id="quest-night">Quest Night</h2>
+
+<p>Built a gamified RPG task manager called <a href="https://github.com/nulljosh/apps">Quest</a> in one session. The concept: a fantasy quest journal for tracking real-life tasks, with XP, leveling (Squire through Mythic), difficulty ranks (F through S), dopamine rewards (80% chance on completion), and streak tracking.</p>
+
+<p>Started with the web app. Vite + React, PWA-ready, full medieval aesthetic: parchment cards with torn edges, wax seal completion animations, gold XP bar, leather textures. MedievalSharp headings, Crimson Text body, Metamorphous stats. 23 tests passing. Then built the iOS app (SwiftUI + SwiftData, iOS 17+) and macOS app (NavigationSplitView with leather sidebar). All three platforms building clean.</p>
+
+<p>Then the real move: merged everything into the <a href="https://github.com/nulljosh/apps">NYC colony sim</a>. Colonists now perform your real-life quests. Add “Go to the gym” as a fitness quest, and a colonist walks to the Gym building, shows a speech bubble saying “Lifting weights”, works for 60 ticks, earns XP. Every 5 quests in a category boosts colonist stats matching that class (Warrior gets STR/END from fitness). Quest board built directly into the HUD (Q key). Player profile shows level, title, XP bar, streak.</p>
+
+<p>Added wallpaper mode (Shift+W). Hides all UI, auto-camera slowly drifts between colonists, real-time day/night cycle. Reduced need decay so colonists survive indefinitely. The game auto-starts on load, no menu. The idea is to run it as a desktop wallpaper: a living city where little people are doing your productive tasks.</p>
+
+<p>Deleted the standalone quest app, quest-ios, and quest-macos after the merge. NYC is the life game now.</p>
+
+<h2 id="late-night-sprint">Late Night Sprint</h2>
+
+<p>Came back after dinner and burned through a stack of accumulated task PDFs from my phone.</p>
+
+<p><a href="https://github.com/nulljosh/apps">Life iOS</a>: Finished the interrupted work from last session. Six new therapy visualization views were staged but never wired in. Integrated all six into the paging scroll, built clean, pushed.</p>
+
+<p><a href="https://github.com/nulljosh/bcgd">BCGD Dashboard</a>: Big night for dad’s garage door business dashboard. Added low stock reorder email alerts, a settings page, browser notifications when stock drops below threshold. Then added PIN authentication so not just anyone with the URL can modify inventory. Built a backup/restore system. Built a full job pipeline tracker so he can track jobs from lead through quote, scheduled, complete, and paid. Dashboard now shows job stats alongside inventory. Added wholesale cost estimates for all 28 parts so the inventory value card actually shows a number. Deployed everything to Vercel.</p>
+
+<p><a href="https://github.com/nulljosh/monica">Monica</a>: Updated Telus phone bill data from actual PDF statements. Added a Bills section to the finance panel with Telus device payment breakdowns. Stripped dead API calls from four server routes for a 234 line reduction. Split App.jsx from 1634 lines into three new layout components, bringing it down to 1323. Bumped the macOS companion to v0.7.0.</p>
+
+<p><a href="https://github.com/nulljosh/apps">NYC</a>: Added an AI autoplay system. The colony can now run and build entirely on its own. It assesses needs, decides what to build, places buildings near the colony center, recruits new colonists when stable, and shifts directives between gather and patrol. Toggle with the AUTOPLAY button in the directive bar.</p>
+
+<h2 id="monday-1">Monday</h2>
+
+<p>Off the keyboard today. School application, prerequisites, gym. No commits. The colony ran itself.</p>
+
+<h2 id="later-in-the-week">Later in the week</h2>
+
+<p>Eleven repos touched across the back half of the week, four platforms, well over fifty commits.</p>
+
+<h3 id="dose">dose</h3>
+
+<p>Added a facemaxxing module tracking jaw, skin, and posture. Library redesigned with sticky category filters. Desktop at v2.1.0.</p>
+
+<p>Labs: blood panels via predefined templates (CBC, metabolic, lipids, thyroid, vitamins, HbA1c). LifeLabs PDF import on web – parses client-side, nothing leaves the device. Insight engine cross-references dose logs against biometrics, flags anomalies beyond two standard deviations, tracks lab marker trends across readings.</p>
+
+<p>UI bump on all four platforms. Health score ring in the header on web and iOS, real dashboard on macOS, ring arc on watchOS.</p>
+
+<h3 id="nyc">nyc</h3>
+
+<p>Version 2.1. Particles on movement, four-frame character animation, and a basic lighting system. Quest pathfinding was broken. Units were routing to the building tile itself instead of an adjacent tile, which caused a hard freeze at level 5. Fixed. XP and leveling now behave consistently across platforms. 4x tick speed with normalized decay rates.</p>
+
+<h3 id="epiphany">epiphany</h3>
+
+<p>Monica is now Epiphany. Name updated across readme, project config, page title, and portfolio. Domain and GitHub repo still need manual renames through the dashboards.</p>
+
+<p>Sticky header in the markets panel, glass search row. Map layers retry on cold start. History chart was broken because the API returns <code class="language-plaintext highlighter-rouge">time</code> not <code class="language-plaintext highlighter-rouge">date</code> – fixed. Indicator system fully customizable.</p>
+
+<p>TradingView icon on every markets row. Stocks were showing dashes for P/E, EPS, beta, and market cap because the old code hit one endpoint – switched to two parallel requests. Stock detail card clipped on mobile, fixed. Map pixel ratio clamped for high-DPI screens.</p>
+
+<p>Six bugs from a backlog: email verification links pointed at Vercel’s deployment URL instead of the custom domain, Yahoo Finance now requires a crumb token exchange before chart requests, ticker bar was eating touch taps as drags, “temporarily unavailable” showing on estimated data.</p>
+
+<p>Profile photo upload replaced with a browser-generated 64x64 pixel avatar – symmetric pattern, random palette, no file picker. Cleaned up standalone <code class="language-plaintext highlighter-rouge">monica-ios</code> and <code class="language-plaintext highlighter-rouge">monica-macos</code>; both now live under <code class="language-plaintext highlighter-rouge">epiphany/</code>.</p>
+
+<h3 id="tally">tally</h3>
+
+<p>Version 3.0.0. Stripped out a significant amount of complexity. BCeID credentials now load from <code class="language-plaintext highlighter-rouge">~/.config/tally/credentials.env</code> so nothing is baked in.</p>
+
+<p>Bottom tab bar is gone. Navigation moved to a horizontal row at the top. The Benefits tab was blank so it got cut. Footer is now semantically correct.</p>
+
+<p>On iOS, the settings screen was missing entirely. Added it with account display and a destructive logout button. Notifications were not clearing when you opened the messages tab. Fixed with a content hash stored in local storage that marks things as read on tab switch. A Swift compiler warning about a non-exhaustive switch statement got resolved by adding the missing case.</p>
+
+<h3 id="nimble">nimble</h3>
+
+<p>Parallel API requests so the interface does not block waiting on a single source. Natural language math parsing added. Type “fifty divided by three” and get an answer inline. App icon done. iOS README now has a real screenshot, generated automatically by a UI test target.</p>
+
+<p>The iOS app showed instant answers but no web search results, which is a real gap from the web version. Added a parallel web search fetch that hits the production API alongside the instant answer query. Results appear below the instant answer card as a list with domain, title, and snippet.</p>
+
+<h3 id="life">life</h3>
+
+<p>The geography map had labels for Vancouver Island positioned right at the left edge of the SVG, which caused them to clip on any narrow screen. Moved them to the right side of their dot so they have room to breathe.</p>
+
+<p>The name anonymization from the previous session missed the inline charts, timeline entries, tooltip text, and the iOS data model. Everything got cleaned up across both platforms. Relationship labels are now First and Second. NYC no longer names anyone.</p>
+
+<p>The deploy config was also missing an output directory declaration, which caused the live site to show a 404. One line fix, now resolves correctly.</p>
+
+<h3 id="school">school</h3>
+
+<p>Same deploy fix as life. The school subdomain was returning 404 because the static site config did not declare where to serve files from. School iOS quiz was returning 404 in production because <code class="language-plaintext highlighter-rouge">@vercel/node</code> was not bundling the <code class="language-plaintext highlighter-rouge">data/</code> directory with the function. One line in vercel.json fixed it.</p>
+
+<h3 id="new-apps">new apps</h3>
+
+<p>Three new apps shipped. wiretext is a Unicode wireframe design tool. Pick components from a palette, place them on a monospace canvas, export as plain text. Runs on web, iOS, and macOS. claude-usage tracks Claude API consumption: a dashboard with a monthly summary ring, a charts view, an entries log, and an iOS widget showing this month’s token count. Both got a zinc dark restyle pass at the end of the week, swapping green for indigo and moving to Inter. fuse is a timeline app built around bomb-timer style countdowns, pulling from iCal and custom event sources.</p>
+
+<h3 id="portfolio">portfolio</h3>
+
+<p>Replaced the SVG app mockups with real iOS screenshots for all project cards. Added NYC to the projects list with a live link. Gallery columns fixed to equal width. Previews refreshed.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry></feed>

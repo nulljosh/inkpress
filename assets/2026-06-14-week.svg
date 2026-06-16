@@ -1,0 +1,31 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        .bg { fill: #1a1a1a; }
+        .text { fill: #e8e8e8; }
+        .accent { fill: #555; }
+      }
+      @media (prefers-color-scheme: light) {
+        .bg { fill: #f5f5f5; }
+        .text { fill: #000; }
+        .accent { fill: #ccc; }
+      }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="400"/>
+
+  <g class="text">
+    <text x="60" y="100" font-size="64" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">Fixes and Shipping</text>
+
+    <text x="60" y="180" font-size="20" font-family="system-ui, -apple-system, sans-serif" opacity="0.8">June 14, 2026</text>
+
+    <g class="accent" opacity="0.4">
+      <circle cx="200" cy="280" r="40"/>
+      <circle cx="400" cy="300" r="35"/>
+      <circle cx="600" cy="270" r="45"/>
+      <circle cx="850" cy="290" r="38"/>
+      <circle cx="1050" cy="275" r="42"/>
+    </g>
+  </g>
+</svg>

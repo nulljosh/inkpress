@@ -1,0 +1,291 @@
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #fafafa;
+  --text: #000;
+  --text-secondary: rgba(0, 0, 0, 0.5);
+  --text-tertiary: rgba(0, 0, 0, 0.3);
+  --border: rgba(0, 0, 0, 0.1);
+  --subtle: rgba(0, 0, 0, 0.04);
+  --font: 'Geist', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+html[data-theme="dark"] {
+  --bg: #111;
+  --text: #e8e8e8;
+  --text-secondary: rgba(255, 255, 255, 0.5);
+  --text-tertiary: rgba(255, 255, 255, 0.25);
+  --border: rgba(255, 255, 255, 0.1);
+  --subtle: rgba(255, 255, 255, 0.04);
+}
+
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease !important;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page-content { padding: 0; }
+
+.w {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: clamp(4rem, 10vw, 8rem) clamp(1.25rem, 5vw, 3rem) 3rem;
+  padding-left: max(clamp(1.25rem, 5vw, 3rem), env(safe-area-inset-left));
+  padding-right: max(clamp(1.25rem, 5vw, 3rem), env(safe-area-inset-right));
+  padding-bottom: max(3rem, env(safe-area-inset-bottom));
+}
+
+header { margin-bottom: clamp(4rem, 8vw, 6rem); }
+
+header h1 {
+  font-family: var(--font);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 200;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--text);
+}
+
+header p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 2.5rem 0 0.75rem;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 300; letter-spacing: -0.02em; }
+h2 { font-size: 1.35rem; font-weight: 500; }
+h3 { font-size: 1.05rem; font-weight: 500; color: var(--text-secondary); }
+h4 { font-size: 0.95rem; font-weight: 500; color: var(--text-secondary); }
+
+p { margin: 0 0 1rem; color: var(--text); }
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover { border-bottom-color: var(--text); }
+
+ul, ol {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  color: var(--text);
+}
+
+ul li, ol li { margin: 0.25rem 0; }
+
+.horizontal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.horizontal-list li { margin: 0; }
+
+.horizontal-list a {
+  color: var(--text-secondary);
+  border-bottom: none;
+  transition: color 0.3s ease;
+}
+
+.horizontal-list a:hover { color: var(--text); }
+
+.dashed {
+  border-top: 1px dashed var(--border);
+  margin: 1.5rem 0;
+}
+
+.glass-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 1rem 0 2rem;
+}
+
+.post-list { list-style: none; padding: 0; margin: 0; }
+
+.post-list-item {
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 0.6rem 0;
+}
+
+.home-date {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: none;
+  margin-bottom: 1.5rem;
+}
+
+.back-link:hover { color: var(--text); }
+
+.glass-card h2:first-child,
+.glass-card h1:first-child,
+.glass-card h3:first-child { margin-top: 0; }
+
+.post-title {
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
+}
+
+.post-meta {
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 2.5rem;
+}
+
+article img,
+.glass-card img,
+.page-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--subtle);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
+
+pre {
+  background: var(--subtle);
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+pre code { background: none; padding: 0; }
+
+blockquote {
+  border-left: 2px solid var(--border);
+  margin: 1rem 0;
+  padding: 0 0 0 1rem;
+  color: var(--text-secondary);
+}
+
+hr {
+  border: none;
+  border-top: 1px dashed var(--border);
+  margin: 2.5rem 0;
+}
+
+footer {
+  margin-top: clamp(4rem, 8vw, 6rem);
+  padding-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.4s ease-out, border-color 0.4s ease-out, transform 0.2s var(--spring);
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.theme-toggle svg { width: 16px; height: 16px; }
+
+@media (max-width: 640px) {
+  header { margin-bottom: 3rem; }
+  .post-title { font-size: clamp(1.75rem, 7vw, 2.25rem); }
+}
