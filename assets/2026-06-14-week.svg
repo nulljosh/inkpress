@@ -1,31 +1,43 @@
-<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <style>
-      @media (prefers-color-scheme: dark) {
-        .bg { fill: #1a1a1a; }
-        .text { fill: #e8e8e8; }
-        .accent { fill: #555; }
-      }
-      @media (prefers-color-scheme: light) {
-        .bg { fill: #f5f5f5; }
-        .text { fill: #000; }
-        .accent { fill: #ccc; }
-      }
-    </style>
-  </defs>
-  <rect class="bg" width="1200" height="400"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <style>
+    .bg { fill: #fafafa; }
+    .fg { fill: #000; }
+    .mut { fill: rgba(0,0,0,0.5); }
+    .dim { fill: rgba(0,0,0,0.25); }
+    .brd { stroke: rgba(0,0,0,0.1); }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #111; }
+      .fg { fill: #e8e8e8; }
+      .mut { fill: rgba(255,255,255,0.5); }
+      .dim { fill: rgba(255,255,255,0.25); }
+      .brd { stroke: rgba(255,255,255,0.1); }
+    }
+    .t { font-family: Geist, -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif; }
+    .m { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace; }
+  </style>
+  <rect class="bg" width="800" height="500"/>
+  <rect class="brd" x="20" y="20" width="760" height="460" rx="12" ry="12" fill="none" stroke-width="1"/>
 
-  <g class="text">
-    <text x="60" y="100" font-size="64" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">Fixes and Shipping</text>
+  <text class="t fg" x="48" y="90" font-size="42" font-weight="300" letter-spacing="-1">Fixes and Shipping</text>
+  <text class="t mut" x="48" y="126" font-size="16">App Store launch . Tally 3.5.0 . SnapTrade sync</text>
 
-    <text x="60" y="180" font-size="20" font-family="system-ui, -apple-system, sans-serif" opacity="0.8">June 14, 2026</text>
+  <line class="brd" x1="48" y1="152" x2="752" y2="152" stroke-width="1"/>
 
-    <g class="accent" opacity="0.4">
-      <circle cx="200" cy="280" r="40"/>
-      <circle cx="400" cy="300" r="35"/>
-      <circle cx="600" cy="270" r="45"/>
-      <circle cx="850" cy="290" r="38"/>
-      <circle cx="1050" cy="275" r="42"/>
-    </g>
-  </g>
+  <text class="m fg" x="48" y="188" font-size="14">apps</text>
+  <text class="m fg" x="48" y="210" font-size="14">nulljosh.github.io</text>
+  <text class="m mut" x="48" y="236" font-size="14">(6 app updates, 1 portfolio)</text>
+
+  <rect class="brd" x="560" y="176" width="200" height="280" rx="8" ry="8" fill="none" stroke-width="1"/>
+  <text class="m mut" x="584" y="206" font-size="12">highlights</text>
+  <text class="m fg" x="584" y="232" font-size="28" font-weight="500">6</text>
+  <text class="m mut" x="584" y="268" font-size="12">shipped</text>
+  <text class="m fg" x="584" y="292" font-size="14">epiphany store</text>
+  <text class="m fg" x="584" y="314" font-size="14">tally 3.5.0</text>
+  <text class="m fg" x="584" y="336" font-size="14">iOS refresh</text>
+  <text class="m fg" x="584" y="358" font-size="14">spark pipeline</text>
+  <text class="m fg" x="584" y="378" font-size="14">echo DNS live</text>
+  <text class="m mut" x="584" y="412" font-size="12">window</text>
+  <text class="m fg" x="584" y="434" font-size="13">Jun 9 -- Jun 14</text>
+
+  <text class="t mut" x="48" y="462" font-size="13">2026-06-14</text>
 </svg>
