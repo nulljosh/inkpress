@@ -34,10 +34,20 @@ categories: journal daily
 
 ## Run
 ```bash
-cd ~/Documents/Code/apps/journal
+cd ~/Documents/Code/journal
 bundle install
 bundle exec jekyll serve   # local preview
 ./scripts/deploy.sh        # build locally + ship prebuilt static to Vercel
+```
+
+## /journal shortcut
+Standalone repo: `nulljosh/journal` on GitHub, pushed from this directory (re-separated 2026-06-16, GitHub push completed 2026-06-18).
+`/journal` (skill at `~/.claude/skills/journal.md`) creates or bumps the current week's entry, then builds and deploys:
+```bash
+/journal              # create/update this week's entry (interactive)
+/journal <date>       # create entry for specific date (YYYY-MM-DD)
+/journal push         # ./scripts/deploy.sh (build + ship to Vercel)
+/journal open         # open current week's entry in browser
 ```
 
 ## Key Files
