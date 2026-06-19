@@ -67,7 +67,7 @@
 
 <h2 id="weekend">Weekend</h2>
 
-<p><a href="https://github.com/nulljosh/monica">Monica</a> took up most of the weekend. I renamed it from Opticon and immediately broke the live site. Spent a full day reading through error logs before realizing the actual problem was hidden behind a crash page. Ten minute fix once I could actually see what was wrong.</p>
+<p><a href="https://github.com/nulljosh/epiphany">Monica</a> took up most of the weekend. I renamed it from Opticon and immediately broke the live site. Spent a full day reading through error logs before realizing the actual problem was hidden behind a crash page. Ten minute fix once I could actually see what was wrong.</p>
 
 <p>After that things picked up. Built a daily brief so when you open the app you just see the important stuff right away – top movers, headlines, no clicking around. Put wildfires on the map next to earthquakes using NASA satellite data. The biggest thing was building a knowledge graph into it. Stocks, earthquakes, people, places – everything is connected now and you can search across all of it. Added an AI chat panel that can actually pull data from the app while you talk to it.</p>
 
@@ -75,11 +75,11 @@
 
 <p>The phone app went from rough to actually usable – spending predictions, simpler layout, dark mode that follows your phone settings, charts that stopped breaking on early morning checks. Fixed the map so it pulls from all its data sources instead of just three. Canadian weather alerts finally work. A bunch of construction data was being quietly thrown away.</p>
 
-<p><a href="https://github.com/nulljosh/spark">Spark</a> got threaded comments, then I went all in on the Apple side. Rebuilt the iPhone app with profiles, badges, and sorting. Built a Mac app, a watch app, and widgets for all three. Fixed a voting bug where it was counting things twice and locked down the database. Mac, iPhone, watch, widgets – same logic, four passes. The fourth pass is where you find all the places you made bad assumptions on the first.</p>
+<p><a href="https://github.com/nulljosh">Spark</a> got threaded comments, then I went all in on the Apple side. Rebuilt the iPhone app with profiles, badges, and sorting. Built a Mac app, a watch app, and widgets for all three. Fixed a voting bug where it was counting things twice and locked down the database. Mac, iPhone, watch, widgets – same logic, four passes. The fourth pass is where you find all the places you made bad assumptions on the first.</p>
 
 <p><a href="https://github.com/nulljosh/tally">Tally</a> got a proper benefits guide for BC and Canada. Went back and fixed some of the existing info that was wrong. Built contacts sync with disability tracking. Same Apple sweep as Spark – Mac app, watch app with a countdown to your next payment, widgets. Your paid status and read messages actually save to your account now. Tightened up security across the board.</p>
 
-<p><a href="https://github.com/nulljosh/arthur">Arthur</a> got smaller. Compressed the model down so it actually fits on a normal computer – went from huge to 91MB. Had to retrain it from scratch because I realized it was learning wrong, reading text in both directions when it should only go forward. Upgraded how it breaks words apart. It can write grammatical sentences now. It cannot think. Fair result for a tiny model.</p>
+<p><a href="https://github.com/nulljosh">Arthur</a> got smaller. Compressed the model down so it actually fits on a normal computer – went from huge to 91MB. Had to retrain it from scratch because I realized it was learning wrong, reading text in both directions when it should only go forward. Upgraded how it breaks words apart. It can write grammatical sentences now. It cannot think. Fair result for a tiny model.</p>
 
 <p>Then on Saturday I turned Arthur into a live service. The exported model is 656MB at full precision, 168MB compressed. Vercel’s size limit is 100MB per file, so the full model does not fit. What does fit: a smaller version running in the browser through WebAssembly. A leftover folder was hiding the real server code, which took longer to find than it should have. Two pages now: one shows the architecture, the other takes a prompt and writes text back. The full model needs a bigger host. Live at <a href="https://arthur.heyitsmejosh.com">arthur.heyitsmejosh.com</a>.</p>
 
@@ -99,11 +99,11 @@
 
 <p>Brought the same charts to the phone and Mac apps. Both got the full nine-type picker using the same data.</p>
 
-<p>Added five games to <a href="https://github.com/nulljosh/apps">Lingo</a> – chess, 2048, memory match, minesweeper, and snake.</p>
+<p>Added five games to <a href="https://github.com/nulljosh">Lingo</a> – chess, 2048, memory match, minesweeper, and snake.</p>
 
 <p>Found a leaked API key in the Xcode build files and scrubbed it out.</p>
 
-<p>Spent the evening consolidating again. Moved bots into the <a href="https://github.com/nulljosh/systems">systems</a> monorepo, reorganized Dose, and cleaned up dead projects on Vercel. Down to 10 active repos. Also fixed the auto-commit watcher so it stops spamming empty lines into journal entries.</p>
+<p>Spent the evening consolidating again. Moved bots into the <a href="https://github.com/nulljosh">systems</a> monorepo, reorganized Dose, and cleaned up dead projects on Vercel. Down to 10 active repos. Also fixed the auto-commit watcher so it stops spamming empty lines into journal entries.</p>
 
 <h2 id="tuesday">Tuesday</h2>
 
@@ -125,9 +125,9 @@
 
 <p>Added a $1/week tier and updated the pricing page. Three tiers now with a clear feature breakdown. Pulled real portfolio data from Wealthsimple for the first time. Portfolio charts now show actual positions instead of placeholder data.</p>
 
-<p>Changed the <a href="https://github.com/nulljosh/spark">Spark</a> feed from a vertical list to a two-column grid on desktop, single column on mobile. Added six starter posts so the feed has content on first load.</p>
+<p>Changed the <a href="https://github.com/nulljosh">Spark</a> feed from a vertical list to a two-column grid on desktop, single column on mobile. Added six starter posts so the feed has content on first load.</p>
 
-<p>Moved the <a href="https://github.com/nulljosh/systems">jot</a> programming language into the systems monorepo. The old standalone repo is archived.</p>
+<p>Moved the <a href="https://github.com/nulljosh">jot</a> programming language into the systems monorepo. The old standalone repo is archived.</p>
 
 <h2 id="thursday">Thursday</h2>
 
@@ -141,7 +141,7 @@
 
 <h2 id="friday">Friday</h2>
 
-<p>Got the <a href="https://github.com/nulljosh/bcgd">BC Garage Doors</a> project properly set up. The landing page and the inventory dashboard were living in two separate places with no connection between them, so I merged them into one project and gave each its own subdomain.</p>
+<p>Got the <a href="https://github.com/nulljosh">BC Garage Doors</a> project properly set up. The landing page and the inventory dashboard were living in two separate places with no connection between them, so I merged them into one project and gave each its own subdomain.</p>
 
 <p>The landing page is now at bcgd.heyitsmejosh.com. It is the customer-facing site with the phone number, booking form, reviews, and service info. The inventory dashboard is at bcgd-dashboard.heyitsmejosh.com. That one tracks parts, stock levels, low-stock alerts, and order history for the shop. Both are live.</p>
 
@@ -159,7 +159,7 @@
 
 <h2 id="monica">Monica</h2>
 
-<p>Spent the day on <a href="https://github.com/nulljosh/monica">Monica</a>. Started with a blank map, 33 GitHub repos, and a version number that was lying.</p>
+<p>Spent the day on <a href="https://github.com/nulljosh/epiphany">Monica</a>. Started with a blank map, 33 GitHub repos, and a version number that was lying.</p>
 
 <p>The map had been empty for weeks. All 11 endpoints wired, markers working in isolation, production loading nothing. Traced it: fallback logic treated empty API responses as valid data. Traffic keys were dead. OpenSky rate-limited flights into a silent 502. Fixed the fallback chain and got markers rendering.</p>
 
@@ -171,11 +171,11 @@
 
 <h2 id="quest-night">Quest Night</h2>
 
-<p>Built a gamified RPG task manager called <a href="https://github.com/nulljosh/apps">Quest</a> in one session. The concept: a fantasy quest journal for tracking real-life tasks, with XP, leveling (Squire through Mythic), difficulty ranks (F through S), dopamine rewards (80% chance on completion), and streak tracking.</p>
+<p>Built a gamified RPG task manager called <a href="https://github.com/nulljosh">Quest</a> in one session. The concept: a fantasy quest journal for tracking real-life tasks, with XP, leveling (Squire through Mythic), difficulty ranks (F through S), dopamine rewards (80% chance on completion), and streak tracking.</p>
 
 <p>Started with the web app. Vite + React, PWA-ready, full medieval aesthetic: parchment cards with torn edges, wax seal completion animations, gold XP bar, leather textures. MedievalSharp headings, Crimson Text body, Metamorphous stats. 23 tests passing. Then built the iOS app (SwiftUI + SwiftData, iOS 17+) and macOS app (NavigationSplitView with leather sidebar). All three platforms building clean.</p>
 
-<p>Then the real move: merged everything into the <a href="https://github.com/nulljosh/apps">NYC colony sim</a>. Colonists now perform your real-life quests. Add “Go to the gym” as a fitness quest, and a colonist walks to the Gym building, shows a speech bubble saying “Lifting weights”, works for 60 ticks, earns XP. Every 5 quests in a category boosts colonist stats matching that class (Warrior gets STR/END from fitness). Quest board built directly into the HUD (Q key). Player profile shows level, title, XP bar, streak.</p>
+<p>Then the real move: merged everything into the <a href="https://github.com/nulljosh">NYC colony sim</a>. Colonists now perform your real-life quests. Add “Go to the gym” as a fitness quest, and a colonist walks to the Gym building, shows a speech bubble saying “Lifting weights”, works for 60 ticks, earns XP. Every 5 quests in a category boosts colonist stats matching that class (Warrior gets STR/END from fitness). Quest board built directly into the HUD (Q key). Player profile shows level, title, XP bar, streak.</p>
 
 <p>Added wallpaper mode (Shift+W). Hides all UI, auto-camera slowly drifts between colonists, real-time day/night cycle. Reduced need decay so colonists survive indefinitely. The game auto-starts on load, no menu. The idea is to run it as a desktop wallpaper: a living city where little people are doing your productive tasks.</p>
 
@@ -185,13 +185,13 @@
 
 <p>Came back after dinner and burned through a stack of accumulated task PDFs from my phone.</p>
 
-<p><a href="https://github.com/nulljosh/apps">Life iOS</a>: Finished the interrupted work from last session. Six new therapy visualization views were staged but never wired in. Integrated all six into the paging scroll, built clean, pushed.</p>
+<p><a href="https://github.com/nulljosh">Life iOS</a>: Finished the interrupted work from last session. Six new therapy visualization views were staged but never wired in. Integrated all six into the paging scroll, built clean, pushed.</p>
 
-<p><a href="https://github.com/nulljosh/bcgd">BCGD Dashboard</a>: Big night for dad’s garage door business dashboard. Added low stock reorder email alerts, a settings page, browser notifications when stock drops below threshold. Then added PIN authentication so not just anyone with the URL can modify inventory. Built a backup/restore system. Built a full job pipeline tracker so he can track jobs from lead through quote, scheduled, complete, and paid. Dashboard now shows job stats alongside inventory. Added wholesale cost estimates for all 28 parts so the inventory value card actually shows a number. Deployed everything to Vercel.</p>
+<p><a href="https://github.com/nulljosh">BCGD Dashboard</a>: Big night for dad’s garage door business dashboard. Added low stock reorder email alerts, a settings page, browser notifications when stock drops below threshold. Then added PIN authentication so not just anyone with the URL can modify inventory. Built a backup/restore system. Built a full job pipeline tracker so he can track jobs from lead through quote, scheduled, complete, and paid. Dashboard now shows job stats alongside inventory. Added wholesale cost estimates for all 28 parts so the inventory value card actually shows a number. Deployed everything to Vercel.</p>
 
-<p><a href="https://github.com/nulljosh/monica">Monica</a>: Updated Telus phone bill data from actual PDF statements. Added a Bills section to the finance panel with Telus device payment breakdowns. Stripped dead API calls from four server routes for a 234 line reduction. Split App.jsx from 1634 lines into three new layout components, bringing it down to 1323. Bumped the macOS companion to v0.7.0.</p>
+<p><a href="https://github.com/nulljosh/epiphany">Monica</a>: Updated Telus phone bill data from actual PDF statements. Added a Bills section to the finance panel with Telus device payment breakdowns. Stripped dead API calls from four server routes for a 234 line reduction. Split App.jsx from 1634 lines into three new layout components, bringing it down to 1323. Bumped the macOS companion to v0.7.0.</p>
 
-<p><a href="https://github.com/nulljosh/apps">NYC</a>: Added an AI autoplay system. The colony can now run and build entirely on its own. It assesses needs, decides what to build, places buildings near the colony center, recruits new colonists when stable, and shifts directives between gather and patrol. Toggle with the AUTOPLAY button in the directive bar.</p>
+<p><a href="https://github.com/nulljosh">NYC</a>: Added an AI autoplay system. The colony can now run and build entirely on its own. It assesses needs, decides what to build, places buildings near the colony center, recruits new colonists when stable, and shifts directives between gather and patrol. Toggle with the AUTOPLAY button in the directive bar.</p>
 
 <h2 id="monday-1">Monday</h2>
 
