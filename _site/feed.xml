@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://journal.heyitsmejosh.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://journal.heyitsmejosh.com/" rel="alternate" type="text/html" /><updated>2026-06-20T05:10:05-07:00</updated><id>https://journal.heyitsmejosh.com/feed.xml</id><title type="html">nulljosh</title><subtitle>Notes, thoughts, and project updates</subtitle><author><name>Joshua Trommel</name></author><entry><title type="html">Splitting Back Apart</title><link href="https://journal.heyitsmejosh.com/2026/06/19/week/" rel="alternate" type="text/html" title="Splitting Back Apart" /><published>2026-06-19T09:00:00-07:00</published><updated>2026-06-19T09:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/06/19/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/06/19/week/"><![CDATA[<p><img src="/assets/2026-06-19-week.svg" alt="2026-06-19" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://journal.heyitsmejosh.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://journal.heyitsmejosh.com/" rel="alternate" type="text/html" /><updated>2026-06-29T02:04:23-07:00</updated><id>https://journal.heyitsmejosh.com/feed.xml</id><title type="html">nulljosh</title><subtitle>Notes, thoughts, and project updates</subtitle><author><name>Joshua Trommel</name></author><entry><title type="html">Spend Analysis Week</title><link href="https://journal.heyitsmejosh.com/2026/06/26/week/" rel="alternate" type="text/html" title="Spend Analysis Week" /><published>2026-06-26T09:00:00-07:00</published><updated>2026-06-26T09:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/06/26/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/06/26/week/"><![CDATA[<p><img src="/assets/2026-06-26-week.svg" alt="2026-06-26" /></p>
+
+<p>Week kicked off with a finance-heavy push on epiphany and a wave of App Store prep across echo and nyc.</p>
+
+<h2 id="monday">monday</h2>
+
+<p>Epiphany got a new Spend Analysis dashboard and split its coarse discretionary categories into finer ones like Starbucks and liquor. Spark’s recovery work wrapped with an MIT license added. Echo fixed TestFlight upload bugs around bundle type and category, and got renamed to Echo Transcribe.</p>
+
+<h2 id="tuesday">tuesday</h2>
+
+<p>Epiphany shipped to the App Store. Fixed an iOS portfolio double-counting bug, patched up auth tests, and prepped macOS App Store entitlements and a beta lane along the way; SnapTrade sync phantom holdings stay a known post-launch fix. Dose picked up the portfolio vibe palette, fixed a nav header overlap, wired an interaction checker into its logging flow, and added an accent-colored pulse animation. Brief migrated case data to Supabase and finalized multi-user support, plus fixed a missing DNS record. Nimble added a Wikidata layer for direct factual answers. Books got a chapter summaries pipeline and a Project Map SVG fix. Lingo launched a SwiftUI iOS companion app. The portfolio site picked up a responsive featured projects grid and a Talli branding update. Nyc got renamed to NYC Survive with build fixes ahead of TestFlight. Canlii-app got scaffolded as a new project.</p>
+
+<h2 id="wednesday">wednesday</h2>
+
+<p>Spark added iOS, macOS, and watchOS companion apps and bumped to v2.1.0. Brief fixed the leverage widget and made the timeline date labels dynamic. Books synced the Agentic AI chapter 12 summary.</p>
+
+<h2 id="thursday">thursday</h2>
+
+<p>Lingo got renamed LingoAce and picked up a full UI vibe refresh, icon chip layout, spring animations, and a login fix. Mac listing got metadata to unblock submission. Added screenshots to the README.</p>
+
+<h2 id="friday">friday</h2>
+
+<p>Spark expanded its roadmap with remaining App Store tasks and noted submission status in the README. Brief added a roadmap section.</p>
+
+<h2 id="saturday">saturday</h2>
+
+<p>FloatingTabBar, SF symbols, symbolEffect, and haptics landed across epiphany, spark, dose, brief, and talli in a coordinated sweep. Epiphany hit v2.5.1 removing the map greyscale overlay on web, iOS, and macOS, plus a floating tab fix and a .ship.json for the /ship skill. Spark got v2.1.1 with the same floating tab polish and haptics on vote buttons, plus Sign in with Apple and OAuth stubs in the auth sheet. Lingo shipped v1.1.0: accounts, masterclass unlock, streak sync to iOS, modal login overlay, and a build fix for AnyJSON types. Dose added Sign in with Apple. Brief fixed a live projection rendering bug where checklist and lawyer DB loads weren’t awaited, and added Sign in with Apple and FloatingTabBar in v1.0.1. Echo bumped the macOS build and fixed the app icon border. Talli hit v2.4.3 with FloatingTabBar and macOS App Store signing prep. Books added ML for Dummies ch4-6 and AI Investing for Dummies summaries. The portfolio got a full redesign: nathanu.com sidebar aesthetic, monochrome, project table, and Lingo swapped in for School.</p>
+
+<h2 id="sunday">sunday</h2>
+
+<p>Auth week. ToS and GitHub OAuth landed across epiphany, dose, and spark in one sweep – all pending Supabase provider setup to go live. Epiphany added map location search on iOS and macOS, fixed Sign in with Apple to use the real endpoint, and bumped to v2.6.0. Brief shipped v6.4.0 with a data-ready signal so PDF and screenshot exports wait for real data before rendering; token PDFs now include checklist and lawyer state for accurate projections. Lingo got auth wired to Supabase on iOS and macOS, streak sync, and a modal login overlay. Books picked up Newton’s biography and two more Dummies series summaries. The portfolio swapped notes/ for a redirect to notes.heyitsmejosh.com, added real app icons, and trimmed the about copy to focus on UVic. Canlii updated its web UI.</p>
+
+<h2 id="monday-1">monday</h2>
+
+<p>Icon cleanup day. Alpha channels stripped from macOS and watchOS icons across epiphany, echo, spark, lingo, and nyc ahead of ASC submission. Epiphany patched the SnapTrade phantom holdings bug and portfolio math. Talli replaced monospace with DM Sans and Fraunces across the web app.</p>
+
+<h2 id="apps">apps</h2>
+
+<p><a href="https://github.com/nulljosh/epiphany">epiphany</a> shipped to App Store + Spend Analysis + v2.6.0 map search + GitHub OAuth + SnapTrade fix + icon fixes, <a href="https://github.com/nulljosh/echo">echo</a> TestFlight fixes + renamed Echo Transcribe + icon fixes, <a href="https://github.com/nulljosh/dose">dose</a> vibe palette + FloatingTabBar + Sign in with Apple + GitHub OAuth, <a href="https://github.com/nulljosh/brief">brief</a> Supabase migration + multi-user + FloatingTabBar + v6.4.0 data-ready export + Sign in with Apple, <a href="https://github.com/nulljosh/spark">spark</a> MIT license + iOS/macOS/watchOS companions + v2.2.0 GitHub OAuth + FloatingTabBar + icon fixes, <a href="https://github.com/nulljosh/nimble">nimble</a> Wikidata layer, <a href="https://github.com/nulljosh/books">books</a> chapter summaries + ML for Dummies + AI Investing + Newton, <a href="https://github.com/nulljosh/lingo">lingo</a> renamed LingoAce + UI refresh + v1.1.0 Supabase auth + streak sync + modal login + icon fixes, <a href="https://github.com/nulljosh/nyc">nyc</a> renamed NYC Survive + icon fixes, <a href="https://github.com/nulljosh/talli">talli</a> v2.4.3 FloatingTabBar + macOS App Store prep + DM Sans font, <a href="https://github.com/nulljosh/nulljosh.github.io">nulljosh.github.io</a> sidebar redesign + real icons + notes redirect + about refresh, canlii-app web UI update.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Splitting Back Apart</title><link href="https://journal.heyitsmejosh.com/2026/06/19/week/" rel="alternate" type="text/html" title="Splitting Back Apart" /><published>2026-06-19T09:00:00-07:00</published><updated>2026-06-19T09:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/06/19/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/06/19/week/"><![CDATA[<p><img src="/assets/2026-06-19-week.svg" alt="2026-06-19" /></p>
 
 <p>The apps monorepo came apart this week. Everything went back to standalone repos, with the small experiments consolidated into one labs repo instead of scattered on their own.</p>
 
@@ -26,13 +64,21 @@
 
 <p>Echo’s Release build got fixed, an invalid suppressTokens assignment was breaking it. Epiphany lost two dead files (simBenchmark.js, stocks-debug.js) and fixed gaps in Langley crime data, flight details, and event/place metadata. Tally added avatar persistence, dropped a misleading $/hr accrual figure, and shipped its App Store privacy manifest with automated screenshots.</p>
 
+<h2 id="sunday">sunday</h2>
+
+<p>Spark’s full source came back from a Vercel deployment-files API recovery, web, api, iOS, macOS, watchOS, widgets, daemon, migrations, and tests all restored. Lingo’s frontend got recovered the same way from its live deployment. Dose confirmed its account-recovery email path against the real Supabase auth.users table. Brief added first-brief authoring and finalized multi-user support. Talli fixed macOS sign-in to surface the real BC Self-Serve login error instead of a generic session-expired message. Echo made its settings icon more visible and tuned down the transcript scroll feel. Epiphany fixed a flights fallback timeout, an NYC IP-geo bug, and disabled a broken Trade tab. The portfolio site got a copy rewrite with expanded project bullets. Dotfiles moved the Cloudflare token out of tracked config into an untracked secrets file.</p>
+
+<p>Follow-up work today: Brief migrated case data to Supabase across iOS and macOS. Dose wired an interaction checker into logging, fixed nav header overlap on desktop, and applied the portfolio vibe palette. Echo moved the live-recording hero screenshot. Epiphany added ASC macOS cleanup tasks and fixed the map permanently stranding on NYC, plus seeded a feature tracker. Lingo got full README and CLAUDE.md after recovery. Nimble added a Wikidata direct-answer layer. NYC fixed a stale target name and set the app display name. Spark grouped the pill nav into a unified card and marked seed-ideas done. Portfolio site trimmed copy and promoted NYC. Books removed the Pre-Calc summary. Dotfiles updated its changelog to v2.0.0.</p>
+
+<p>June is hot this year, 30C most days, average for the month but still sweltering when it sticks around. Development across the apps is going well and the workflow itself keeps improving, CI, code review, the whole loop is getting smoother and it has been genuinely fun. Got accepted into Capilano University for legal studies. The plan is law first, 3-4 years practicing while keeping math and code going in the background, then a UVic comp sci BSc somewhere around 30, mirroring finance the whole way through, law then comp-sci then finance. Three projects are shipped now and the focus shifts to polishing and monetizing them instead of just building. Still chipping at code box gaps and a few lost steps. Father’s Day tomorrow. Next up is more code review, more tests, math studying, and styling passes.</p>
+
 <h2 id="apps">apps</h2>
 
-<p><a href="https://github.com/nulljosh/tally">tally</a> i18n sync + PWD/RDSP/CDB schema unification + App Store privacy manifest, <a href="https://github.com/nulljosh/echo">echo</a> icon refresh + web app restore + Release build fix, <a href="https://github.com/nulljosh/dose">dose</a> cleanup, <a href="https://github.com/nulljosh">brief</a> restored + scrape token security fix, <a href="https://github.com/nulljosh/labs">labs</a> consolidation of nimble/nyc/grapher/wiretext, <a href="https://github.com/nulljosh/epiphany">epiphany</a> Markets polish + Autopilot BTC cap + data gap fixes, journal re-separated.</p>
+<p><a href="https://github.com/nulljosh/tally">tally</a> i18n sync + PWD/RDSP/CDB schema unification + App Store privacy manifest, <a href="https://github.com/nulljosh/echo">echo</a> icon refresh + web app restore + Release build fix + hero screenshot reordered, <a href="https://github.com/nulljosh/dose">dose</a> cleanup + interaction logging + portfolio vibe palette, <a href="https://github.com/nulljosh/brief">brief</a> restored + Supabase migration (iOS/macOS) + scrape token security + multi-user authoring, <a href="https://github.com/nulljosh/labs">labs</a> consolidation, <a href="https://github.com/nulljosh/epiphany">epiphany</a> Markets polish + Autopilot BTC cap + map fix + feature tracker + ASC cleanup, <a href="https://github.com/nulljosh/spark">spark</a> full source recovery + pill nav consolidation, <a href="https://github.com/nulljosh/lingo">lingo</a> frontend recovery + docs, <a href="https://github.com/nulljosh/talli">talli</a> macOS sign-in fix, <a href="https://github.com/nulljosh/nimble">nimble</a> Wikidata layer, <a href="https://github.com/nulljosh/nyc">nyc</a> target name fix + app naming, <a href="https://github.com/nulljosh/books">books</a> cleanup, <a href="https://github.com/nulljosh/dotfiles">dotfiles</a> v2.0.0, journal re-separated.</p>
 
 <h2 id="nulljoshgithubio">nulljosh.github.io</h2>
 
-<p><a href="https://github.com/nulljosh/nulljosh.github.io">Portfolio</a>: full homepage redesign, blue/black/white/gray palette, links updated for labs consolidation.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Fixes and Shipping</title><link href="https://journal.heyitsmejosh.com/2026/06/14/week/" rel="alternate" type="text/html" title="Fixes and Shipping" /><published>2026-06-14T09:00:00-07:00</published><updated>2026-06-14T09:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/06/14/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/06/14/week/"><![CDATA[<p><img src="/assets/2026-06-14-week.svg" alt="2026-06-14" /></p>
+<p><a href="https://github.com/nulljosh/nulljosh.github.io">Portfolio</a>: full homepage redesign, blue/black/white/gray palette, NYC promoted, copy trimmed, links updated.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Fixes and Shipping</title><link href="https://journal.heyitsmejosh.com/2026/06/14/week/" rel="alternate" type="text/html" title="Fixes and Shipping" /><published>2026-06-14T09:00:00-07:00</published><updated>2026-06-14T09:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/06/14/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/06/14/week/"><![CDATA[<p><img src="/assets/2026-06-14-week.svg" alt="2026-06-14" /></p>
 
 <p>Focused on shipping and fixes. Epiphany hit the App Store, five follow-up bug fixes rolled out, and the rest of the portfolio caught up on neglected corners.</p>
 
@@ -366,90 +412,4 @@
 
 <p>Cadence submodule ref bumped to pull an iOS/macOS API fix.</p>
 
-<p>Deleted <code class="language-plaintext highlighter-rouge">browser</code>, <code class="language-plaintext highlighter-rouge">browser-ios</code>, and <code class="language-plaintext highlighter-rouge">nyc-wallpaper</code> from the apps monorepo. All three were placeholder scaffolds with no active development. Dead weight, gone.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Cadence and Quiet</title><link href="https://journal.heyitsmejosh.com/2026/04/13/week/" rel="alternate" type="text/html" title="Cadence and Quiet" /><published>2026-04-13T13:00:00-07:00</published><updated>2026-04-13T13:00:00-07:00</updated><id>https://journal.heyitsmejosh.com/2026/04/13/week</id><content type="html" xml:base="https://journal.heyitsmejosh.com/2026/04/13/week/"><![CDATA[<p><img src="/assets/2026-04-13-week.svg" alt="Apr 13" /></p>
-
-<p>New week, new app. Six repos touched. The code side of the week was clean. The rest was not. Main event: <a href="https://github.com/nulljosh">Cadence</a> from nothing to v1.0.0.</p>
-
-<h2 id="cadence">cadence</h2>
-
-<p>Code progress tracker. Pulls real git log from every repo in the code directory. Renders a 365-day heatmap, 30-day commit chart, stats grid, sortable project list. Node.js API, vanilla JS front. No frameworks. Scaffold, then Apple Liquid Glass, then live git via child process. On Vercel with serverless functions. There is something slightly recursive about building a tool that tracks your own building. The heatmap is made of the hours that made the heatmap.</p>
-
-<p>iOS and macOS SwiftUI targets share a network manager and model layer. Not wired to live data yet. Added to the apps monorepo and the portfolio. Today: dashboard footer with license + GitHub link, MIT file.</p>
-
-<h2 id="epiphany">epiphany</h2>
-
-<p>Compiler warnings cleared. A <code class="language-plaintext highlighter-rouge">nonisolated</code> annotation was blocking strict-concurrency builds. FlightFeed had an <code class="language-plaintext highlighter-rouge">internal</code> type the consumer couldn’t see. Made it public. Dead stubs and debug files removed.</p>
-
-<h2 id="tally">tally</h2>
-
-<p>Three new web modules: dispute filing, direct-to-consumer program lookup, legal resources. All wired to the existing data layer.</p>
-
-<h2 id="school">school</h2>
-
-<p>iOS companion merged into the monorepo. Standalone gone. Live subdomain was 404 because the deploy config had no output directory. One line.</p>
-
-<h2 id="apps--life">apps / life</h2>
-
-<p>Monday: Housing’s stale garage-door fact fixed on web and iOS. Missing <code class="language-plaintext highlighter-rouge">.gitignore</code> added for wiretext-ios.</p>
-
-<p>Friday was bigger. Expanded autism, mental health, and work-history sections. Geography map swapped from custom SVG to Leaflet (web) and MapKit (iOS), which killed the buggy scroll reveal and suppressed the Ukraine flag attribution. Dates corrected March to April. PWD status updated with a June 22 processing date. School percentages dropped. Mom’s birthday added. IQ dedup, doc bump. Friendships rewrite: trimmed the Alex recap, logged today’s call, noted a rumour from the old friend group. Mirrored to iOS, regenerated PDF.</p>
-
-<h2 id="bcgd">bcgd</h2>
-
-<p>Biggest bump in a while. Job costing, lead sources, customer CRM, fleet location tracking all in one push. README got a roadmap. Marketing site redirected to a Vercel login mid-week; fixed same day, tile back on the portfolio.</p>
-
-<h2 id="tally-1">tally</h2>
-
-<p>Now inside the apps monorepo. Root README and CLAUDE.md updated. Added a live countdown timer and earnings-per-hour rate. Both update in the background.</p>
-
-<h2 id="dose">dose</h2>
-
-<p>Substance library grew by 33 prescription meds. Schema unchanged.</p>
-
-<h2 id="portfolio">portfolio</h2>
-
-<p>Carousel rebuild. Seven active projects with nav buttons. Old Twitter link gone. Intro refreshed. Broken screenshots removed. bcgd tile restored.</p>
-
-<h2 id="spark">spark</h2>
-
-<p>Deployment fell over Tuesday. Next week.</p>
-
-<h2 id="epiphany-1">epiphany</h2>
-
-<p>Docs tidied. Dead API key cleanup marked done; stubs documented as dormant, not ghosts.</p>
-
-<h2 id="wednesday-apr-16">wednesday, apr 16</h2>
-
-<p>Snapshot. Therapy weekly. Gym 3-4x/week since December. 135-140 lbs. Finishing pre-calc at LEC. Science and English done. UVic comp sci, Vancouver Island.</p>
-
-<p>Building Epiphany (Palantir for normies), Tally (BC gov benefits), Spark (AI ideas db, eventually AI reddit with law integration), NYC sim. Helping dad with bcgd social, site, dashboard.</p>
-
-<p>Plan: gym, maybe light research, study for math tests. Bug hunt and security fixes on the weekend. Opus 4.7 is mid. Claude resets 6pm, then work. Beer and benefits until then.</p>
-
-<p>3.14159265358979323846264338327950288419716 9537</p>
-
-<h2 id="friday-apr-17">friday, apr 17</h2>
-
-<p>Another day, another scavenge to find something, anything to do. Somebody, anybody to talk to. But there’s nobody here. This planet is a disgusting fucking corpse. Walk to gym or don’t. Same results. Gym for four months, no difference. Only an injured shoulder. Haven’t had sex in years. Women hardly ever looked at me. And people will tell me to be positive or try harder.</p>
-
-<h2 id="saturday-apr-18">saturday, apr 18</h2>
-
-<p>Another boring day. Excruciating pain. Who would do this to another person. There is no God.</p>
-
-<p>Had a dream last night about being an airplane. No idea what that means.</p>
-
-<p>Light on code. Gym and calculus. Snow Leopard pass: reliability first, polish where it counts. Almost nothing hit git beyond the auto daily sync. Real housekeeping was here: tightened the one-post-per-week rule in <code class="language-plaintext highlighter-rouge">CLAUDE.md</code> to Friday or Sunday dates, merged the stray <code class="language-plaintext highlighter-rouge">2026-04-11-entry.md</code> in, fixed a stale SVG reference, regenerated weekly SVGs.</p>
-
-<p>Spent the evening downstairs with my brother. We smoked, talked, killed hours. When his girlfriend came home he asked me to leave through the front door and walk around the house rather than cut back through his suite, in case she was changing. A small ask. Reasonable on its face. But it sat with me longer than it should have.</p>
-
-<p>The whole night had been a chorus about how women are only good for one thing. Then the moment she walked in, the room reorganized itself around her comfort, and mine became the variable that absorbed the friction. She is the partner. I am the brother. Everyone understands the ranking, even when no one says it aloud.</p>
-
-<p>There is a paradox in shelter. What you guard most carefully tends to be the thing that eventually announces itself. Hide a thing precisely enough and you teach the people nearby to notice the hiding. I do not actually want to chat with his girlfriend. The request was not the problem. The problem is what the request quietly reveals: a hierarchy of proximity that contradicts the words spoken five minutes earlier. Humans are not logical creatures. They are loyal ones, and the loyalty does not always answer to the principle.</p>
-
-<h2 id="state-of-things">state of things</h2>
-
-<p>Fine. Gym almost every day, personal besting. School manageable. Small cough from the chronic, otherwise healthy.</p>
-
-<p>AI spend self-limits. A few hundred a month for bleeding edge is worth it. Claude’s models are good. The tooling is rough, the outages aren’t great, but Opus carries it.</p>
-
-<p>Steady. Solo most of the time, one friend on the phone weekly. Not complaining.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<p>Deleted <code class="language-plaintext highlighter-rouge">browser</code>, <code class="language-plaintext highlighter-rouge">browser-ios</code>, and <code class="language-plaintext highlighter-rouge">nyc-wallpaper</code> from the apps monorepo. All three were placeholder scaffolds with no active development. Dead weight, gone.</p>]]></content><author><name>Joshua Trommel</name></author><category term="journal" /><category term="weekly" /><summary type="html"><![CDATA[]]></summary></entry></feed>
