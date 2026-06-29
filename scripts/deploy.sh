@@ -12,4 +12,4 @@ mkdir -p .vercel/output/static
 cp -R _site/. .vercel/output/static/
 printf '{"version":3}\n' > .vercel/output/config.json
 
-vercel deploy --prebuilt --prod --yes
+npx vercel deploy --prebuilt --prod --yes

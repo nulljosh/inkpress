@@ -10,13 +10,13 @@ Live at [journal.heyitsmejosh.com](https://journal.heyitsmejosh.com).
 ## Features
 - Local Jekyll dev server via `bundle exec jekyll serve` at `http://localhost:4000/`.
 - Posts live in `_posts/` named `YYYY-MM-DD-title.md` with front matter template and guidance to write like a normal person with no jargon pileup.
-- `./scripts/ship.sh` is the publish path that blocks duplicate post dates, checks entries read like natural English, does a clean Jekyll build, previews today's homepage entry, pushes `main`, and force-pushes `gh-pages`.
+- `./scripts/deploy.sh` is the only publish path. Builds Jekyll locally, outputs to `_site/`, then deploys prebuilt static to Vercel via `vercel deploy --prebuilt`. No GitHub Pages, no remote build — a plain `git push` does not deploy.
 
 ## Run
 ```bash
 bundle install
 bundle exec jekyll serve
-./scripts/ship.sh
+./scripts/deploy.sh
 ```
 
 ## Roadmap
@@ -25,8 +25,7 @@ bundle exec jekyll serve
 
 ## Changelog
 v2.2.0
-- GitHub Actions auto-build pipeline. Pushes to `main` trigger a clean build and deploy to `gh-pages` automatically.
-- ship.sh simplified -- removed redundant steps handled by CI.
+- Switched to Vercel prebuilt deployment via `./scripts/deploy.sh`. No GitHub Actions, no gh-pages.
 - Fixed light-mode `.dim` CSS in Apr 26, May 1, May 8 SVG headers (was `rgba(255,255,255,0.25)`, now `rgba(0,0,0,0.25)`).
 
 v2.1.0
