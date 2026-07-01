@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>
+    Renames and Widgets Week
+  </title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Renames and Widgets Week | nulljosh</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Renames and Widgets Week" />
+<meta name="author" content="Joshua Trommel" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes, thoughts, and project updates" />
+<meta property="og:description" content="Notes, thoughts, and project updates" />
+<link rel="canonical" href="https://journal.heyitsmejosh.com/2026/07/03/week/" />
+<meta property="og:url" content="https://journal.heyitsmejosh.com/2026/07/03/week/" />
+<meta property="og:site_name" content="nulljosh" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-07-03T09:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Renames and Widgets Week" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Joshua Trommel"},"dateModified":"2026-07-03T09:00:00-07:00","datePublished":"2026-07-03T09:00:00-07:00","description":"Notes, thoughts, and project updates","headline":"Renames and Widgets Week","mainEntityOfPage":{"@type":"WebPage","@id":"https://journal.heyitsmejosh.com/2026/07/03/week/"},"url":"https://journal.heyitsmejosh.com/2026/07/03/week/"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://journal.heyitsmejosh.com/feed.xml" title="nulljosh" /><link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#111">
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script>
+  (function() {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+  window.addEventListener('load', function() {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    btn.setAttribute('aria-pressed', document.documentElement.getAttribute('data-theme') === 'dark');
+    btn.addEventListener('click', function() {
+      var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.classList.add('transition');
+      setTimeout(function() { document.documentElement.classList.remove('transition'); }, 400);
+      document.documentElement.setAttribute('data-theme', t);
+      btn.setAttribute('aria-pressed', String(t === 'dark'));
+      localStorage.setItem('theme', t);
+    });
+  });
+</script>
+
+</head>
+<body>
+  <main class="page-content" aria-label="Content">
+    <div class="w">
+      <a href="/" class="back-link">back</a>
+<article class="glass-card">
+  <h1 class="post-title">Renames and Widgets Week</h1>
+  
+
+<p class="post-meta">
+  <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
+  &middot; 2 min
+</p>
+
+  <p><img src="/assets/2026-07-03-week.svg" alt="2026-07-03" /></p>
+
+<p>Week opened with the Dose and Lingo renames landing for real, then turned into a widget-extension sweep and a pile of roadmap imports from old PDF notes.</p>
+
+<h2 id="tuesday">tuesday</h2>
+
+<p>Dose renamed to Healstack and fixed a duplicate build output bug in xcodegen. Epiphany marked App Store version 2.5.1 as submitted and refreshed its architecture diagram. Nulljosh.github.io swapped Lingo for Parlay in the project list and fixed stale purple placeholder icons on Echo and Parlay. Quotable picked up a genre filter, share-score button, macOS scaffold, and later a custom subdomain plus light/dark mode and portfolio vibe tokens.</p>
+
+<h2 id="wednesday">wednesday</h2>
+
+<p>Widget extensions got wired into project.yml across epiphany, spark, and talli, with App Group entitlements added. Spark fixed Swift 6 concurrency errors in its widget target. Echo, epiphany, spark, talli, and parlay all got a What’s New popup and imported their old roadmap PDFs (icons-bugs, epiphany-notes, Spark, Talli, Lingo, Echo web) into tracked TODOs, then cleaned out anything already checked off. Nimble added an iOS companion target. Nyc added an iOS companion target with touch controls and wired manual colonist move commands. Dotfiles added a combined <code class="language-plaintext highlighter-rouge">/audit</code> command (security-sweep + code-review).</p>
+
+<h2 id="apps">apps</h2>
+
+<p><a href="https://github.com/nulljosh/dose">healstack</a> renamed from Dose + build fix, <a href="https://github.com/nulljosh/epiphany">epiphany</a> v2.5.1 submitted + widget extensions + roadmap cleanup, <a href="https://github.com/nulljosh/parlay">parlay</a> roadmap import + What’s New popup, <a href="https://github.com/nulljosh/spark">spark</a> widget extensions + Swift 6 fixes, <a href="https://github.com/nulljosh/talli">talli</a> widget extensions + roadmap import, <a href="https://github.com/nulljosh/echo">echo</a> roadmap import + What’s New popup, <a href="https://github.com/nulljosh/nimble">nimble</a> iOS companion target, <a href="https://github.com/nulljosh/nyc">nyc</a> iOS companion target + touch controls, <a href="https://github.com/nulljosh/nulljosh.github.io">nulljosh.github.io</a> Parlay rename + icon fixes + quotable redirect, quotable genre filter + subdomain + light/dark mode, <a href="https://github.com/nulljosh/dotfiles">dotfiles</a> /audit command.</p>
+
+</article>
+
+      <button title="Toggle Theme" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+  <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor">
+    <circle cx="16" cy="16" r="14" fill="none" stroke="currentcolor" stroke-width="4"></circle>
+    <path d="
+             M 16 0
+             A 16 16 0 0 0 16 32
+             z">
+    </path>
+  </svg>
+</button>
+
+    </div>
+  </main>
+</body>
+</html>
