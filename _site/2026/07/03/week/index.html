@@ -60,7 +60,7 @@
 
 <p class="post-meta">
   <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
-  &middot; 5 min
+  &middot; 6 min
 </p>
 
   <p><img src="/assets/2026-07-03-week.svg" alt="2026-07-03" /></p>
@@ -88,6 +88,8 @@
 <p>Evening: Lexly sign-in hang verified fixed and live, avatar step removed from signup flow, stale lingo/ clone deleted after rescuing icon fixes, macOS icon rebuilt on Apple’s icon grid (824px rounded rect, all scale sizes). All App Store metadata and screenshots filled via asc for both iOS and macOS, with submission blocked only on 2FA availability and App Privacy policy completion. Created /progress skill to track whole-codebase time/cost estimates: ~67 open items ≈ 155 hours across all repos. Lexly’s iOS and macOS app icons were also regenerated so the artwork fills the canvas instead of sitting at roughly 60% size.</p>
 
 <p>Later night: Spark Mac notched its first release build (1.0.0 build 1), hit the provisioning wall, fixed it with xcodebuild -allowProvisioningUpdates, archived and exported the build, then uploaded to App Store Connect. Lexly iOS and macOS builds both confirmed valid in the App Store build pipeline.</p>
+
+<p>Nightly investigation: Talli Xcode Cloud builds were failing on 50+ jobs due to a missing iOS Distribution certificate. Diagnosed via asc-cli and created the missing cert on App Store Connect using <code class="language-plaintext highlighter-rouge">asc certificates create --certificate-type IOS_DISTRIBUTION</code>. Reviewed the monthly-report submission code path (src/scraper.js), confirmed it completes a real end-to-end filing to BC Self-Serve with all form fields intact, but flagged weak success-detection logic that should be hardened with stronger assertions before the next filing window (days 1-5 of the month).</p>
 
 <h2 id="apps">apps</h2>
 
