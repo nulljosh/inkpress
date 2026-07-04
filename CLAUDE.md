@@ -4,7 +4,7 @@ v2.2.0
 ## Rules
 - Project is a personal Jekyll blog.
 - URL slug comes from the filename, not the `title:` front matter. Filename format: `YYYY-MM-DD-slug.md` — the slug portion is what appears in the URL (e.g., `2026-04-13-week.md` ships at `/2026/04/13/week/`).
-- SVG headers must match the site CSS. Use monochrome `#000`/`#e8e8e8` with `prefers-color-scheme` media queries embedded in the SVG `<style>` block. No green, amber, or other accents — the dark editorial palette is for landing pages, not this journal.
+- Journal shares the portfolio's design tokens (`heyitsmejosh.com/tokens.css`, linked in `_layouts/default.html` before `main.css`). The blue `--accent` is used for link/hover states. `--text-secondary`/`--text-tertiary`/`--subtle` map to the shared `--text2`/`--text3`/`--border2`. Body font stays Geist (not the portfolio's mono) for reading comfort. SVG headers should use `var(--text)`/`var(--border)` with `prefers-color-scheme` media queries so they follow the same palette.
 - Live site is `journal.heyitsmejosh.com`.
 - Posts live in `_posts/`.
 - `./scripts/deploy.sh` is the only publish path. It builds Jekyll locally and ships `_site` to the Vercel `journal` project via the Build Output API (`vercel deploy --prebuilt`), so Vercel never runs Ruby/bundler. There is no GitHub Pages / gh-pages flow and no remote build; a plain `git push` does not deploy.

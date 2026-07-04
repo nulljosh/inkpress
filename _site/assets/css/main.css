@@ -23,23 +23,16 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg: #fafafa;
-  --text: #000;
-  --text-secondary: rgba(0, 0, 0, 0.5);
-  --text-tertiary: rgba(0, 0, 0, 0.3);
-  --border: rgba(0, 0, 0, 0.1);
-  --subtle: rgba(0, 0, 0, 0.04);
+  --text-secondary: var(--text2);
+  --text-tertiary: var(--text3);
+  --subtle: var(--border2);
   --font: 'Geist', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
-  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 html[data-theme="dark"] {
-  --bg: #111;
-  --text: #e8e8e8;
-  --text-secondary: rgba(255, 255, 255, 0.5);
-  --text-tertiary: rgba(255, 255, 255, 0.25);
-  --border: rgba(255, 255, 255, 0.1);
-  --subtle: rgba(255, 255, 255, 0.04);
+  --text-secondary: var(--text2);
+  --text-tertiary: var(--text3);
+  --subtle: var(--border2);
 }
 
 html.transition,
@@ -114,7 +107,7 @@ a {
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
-a:hover { border-bottom-color: var(--text); }
+a:hover { border-bottom-color: var(--accent); color: var(--accent); }
 
 ul, ol {
   margin: 0 0 1rem;
@@ -145,7 +138,7 @@ ul li, ol li { margin: 0.25rem 0; }
   transition: color 0.3s ease;
 }
 
-.horizontal-list a:hover { color: var(--text); }
+.horizontal-list a:hover { color: var(--accent); }
 
 .dashed {
   border-top: 1px dashed var(--border);
@@ -279,7 +272,8 @@ footer {
 }
 
 .theme-toggle:hover {
-  color: var(--text);
+  color: var(--accent);
+  border-color: var(--accent);
   transform: translateY(-2px);
 }
 
