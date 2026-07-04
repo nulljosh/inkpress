@@ -2,7 +2,7 @@
 
 # Journal
 
-![version](https://img.shields.io/badge/version-v2.2.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fjournal-black?logo=github)](https://github.com/nulljosh/journal)
+![version](https://img.shields.io/badge/version-v2.3.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fjournal-black?logo=github)](https://github.com/nulljosh/journal)
 
 Personal Jekyll blog.
 Live at [journal.heyitsmejosh.com](https://journal.heyitsmejosh.com).
@@ -24,6 +24,9 @@ bundle exec jekyll serve
 - [ ] Add automatic image optimization for post assets.
 
 ## Changelog
+v2.3.0
+- Journal now shares the portfolio's design tokens (`heyitsmejosh.com/tokens.css`); blue accent used for links, hover states, and theme toggle.
+
 v2.2.0
 - Switched to Vercel prebuilt deployment via `./scripts/deploy.sh`. No GitHub Actions, no gh-pages.
 - Fixed light-mode `.dim` CSS in Apr 26, May 1, May 8 SVG headers (was `rgba(255,255,255,0.25)`, now `rgba(0,0,0,0.25)`).

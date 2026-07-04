@@ -1,5 +1,5 @@
 # Journal
-v2.2.0
+v2.3.0
 
 ## Rules
 - Project is a personal Jekyll blog.
