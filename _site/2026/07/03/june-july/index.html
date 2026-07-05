@@ -61,7 +61,7 @@
 
 <p class="post-meta">
   <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
-  &middot; 3 min
+  &middot; 5 min
 </p>
 
   <p><img src="/assets/2026-07-03-week.svg" alt="June-July" /></p>
@@ -79,6 +79,14 @@
 <p>Landed a real batch of Epiphany fixes tonight. Dev auto-login (for testing) was silently failing through a fragile Xcode scheme-override approach—swapped it out for a proper gitignored .xcconfig-based setup that actually works. Found a UI bug where Settings and Markets tabs were hiding content like the Delete Account button behind the floating tab bar at the bottom, fixed the tab bar positioning. Tracked down why autopilot does nothing in paper-mode tests: the engine was floor()’ing whole-share stock quantities, which silently no-op’d any order below ~$150 notional. Fixed it to handle fractional BTC trades down to $0.01 test caps. Cleaned up leftover “Monica” (the old app name) references lingering in the iOS widget target, plus the annual Xcode nags that reset every build—App Category, widget version sync, missing asset placeholder.</p>
 
 <p>Still pending: the Markets drawer drag gesture is choppy and needs its own tuning pass. Live trading remains blocked on getting a real brokerage with actual trade permission (SnapTrade and Wealthsimple are both intentionally read-only).</p>
+
+<h2 id="sunday">Sunday</h2>
+
+<p>Smoothed out the Markets news drawer drag that was choppy from fighting a declarative animation—removed the conflicting <code class="language-plaintext highlighter-rouge">.animation</code> modifier so the gesture now tracks the finger 1:1, and gave the drawer a semi-transparent liquid-glass look with <code class="language-plaintext highlighter-rouge">.ultraThinMaterial</code> and a hairline border rim. Later polished the settle behavior to pop-free (moved drag state so the spring reset animates instead of snapping), made list rows clear the peek drawer on tap, and hid the Fear &amp; Greed row when the drawer is fully open so the top sliver stays as a clean horizontal ticker strip, mirroring Yahoo Finance’s layout.</p>
+
+<p>Found and fixed a portfolio math bug: the net-worth calculator was dropping uninvested cash sitting in investment accounts—showed $229 when the accounts actually summed to $415.78. Now it tallies all account balances correctly. Fixed the “Cash” account subtitle which was double-counting holdings, and stripped the redundant brokerage prefix from account names so “Wealthsimple Trade TFSA” renders as just “TFSA”.</p>
+
+<p>Diagnosed two gaps that explain sparse UI: commodity and crypto detail views lack chart/news/ranges because the data models only carry price + percent-change—it’s a backend data shape issue, not UI wiring (the infrastructure for news and ranges is already there). The autopilot simulator appears to do nothing because paper trades only run during market hours, and the visible “live failed” rows are stale read-only Wealthsimple probes; real live trading is blocked waiting for a broker with actual trade permission (Alpaca or IBKR, not SnapTrade or WS). Both gaps are documented in the roadmap as design constraints, not bugs.</p>
 
 </article>
 
