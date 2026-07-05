@@ -88,6 +88,8 @@
 
 <p>Diagnosed two gaps that explain sparse UI: commodity and crypto detail views lack chart/news/ranges because the data models only carry price + percent-change—it’s a backend data shape issue, not UI wiring (the infrastructure for news and ranges is already there). The autopilot simulator appears to do nothing because paper trades only run during market hours, and the visible “live failed” rows are stale read-only Wealthsimple probes; real live trading is blocked waiting for a broker with actual trade permission (Alpaca or IBKR, not SnapTrade or WS). Both gaps are documented in the roadmap as design constraints, not bugs.</p>
 
+<p>Later in the week wrapped up loose app icon work: stripped the alpha channel from Healstack’s iOS marketing icon (App Store rejects alpha), upscaled Nimble’s app icon to the full 1024x1024 marketing size. Cleaned up the labs repo by removing wiretext and grapher, which are now standalone projects. Fixed the portfolio site’s mobile navigation—stopped it from squishing, realigned the nav and home button font pairing, and smoothed out theme-toggle spacing. Documented a terminal/tmux shortcuts cheatsheet in dotfiles notes for quick reference.</p>
+
 </article>
 
       <button title="Toggle Theme" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
