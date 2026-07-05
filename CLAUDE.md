@@ -55,3 +55,8 @@ Standalone repo: `nulljosh/journal` on GitHub, pushed from this directory (re-se
 - `scripts/deploy.sh` - Only publish path; builds Jekyll locally and deploys `_site` to Vercel with `--prebuilt`.
 - `_config.yml` - Jekyll site configuration.
 - `index.html` - Site entry point.
+
+## iOS app — next steps (2026-07-05)
+IPA ready at `ios/.asc/artifacts/Journal.ipa` (1.0.0 b1). Bundle ID registered.
+1. User runs: `asc web apps create --name "Journal by Josh" --bundle-id com.nulljosh.journal --sku journal2026 --apple-id trommatic@icloud.com`
+2. Then: `asc builds upload --app <NEW_APP_ID> --ipa ios/.asc/artifacts/Journal.ipa --wait`
