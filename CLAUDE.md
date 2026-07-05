@@ -58,5 +58,5 @@ Standalone repo: `nulljosh/journal` on GitHub, pushed from this directory (re-se
 
 ## iOS app — next steps (2026-07-05)
 IPA ready at `ios/.asc/artifacts/Journal.ipa` (1.0.0 b1). Bundle ID registered.
-1. User runs: `asc web apps create --name "Journal by Josh" --bundle-id com.nulljosh.journal --sku journal2026 --apple-id trommatic@icloud.com`
+Done: app record 6787759999 created, build 1.0.0 b1 uploaded 2026-07-05. Next: screenshots, metadata, submit.
 2. Then: `asc builds upload --app <NEW_APP_ID> --ipa ios/.asc/artifacts/Journal.ipa --wait`
