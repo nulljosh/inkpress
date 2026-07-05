@@ -8,7 +8,7 @@ v2.3.0
 - Live site is `journal.heyitsmejosh.com`.
 - Posts live in `_posts/`.
 - `./scripts/deploy.sh` is the only publish path. It builds Jekyll locally and ships `_site` to the Vercel `journal` project via the Build Output API (`vercel deploy --prebuilt`), so Vercel never runs Ruby/bundler. There is no GitHub Pages / gh-pages flow and no remote build; a plain `git push` does not deploy.
-- One post per week. Never create more than one entry in the same calendar week. The weekly post must be dated either Friday or Sunday. If multiple entries exist in the same week, merge them into a single Friday or Sunday entry and delete the extras.
+- One post per month (changed 2026-07-04 from weekly; 13 weekly posts felt like changelog spam and got merged into 4 monthly entries covering Feb-Jul). Never create more than one entry in the same calendar month. Dated the last Friday or Sunday of the month covered. If multiple entries exist in the same month, merge them into one and delete the extras.
 - Filename date and front matter date must match.
 - Write in natural English, not tool-name spam.
 - Post titles must be short and punchy — under 6 words. No changelog-style summaries, no feature lists. Write a label, not a sentence.

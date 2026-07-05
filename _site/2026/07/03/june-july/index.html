@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>
+    Renames and Widgets
+  </title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Renames and Widgets | nulljosh</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Renames and Widgets" />
+<meta name="author" content="Joshua Trommel" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes, thoughts, and project updates" />
+<meta property="og:description" content="Notes, thoughts, and project updates" />
+<link rel="canonical" href="https://journal.heyitsmejosh.com/2026/07/03/june-july/" />
+<meta property="og:url" content="https://journal.heyitsmejosh.com/2026/07/03/june-july/" />
+<meta property="og:site_name" content="nulljosh" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-07-03T09:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Renames and Widgets" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Joshua Trommel"},"dateModified":"2026-07-03T09:00:00-07:00","datePublished":"2026-07-03T09:00:00-07:00","description":"Notes, thoughts, and project updates","headline":"Renames and Widgets","mainEntityOfPage":{"@type":"WebPage","@id":"https://journal.heyitsmejosh.com/2026/07/03/june-july/"},"url":"https://journal.heyitsmejosh.com/2026/07/03/june-july/"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://journal.heyitsmejosh.com/feed.xml" title="nulljosh" /><link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#111">
+
+  <link rel="stylesheet" href="https://heyitsmejosh.com/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script>
+  (function() {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+  window.addEventListener('load', function() {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    btn.setAttribute('aria-pressed', document.documentElement.getAttribute('data-theme') === 'dark');
+    btn.addEventListener('click', function() {
+      var t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.classList.add('transition');
+      setTimeout(function() { document.documentElement.classList.remove('transition'); }, 400);
+      document.documentElement.setAttribute('data-theme', t);
+      btn.setAttribute('aria-pressed', String(t === 'dark'));
+      localStorage.setItem('theme', t);
+    });
+  });
+</script>
+
+</head>
+<body>
+  <main class="page-content" aria-label="Content">
+    <div class="w">
+      <a href="/" class="back-link">back</a>
+<article class="glass-card">
+  <h1 class="post-title">Renames and Widgets</h1>
+  
+
+<p class="post-meta">
+  <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
+  &middot; 3 min
+</p>
+
+  <p><img src="/assets/2026-07-03-week.svg" alt="June-July" /></p>
+
+<p>Epiphany finally shipped to the App Store early in the month, closing out months of revision, and got a Spend Analysis dashboard and finer spending categories soon after. Its long-standing SnapTrade phantom-holdings bug got fixed by deduping accounts on refresh. Dose was renamed Healstack and Lingo went through two more names before landing on Lexly, each rename dragging a branding and icon cleanup pass behind it. Talli hit v3.5.0, then kept moving through translated locales, an app-icon and appearance-picker pass, and its own widget.</p>
+
+<p>The apps monorepo came apart this month, back to standalone repos, with the smaller experiments (nimble, nyc, grapher, wiretext) folded into one labs repo instead of living as loose scaffolds. Widget extensions and a shared FloatingTabBar/haptics treatment rolled out across epiphany, spark, talli, dose, and brief in a coordinated sweep. Spark added iOS, macOS, and watchOS companions, got its own Mac App Store record, and archived its first Mac release build. Auth week brought GitHub OAuth and Sign in with Apple across epiphany, dose, and spark. Brief migrated its case data to Supabase and finalized multi-user support. Echo split its landing page from the app and fixed an in-app-purchase mismatch. A new project, Etyma, got scaffolded as an etymology app with a Wiktionary parsing pipeline.</p>
+
+<p>Talli’s build pipeline was the month’s real puzzle: Xcode Cloud jobs failed for days, first traced to a missing distribution certificate, then to a stale App Group identifier getting silently reverted on every build, and finally to an account-level blocker, App Store Connect’s paid-apps agreement stuck pending bank and tax details, which turned off automatic signing account-wide. Worked around it by building and uploading to TestFlight locally instead. Docker got installed and Shannon, an AI pentesting tool, got wired up as a new skill, though its first run needs more debugging before it’s trustworthy.</p>
+
+<p>Reconnected with Jayda for the first time in about ten years, three days together with a couple of drives to catch the sunset. Fun, but a reminder of how much I value my own space and peace now. Submitted the Capilano University application for Paralegal Studies, the concrete next step toward practicing law. June ran hot, 30C most days. Development keeps compounding, the review and testing loop getting smoother each month. Three projects are properly shipped now and the shift is toward polishing and monetizing rather than just building.</p>
+
+<h2 id="saturday">Saturday</h2>
+
+<p>Landed a real batch of Epiphany fixes tonight. Dev auto-login (for testing) was silently failing through a fragile Xcode scheme-override approach—swapped it out for a proper gitignored .xcconfig-based setup that actually works. Found a UI bug where Settings and Markets tabs were hiding content like the Delete Account button behind the floating tab bar at the bottom, fixed the tab bar positioning. Tracked down why autopilot does nothing in paper-mode tests: the engine was floor()’ing whole-share stock quantities, which silently no-op’d any order below ~$150 notional. Fixed it to handle fractional BTC trades down to $0.01 test caps. Cleaned up leftover “Monica” (the old app name) references lingering in the iOS widget target, plus the annual Xcode nags that reset every build—App Category, widget version sync, missing asset placeholder.</p>
+
+<p>Still pending: the Markets drawer drag gesture is choppy and needs its own tuning pass. Live trading remains blocked on getting a real brokerage with actual trade permission (SnapTrade and Wealthsimple are both intentionally read-only).</p>
+
+</article>
+
+      <button title="Toggle Theme" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+  <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor">
+    <circle cx="16" cy="16" r="14" fill="none" stroke="currentcolor" stroke-width="4"></circle>
+    <path d="
+             M 16 0
+             A 16 16 0 0 0 16 32
+             z">
+    </path>
+  </svg>
+</button>
+
+    </div>
+  </main>
+</body>
+</html>
