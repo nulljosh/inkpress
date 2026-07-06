@@ -13,7 +13,12 @@ struct EntryDetailView: View {
               ) else {
             return AttributedString(entry.htmlContent)
         }
-        return AttributedString(attr)
+        var result = AttributedString(attr)
+        // HTML import bakes in black text; strip colors so it adapts to dark mode.
+        for run in result.runs {
+            result[run.range].foregroundColor = nil
+        }
+        return result
     }
 
     var body: some View {
