@@ -1,3 +1,5 @@
 .vercel
 .DS_Store
 .jekyll-cache
+.asc/artifacts/
+.asc/release/
