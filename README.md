@@ -1,6 +1,6 @@
 <img src="icon.svg" width="80">
 
-# Journal
+# Inkpress
 
 ![version](https://img.shields.io/badge/version-v2.3.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fjournal-black?logo=github)](https://github.com/nulljosh/journal)
 
