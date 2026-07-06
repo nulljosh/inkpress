@@ -13,7 +13,7 @@
 		<key>CFBundleIdentifier</key>
 		<string>com.nulljosh.journal</string>
 		<key>CFBundleShortVersionString</key>
-		<string>1.0.0</string>
+		<string>1.0.1</string>
 		<key>CFBundleVersion</key>
 		<string>1</string>
 		<key>SigningIdentity</key>
@@ -24,7 +24,7 @@
 	<key>ArchiveVersion</key>
 	<integer>2</integer>
 	<key>CreationDate</key>
-	<date>2026-07-05T20:08:43Z</date>
+	<date>2026-07-06T07:44:40Z</date>
 	<key>Name</key>
 	<string>Journal-iOS</string>
 	<key>SchemeName</key>
