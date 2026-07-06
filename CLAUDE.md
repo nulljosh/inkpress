@@ -56,6 +56,9 @@ Standalone repo: `nulljosh/journal` on GitHub, pushed from this directory (re-se
 - `_config.yml` - Jekyll site configuration.
 - `index.html` - Site entry point.
 
+## iOS app — next steps (2026-07-06)
+Dark-mode fix (invisible entry content) committed 243aa5a but NOT in the build under review (1.0.1 b2, WAITING_FOR_REVIEW). Next: cancel submission, then `asc workflow run ship-ios VERSION:1.0.1` (or 1.0.2) to ship b3 with the fix.
+
 ## iOS app — next steps (2026-07-05)
 IPA ready at `ios/.asc/artifacts/Journal.ipa` (1.0.0 b1). Bundle ID registered.
 Done 2026-07-05: submitted for App Review (submission e88f9bcf, build 1.0 b1). Availability initialized on submit; check review status with `asc status --app 6787759999`.
