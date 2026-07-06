@@ -104,9 +104,15 @@
 
 <p>Lexly’s fixed build (202607060001) uploaded to App Store Connect. Echo got its model-download watchdog hardened: added a 3-retry loop and capped iOS auto-model at the base version to avoid stalls. Updated the project portfolio (nulljosh.github.io) to point Nimble at its own domain (nimble.heyitsmejosh.com), added Healstack and Quotable to the projects table, and wired all the Pages deploy cancellation logic for cleaner CI runs.</p>
 
+<h2 id="monday-continued">Monday (continued)</h2>
+
+<p>Late night: fixed a critical bug in the Journal app where blank entries loaded no content from Atom feeds—the parser wasn’t handling CDATA sections properly. Renamed the app from “Journal” to “Inkpress” in App Store Connect and on GitHub (repo now nulljosh/inkpress), resolving the naming collision with Apple’s native Journal app, set the display name, and bumped iOS to 1.0.1 build 2, submitting it for App Review to replace the broken 1.0 build.</p>
+
+<p>Also renamed Brief’s app to “Casewright” in App Store Connect and GitHub (repo now nulljosh/casewright), set the display name, and iOS 1.0.1 is already Waiting for Review.</p>
+
 <h2 id="apps">Apps</h2>
 
-<p><strong>Shipped:</strong> Epiphany v2.6.0 (iOS/macOS), Talli v3.5.1 (iOS/Mac in review), Brief v1.0.1 (iOS submitted), Journal v1.0 (iOS submitted for review).</p>
+<p><strong>Shipped:</strong> Epiphany v2.6.0 (iOS/macOS), Talli v3.5.1 (iOS/Mac in review), Casewright v1.0.1 (iOS Waiting for Review), Inkpress v1.0.1 b2 (iOS submitted for review).</p>
 
 <p><strong>In flight:</strong> Lexly build 202607060001 live (iOS/Mac screenshots + metadata pending), Healstack v2.3.3 (build valid, awaiting submit), Spark v2.1.0 (Mac live, iOS 4 screenshots remaining), Echo (Mac build + upload pending after icon source fix).</p>
 
