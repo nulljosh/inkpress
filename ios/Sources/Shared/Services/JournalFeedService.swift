@@ -84,6 +84,12 @@ final class AtomFeedParser: NSObject, XMLParserDelegate {
         }
     }
 
+    func parser(_ parser: XMLParser, foundCDATA CDATABlock: Data) {
+        guard insideEntry, currentElement == "content",
+              let s = String(data: CDATABlock, encoding: .utf8) else { return }
+        currentContent += s
+    }
+
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName: String?) {
         if elementName == "entry" {
             insideEntry = false
