@@ -56,6 +56,9 @@ Standalone repo: `nulljosh/journal` on GitHub, pushed from this directory (re-se
 - `_config.yml` - Jekyll site configuration.
 - `index.html` - Site entry point.
 
+## iOS app — next steps (2026-07-07)
+Fixed EntryDetailView.swift: HTML entry content was rendering unstyled (12pt Times, no spacing) because NSAttributedString's HTML importer has no default CSS. Now wraps content in a `<style>` block forcing system font + heading sizes + paragraph spacing before parsing. NOT yet built/verified in simulator or shipped — do that first next session, then `asc workflow run ship-ios VERSION:1.0.x`.
+
 ## iOS app — next steps (2026-07-06)
 Dark-mode fix (invisible entry content) committed 243aa5a but NOT in the build under review (1.0.1 b2, WAITING_FOR_REVIEW). Next: cancel submission, then `asc workflow run ship-ios VERSION:1.0.1` (or 1.0.2) to ship b3 with the fix.
 
