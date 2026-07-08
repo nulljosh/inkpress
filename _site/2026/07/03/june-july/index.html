@@ -190,6 +190,10 @@
 
 <p>Nightly wrap and app verification. Confirmed Echo iOS 1.3.3 and Inkpress 1.0.1 both correctly in WAITING_FOR_REVIEW status on the App Store (no action needed). Fixed Talli’s corrupted submission: an earlier stale failed build run had accidentally submitted wrong version v2.4.4 (a downgrade from v3.5.2) to Apple review. Cancelled that submission and re-shipped the correct version v3.5.3 to the App Store. Also caught that Inkpress’s pending review (v1.0.1) was missing a dark-mode fix already sitting in an uploaded but unsubmitted build; cancelled v1.0.1’s review and submitted v1.0.2 instead, which has the fix. All three apps now WAITING_FOR_REVIEW: Talli v3.5.3, Echo v1.3.3, Inkpress v1.0.2. Updated journal and notes wiki with current ship status.</p>
 
+<h2 id="tuesday-1">Tuesday</h2>
+
+<p>Epiphany’s venue detail cards now display a native MKLookAroundScene preview when available, giving users a street-level look at the location directly in the app (no API key needed). Built on top of earlier Markets fixes this week: the ticker’s blank-entry regression is fixed, the What’s New sheet now self-sizes instead of forcing a half-screen height, and the news drawer’s drag gesture is smooth with placeholder icons when images are missing. All fixes pushed and auto-deployed to production. The portfolio app submission is on track with most blockers cleared. Continued polishing across Markets: tightened list row padding to match iOS Stocks, refined the ticker performance by precomputing formatted currency instead of rebuilding on every animation frame, and verified all 90+ venue detail tests pass after the Look Around integration.</p>
+
 </article>
 
       <button title="Toggle Theme" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
