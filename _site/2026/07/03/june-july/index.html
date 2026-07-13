@@ -61,7 +61,7 @@
 
 <p class="post-meta">
   <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
-  &middot; 35 min
+  &middot; 36 min
 </p>
 
   <p><img src="/assets/2026-07-03-week.svg" alt="June-July" /></p>
@@ -277,6 +277,22 @@
 <h2 id="saturday-2026-07-11">Saturday (2026-07-11)</h2>
 
 <p>Confirmed Epiphany’s brokerage integration supports Interactive Brokers via the existing SnapTrade v4 connection portal—the full broker list is searchable and IBKR has been available from the start. Updated the Settings brokerage-connect copy to mention Interactive Brokers alongside SnapTrade and Wealthsimple, giving users more visibility into supported options. Pushed (commit 3c2956b).</p>
+
+<p>Healstack UI polish: removed drop shadows from card surfaces and the floating tab bar to simplify the visual hierarchy and improve the minimalist aesthetic. Build verified cleanly (commit 60d4e5d).</p>
+
+<h2 id="sunday-1">Sunday</h2>
+
+<p>Batch cleanup pass across the portfolio: imported ship-plan items from three PDF exports (Icons.pdf, Asc.pdf, Apps.pdf) into roadmap sections across 12 repos (epiphany, grapher, healstack, journal, lexly, spark, talli, wiretext, books, nulljosh.github.io, and brief), consolidating visual checklists and ASC registration steps into git-tracked TODOs instead of scattered PDFs.</p>
+
+<p>Fixed Brief’s floating tab bar positioning—was overlapping content below with an overlay approach; switched to <code class="language-plaintext highlighter-rouge">.safeAreaInset</code> so the bar correctly reserves space without blocking buttons underneath (commit 9f6631d).</p>
+
+<p>Echo gained document-in-place support by adding <code class="language-plaintext highlighter-rouge">LSSupportsOpeningDocumentsInPlace</code> to Info.plist, enabling iOS to hand files directly to Echo instead of making copies (commit 9be1314). Also added a “Preparing” phase indicator after model download starts so users see feedback while the model loads asynchronously.</p>
+
+<p>Healstack’s login screen branding got a complete rename pass: swapped “Dose” label to “Healstack” across the web dashboard, iOS app, and watchOS target (commit 1c78ce9). The bundle IDs and internal names stayed unchanged, keeping existing App Store records intact—only the customer-facing branding updated.</p>
+
+<p>Lexly’s iOS builds were failing with “Couldn’t load” on every course tap—xcodegen had flattened the course resource folder structure into a flat directory, breaking the asset path lookups. Fixed it by adding a directory-tree fallback in ContentStore that walks subdirectories to find course-data.json even when nested (commit 634e2fc). Also hardened the course validator against missing exercise IDs to prevent silent skips.</p>
+
+<p>Grapher and Wiretext got their first roadmap TODOs documented: sim verification steps and ASC registration blockers, matching the pattern rolled out across other small projects.</p>
 
 <h2 id="apps-summary">Apps Summary</h2>
 
