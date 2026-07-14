@@ -338,6 +338,8 @@
 
 <p>Deployed the bcgd retheme/dedupe fix to production via <code class="language-plaintext highlighter-rouge">npx vercel --prod</code> — the site was committed to git and pushed earlier (648a569) but had never been deployed to Vercel until tonight. Confirmed via curl that bcgd.heyitsmejosh.com no longer serves the duplicate-image “Recent Repairs” gallery section.</p>
 
+<p>Late evening (2026-07-14 nightly wrap): Talli 3.5.4 was approved by Apple App Review today. Updated the README with the App Store listing link and v3.5.4 approval badge. Fixed a critical bug where portal side-nav items were leaking into Messages and Notifications tabs as fake messages—scraper junk filter now uses a shared prefix-regex instead of exact-string matching, with regression test coverage. Widget Info.plist had a hardcoded version (1.0/1) that xcodegen was overwriting on every regeneration, fixed by reading from build settings instead. Talli’s v3.5.4 build is live on the App Store. BCGD web got a production refresh: populated the reviews grid with static testimonials from site scrape and retinted the dashboard to match the site’s teal/green brand identity. Lexly roadmap cleaned up and pushed. Spark and Echo roadmaps updated with feature parking notes.</p>
+
 </article>
 
       <button title="Toggle Theme" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
