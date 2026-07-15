@@ -61,7 +61,7 @@
 
 <p class="post-meta">
   <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
-  &middot; 50 min
+  &middot; 52 min
 </p>
 
   <p><img src="/assets/2026-07-03-week.svg" alt="June-July" /></p>
@@ -369,6 +369,10 @@
 <h2 id="tuesday-july-14-nightly-wrap">Tuesday (July 14, nightly wrap)</h2>
 
 <p>Built a new “seo-content-autopilot” Claude Code skill in the dotfiles repo—a tool for generating SEO-optimized content plans with keyword analysis, competitor research, and section-by-section guidance. The skill went through its initial commit with some refinements to the command setup. Abraham’s index.html got a sample demo section showing a realistic SEO content plan for an Austin HVAC company (placeholder example to test the output format). Both changes landed in the past 12 hours and are now pushed.</p>
+
+<p>Consolidated the Abraham client project into a single public GitHub repo (github.com/nulljosh/abraham, Apache-2.0 licensed). Originally started as two separate repos (abraham-seo-engagement and abraham-email-bot), but merged them into one after working through visibility/privacy tradeoffs with the user. The unified repo now covers both the SEO/Google Business Profile retainer and the cold email bot jobs under a single contract. Built out the project structure with a comprehensive README, CLAUDE.md playbook (merged from a detailed client operating guide), a GitHub Pages landing page (index.html with seo-content-autopilot demo section), transcribed three reference YouTube videos into transcripts.pdf, and scaffolding for the email bot pipeline (leads, writer, sender stages—not yet wired to real data). Rewrote the engagement contract in plain language, added a pricing-context appendix, and carefully scrubbed the client’s real name and sensitive negotiation history out of the public repo. Contract.pdf, plan.pdf, and the detailed operating guide are kept locally and gitignored to protect client privacy. All work is gated on Abraham signing the contract and sending the first payment—nothing is live yet. The project represents careful execution around client confidentiality in a public GitHub repo context.</p>
+
+<p>Later tonight: fixed abraham.heyitsmejosh.com subdomain DNS by adding a Cloudflare CNAME record (was 404ing due to a domain routing conflict with the main heyitsmejosh.com site), set the GitHub repo homepage to https://abraham.heyitsmejosh.com, and restyled the landing page (index.html) to match the portfolio’s design system (Fraunces serif headings + DM Sans body font, warm card-based layout instead of the previous generic dark theme).</p>
 
 </article>
 
