@@ -61,7 +61,7 @@
 
 <p class="post-meta">
   <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
-  &middot; 44 min
+  &middot; 46 min
 </p>
 
   <p><img src="/assets/2026-07-03-week.svg" alt="June-July" /></p>
@@ -339,6 +339,12 @@
 <p>Deployed the bcgd retheme/dedupe fix to production via <code class="language-plaintext highlighter-rouge">npx vercel --prod</code> — the site was committed to git and pushed earlier (648a569) but had never been deployed to Vercel until tonight. Confirmed via curl that bcgd.heyitsmejosh.com no longer serves the duplicate-image “Recent Repairs” gallery section.</p>
 
 <p>Late evening (2026-07-14 nightly wrap): Talli 3.5.4 was approved by Apple App Review today. Updated the README with the App Store listing link and v3.5.4 approval badge. Fixed a critical bug where portal side-nav items were leaking into Messages and Notifications tabs as fake messages—scraper junk filter now uses a shared prefix-regex instead of exact-string matching, with regression test coverage. Widget Info.plist had a hardcoded version (1.0/1) that xcodegen was overwriting on every regeneration, fixed by reading from build settings instead. Talli’s v3.5.4 build is live on the App Store. BCGD web got a production refresh: populated the reviews grid with static testimonials from site scrape and retinted the dashboard to match the site’s teal/green brand identity. Lexly roadmap cleaned up and pushed. Spark and Echo roadmaps updated with feature parking notes.</p>
+
+<p>Night wrap: Talli iOS version bumped to 3.5.5 with a fresh archive, export, and upload to App Store Connect—build processing cleanly on ASC. The ship-ios workflow publish step hit a path error (cosmetic issue, not the build itself), so review submission still needs confirming or resuming. Quotable’s nav logo was made theme-adaptive by switching to an inline SVG that uses <code class="language-plaintext highlighter-rouge">currentColor</code> tied to <code class="language-plaintext highlighter-rouge">--text</code>, making it light in dark mode and dark in light mode—shipped across web, iOS, and macOS. Attempted to push the commits to GitHub but hit a 403 error: the nulljosh/quotable repo is archived and read-only. Blocker: the repo needs to be unarchived on GitHub before the theme-adaptive nav commits can be pushed. NYC web title screen fixed: the web game was auto-skipping straight into a new game instead of showing the title menu—root cause was <code class="language-plaintext highlighter-rouge">init()</code> in web/js/main.js unconditionally calling startGame() instead of showMenu(). Changed to call showMenu() first, letting players click New Game or Load Game before the sim starts. Books, dotfiles, and the three roadmap updates (echo, healstack, spark) all committed and pushed without issue. Tokens.css sync to portfolio’s fredrika theme landed on books; dotfiles asc-aso-audit skill now includes an optional Phase 3 for AppSigma competitor landscape signals.</p>
+
+<h2 id="tuesday-2026-07-14-later-evening">Tuesday (2026-07-14, later evening)</h2>
+
+<p>AI Investing for Dummies is done: all 16 chapters plus 3 appendices summarized, merged into ai-investing-for-dummies-summary.md, synced to the books repo via sync-summaries.sh, and pushed (05b2745). Raw HEIC photos for the book are now deleted, held back until after the repo sync per the usual ordering rule. Small closing task after that: confirmed the books iOS app is a WKWebView wrapper mirroring the live site, built and ran it in Simulator, and grabbed a screenshot showing the library list with the AI Investing summary badge live in-app, added to the README (1eff110). Simulator shut down afterward.</p>
 
 </article>
 
