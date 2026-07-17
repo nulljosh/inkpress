@@ -61,7 +61,7 @@
 
 <p class="post-meta">
   <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
-  &middot; 67 min
+  &middot; 68 min
 </p>
 
   <p><img src="/assets/2026-07-03-week.svg" alt="June-July" /></p>
@@ -457,6 +457,14 @@
 <h2 id="friday-july-17">Friday (July 17)</h2>
 
 <p>Portfolio homepage got a visual refresh with an animated Memoji avatar in the header. Extracted the avatar face from a Memoji contact-poster screenshot using Python and PIL to blue-channel chroma-key out the background, isolating just the face. Built a static CSS gradient bubble to house the avatar, then layered the chroma-keyed face on top and animated it with a looping bob-and-tilt effect for subtle life and personality. Both the bubble background and the face sprite are now live on heyitsmejosh.com, rendering cleanly across light and dark modes. Committed and pushed to GitHub; the change auto-deployed via Vercel.</p>
+
+<h2 id="friday-continued-1">Friday (continued)</h2>
+
+<p>Spent the evening fixing the resume. Joshua’s old version still claimed he was “currently enrolled at UVIC,” which isn’t true yet—he’s self-taught, coding since childhood, and applying there. Removed the false claim, reordered the projects section to lead with the eight shipped apps instead of burying them under old retail and hardware-repair history, trimmed out the older non-technical jobs to keep the focus tight, and regenerated the PDF via headless Chrome. The resume now accurately reflects his actual foundation: eight production apps across iOS, macOS, watchOS, and web, shipped and live, not aspirational college enrollment.</p>
+
+<p>Explored auto-applying to jobs at scale as a follow-up. Tried a job-tracker site (doomersareretardedcommunists.com) scraping roughly 32,000 ATS listings from Workday, Greenhouse, Lever, and Ashby—immediately a dead end. The data had no recruiter emails, Primitive (our email infrastructure) is domain-entitlement-gated anyway, and 99% of postings were US-only with no reliable way to detect Canada eligibility from metadata alone (Ashby pages are JavaScript SPAs, Greenhouse pages render blank via fetch). Tried again with cleaner public APIs (Remotive, RemoteOK) that return real location and description fields in the response. Better data, but still a dead end: the few Canada-eligible postings that survived filtering were all senior/expert-level (5+ years experience), a skill gap for a self-taught candidate with no professional SWE work history.</p>
+
+<p>Conclusion: there’s no real auto-apply or mass-application volume play available right now through free job-board APIs for a Canada-based, no-US-work-auth, self-taught candidate. The resume fix is the concrete deliverable. The real next step isn’t automated—it’s portfolio-first direct outreach. Joshua needs to identify a small set of target companies and contacts he actually wants to work with, then I can draft personalized emails to each one, leveraging his shipped apps as the real differentiator instead of relying on ATS keyword-matching.</p>
 
 </article>
 
