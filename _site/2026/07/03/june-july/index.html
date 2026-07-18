@@ -521,6 +521,8 @@
 
 <p>Fourth wrap (final for 2026-07-18): Attempted to create the “Spine” app record in App Store Connect via browser automation after manual authentication. Hit an unexpected blocker: the exact name “Spine” is already taken by another developer’s app on the App Store (Apple’s app-name collision check, not a technical/2FA issue). Was mid-way through retrying with a variant name (“Spine — Book Rankings”) when the user asked to wrap up for the night. Bundle ID com.heyitsmejosh.spine is registered and ready; the app record itself was not created. Next session: retry app creation with a non-colliding name (e.g. “Spine — Book Rankings”, “Spine Reads”, or check availability first via the asc-name-creator skill), then upload a build.</p>
 
+<p>Fifth wrap (final: app naming resolved): Switched from slow browser-click-and-check to the asc-name-creator skill’s direct API approach (PATCH appInfoLocalizations via curl, reading the DUPLICATE error code instead of taking ASC UI screenshots). Much faster. Tried Spinely, Bindr, Colophon, Stackt, Tsundoku, and Marginalia—all taken—followed by Coverleaf, Booknook, Shelfmark, Pageturn, and Bookwyrm. Finally “Spinelist” succeeded. The app is now named “Spinelist” in App Store Connect (id 6792376485, bundle com.heyitsmejosh.spine), with both iOS and macOS platforms registered. No build has been uploaded yet—that’s the next step whenever the project resumes.</p>
+
 </article>
 
       <button title="Toggle Theme" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
