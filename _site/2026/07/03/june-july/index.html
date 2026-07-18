@@ -61,7 +61,7 @@
 
 <p class="post-meta">
   <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
-  &middot; 78 min
+  &middot; 79 min
 </p>
 
   <p><img src="/assets/2026-07-03-week.svg" alt="June-July" /></p>
@@ -522,6 +522,10 @@
 <p>Fourth wrap (final for 2026-07-18): Attempted to create the “Spine” app record in App Store Connect via browser automation after manual authentication. Hit an unexpected blocker: the exact name “Spine” is already taken by another developer’s app on the App Store (Apple’s app-name collision check, not a technical/2FA issue). Was mid-way through retrying with a variant name (“Spine — Book Rankings”) when the user asked to wrap up for the night. Bundle ID com.heyitsmejosh.spine is registered and ready; the app record itself was not created. Next session: retry app creation with a non-colliding name (e.g. “Spine — Book Rankings”, “Spine Reads”, or check availability first via the asc-name-creator skill), then upload a build.</p>
 
 <p>Fifth wrap (final: app naming resolved): Switched from slow browser-click-and-check to the asc-name-creator skill’s direct API approach (PATCH appInfoLocalizations via curl, reading the DUPLICATE error code instead of taking ASC UI screenshots). Much faster. Tried Spinely, Bindr, Colophon, Stackt, Tsundoku, and Marginalia—all taken—followed by Coverleaf, Booknook, Shelfmark, Pageturn, and Bookwyrm. Finally “Spinelist” succeeded. The app is now named “Spinelist” in App Store Connect (id 6792376485, bundle com.heyitsmejosh.spine), with both iOS and macOS platforms registered. No build has been uploaded yet—that’s the next step whenever the project resumes.</p>
+
+<h2 id="saturday-2026-07-18-1">Saturday (2026-07-18)</h2>
+
+<p>Ran out of usage token budget for the night. Session wrapped with backlog captured in the notes wiki (master.md Backlog section) and routed to the relevant repo CLAUDEs (books, spark, talli). Four app Store Connect infrastructure blockers documented for next session: Spinelist export-signing, Sparkjar icon symptom, Portfolio icon attachment, and Talli Mac consolidation+recolor. Four app review rejections flagged (Lexly iOS/Mac, Inkpress iOS, Casewright iOS) for investigation once session resumes.</p>
 
 </article>
 
