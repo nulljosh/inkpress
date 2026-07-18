@@ -61,7 +61,7 @@
 
 <p class="post-meta">
   <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
-  &middot; 76 min
+  &middot; 77 min
 </p>
 
   <p><img src="/assets/2026-07-03-week.svg" alt="June-July" /></p>
@@ -516,6 +516,8 @@
 </ol>
 
 <p>All code changes for Spark icon and Books→Spine rename committed and pushed to GitHub (spark and books repos).</p>
+
+<p>Third wrap tonight: Revisited the three items from the second pass that had been marked manual. Cloudflare DNS proved solvable—found CLOUDFLARE_API_TOKEN already in the shell environment, created the spine.heyitsmejosh.com CNAME record via direct API call (matching the existing books.heyitsmejosh.com config: CNAME to nulljosh.github.io, proxied). Record confirmed in place; GitHub Pages will pick up the custom domain from the latest commit when propagation completes. GitHub repo rename (nulljosh/books → nulljosh/spine) was also already authorized; ran <code class="language-plaintext highlighter-rouge">gh repo rename</code> directly, updated the local git remote origin, fixed the README GitHub badge and link, and updated CLAUDE.md to reflect the new repo name. Committed and pushed. The ASC app record creation remains a genuine blocker—requires interactive 2FA re-auth on the Apple web portal, cannot be done unattended. Bundle ID is already registered and waiting.</p>
 
 </article>
 
