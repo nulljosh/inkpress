@@ -61,7 +61,7 @@
 
 <p class="post-meta">
   <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
-  &middot; 78 min
+  &middot; 79 min
 </p>
 
   <p><img src="/assets/2026-07-03-week.svg" alt="June-July" /></p>
@@ -513,7 +513,13 @@
 
 <p>Evening: installed AeroSpace (a tiling window manager for macOS) and SketchyBar (a custom macOS menu bar) via Homebrew. Set up default configurations for both tools, with SketchyBar registered as a login service so it launches on startup. The full configuration is still in progress—granted Accessibility permissions in System Settings and started SketchyBar, but AeroSpace setup is blocked pending manual permission grant in System Settings (left open for user to complete). Both projects inspired by a recent tweet showing a well-configured desktop with SketchyBar and AeroSpace working together.</p>
 
-<p>Later that night, shipped Pro tier gating across multiple apps. Epiphany landed two critical Stripe fixes—the webhook price lookup now correctly resolves product IDs instead of passing undefined values, and payment failures are now properly handled when events arrive. The People graph and Daily Brief features are now gated behind a Pro subscription with server-side isPro() enforcement and locked UI states for unpaid users. Lexly activated its Pro tier with 5 of 7 course categories now restricted to paying customers, and unlimited streak freezes unlocked for Pro users (removing the earlier soft cap). The Stripe edge functions migration was applied to Supabase. Spark documented the Pro tier definition as a decision record—unlimited posts plus 24 hours of pinned visibility versus the free tier’s 3 posts with 1 hour pinned—though the backend implementation remains a roadmap item. Also got a Yelp API key set up for Epiphany (Joshua drove the captcha and account creation himself, Claude filled the form), so the venue photos/reviews feature that had been built but silently no-op’ing for weeks finally went live. All changes pushed to GitHub and memory files updated.</p>
+<p>Later that night, shipped Pro tier gating across multiple apps. Epiphany landed two critical Stripe fixes—the webhook price lookup now correctly resolves product IDs instead of passing undefined values, and payment failures are now properly handled when events arrive. The People graph and Daily Brief features are now gated behind a Pro subscription with server-side isPro() enforcement and locked UI states for unpaid users. Lexly activated its Pro tier with 5 of 7 course categories now restricted to paying customers, and unlimited streak freezes unlocked for Pro users (removing the earlier soft cap). The Stripe edge functions migration was applied to Supabase. Spark documented the Pro tier definition as a decision record—unlimited posts plus 24 hours of pinned visibility versus the free tier’s 3 posts with 1 hour pinned—though the backend implementation remains a roadmap item.</p>
+
+<p>Also got a Yelp API key set up for Epiphany (Joshua drove the captcha and account creation himself, Claude filled the form), so the venue photos/reviews feature that had been built but silently no-op’ing for weeks finally went live. Venue review cards now ship across iOS, macOS, and web platforms. Cleaned up branding in the same commit: renamed the stale MonicaWidgets macOS widget target to EpiphanyWidgets and fixed a pre-existing Swift 6 concurrency bug in the widget. Finally deployed X/Twitter OAuth to production—TWITTER_CLIENT_ID and TWITTER_CLIENT_SECRET set in Vercel, so sign-in with X is now live on the web dashboard to complement GitHub and Apple OAuth.</p>
+
+<p>All changes pushed to GitHub and memory files updated.</p>
+
+<p>Built and deployed a new <code class="language-plaintext highlighter-rouge">/news</code> skill at <code class="language-plaintext highlighter-rouge">~/.claude/skills/news/</code>. Expanded the market briefing beyond YouTube transcripts to scrape WSJ, Bloomberg, CNN, Fox Business, and CNBC landing pages live, synthesizing the day’s top stories into a ranked briefing with market snapshot (S&amp;P/Nasdaq/Dow moves + weekly trend), factual verification spot-checks against independent sources, and sector-in-focus context. Ran a live briefing tonight—chip stocks fell into a bear market on AI-capex doubts and macro slowdown fears, Iran geopolitical tensions rattled energy, and inflation-cooled expectations pushed bond yields lower. The skill is now ready for daily morning invocation via <code class="language-plaintext highlighter-rouge">/news</code> or <code class="language-plaintext highlighter-rouge">/market</code>.</p>
 
 </article>
 
