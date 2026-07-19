@@ -61,7 +61,7 @@
 
 <p class="post-meta">
   <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
-  &middot; 88 min
+  &middot; 89 min
 </p>
 
   <p><img src="/assets/2026-07-03-week.svg" alt="June-July" /></p>
@@ -548,6 +548,8 @@
 <p>Late evening nightly wrap: spent the final stretch of the session tracking down a stubborn iOS build blocker on Spark. The app icon kept showing an old purple design in TestFlight and App Store Connect even though the source SVG was already fixed to dark navy—turned out both iOS provisioning profiles were silently corrupted, missing certificate attachments and with the App Group entitlement mysteriously wiped (despite the capability being enabled in the App ID configuration). Deleted and regenerated both profiles from scratch via the ASC CLI. While fixing that, uncovered a couple of small validation issues in the widget extension: the Info.plist was missing NSExtensionPointIdentifier and had mismatched build numbers between the main app and widget targets, both of which would’ve bounced a real upload. Fixed those, ran a clean archive on iOS, and verified it built green. The export and TestFlight upload are queued for the next session. Also bumped Spark’s version to 2.2.0 across web, iOS, and macOS docs as a cleanup pass.</p>
 
 <p>While I was in there, went ahead and renamed it to Sparkjar everywhere — repo, domain, Vercel — since that’s the real name and the codebase had drifted from it. Repo moved from nulljosh/spark to nulljosh/sparkjar, local folder renamed to match, domain swapped from spark.heyitsmejosh.com to sparkjar.heyitsmejosh.com via a Cloudflare CNAME swap (old one deleted), and every README/CLAUDE.md/package.json reference updated. Also did a quick DNS sweep while poking around Cloudflare and found three confirmed-stale CNAMEs left over from old app renames (tally, lingo, beep) — cleaned those up too. Bundle ID rename and the matching new ASC app registration are deliberately parked for a dedicated session so they don’t undo tonight’s provisioning-profile fix.</p>
+
+<p>Final nightly wrap (2026-07-18): Ended the night with 99 commits across 13 repos. Major shipping: Spinelist app name collision resolved and ASC app record live (bundle ready for build upload), Sparkjar iOS provisioning profiles regenerated and icon restyle complete (export + TestFlight queued), Brief renamed to Litigate with icon badge removed and build 3 on ASC, and SwiftLint build-time linting verified working on Epiphany and Talli with the fix documented for rollout to other apps. Accessibility audit across 18 apps identified 78 findings; fixed canlii-app’s error-alert binding but the push failed due to a missing GitHub remote. The Spine rename cascade (repo, DNS, ASC registration) and Sparkjar cleanup (repo rename, domain swap, DNS cleanup) both completed—next steps are build uploads and bundle ID registration work for a dedicated follow-up.</p>
 
 </article>
 
