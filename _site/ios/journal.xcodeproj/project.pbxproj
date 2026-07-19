@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22019299B142F9C6C8192940 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099194237BF0D71FD3C6424 /* Feed.swift */; };
 		5D7EBE7D411C4B9B8E890D29 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38ACDB28857F0E41D3C492E /* JournalEntry.swift */; };
+		65959DE874A252B4341CB060 /* ManageFeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA21421125A16812D6815E /* ManageFeedsView.swift */; };
 		664458B2090B4F4F075E125D /* JournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2FC2F32D71F065BB94DA3 /* JournalApp.swift */; };
 		726E2BDEC0363FC1A23D0AAD /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409A12C7017D00F584C499DF /* EntryDetailView.swift */; };
 		844DF1D2B31BE048837E9B2A /* EntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286BB5BF361BF084AB417E5 /* EntryListView.swift */; };
@@ -25,7 +27,9 @@
 		B29B9530A60D6C424502F145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B38ACDB28857F0E41D3C492E /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		D9B2FC2F32D71F065BB94DA3 /* JournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalApp.swift; sourceTree = "<group>"; };
+		E099194237BF0D71FD3C6424 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		EEC44D06947275059DED3B30 /* JournalFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalFeedService.swift; sourceTree = "<group>"; };
+		F6EA21421125A16812D6815E /* ManageFeedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFeedsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -34,6 +38,7 @@
 			children = (
 				409A12C7017D00F584C499DF /* EntryDetailView.swift */,
 				8286BB5BF361BF084AB417E5 /* EntryListView.swift */,
+				F6EA21421125A16812D6815E /* ManageFeedsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -89,6 +94,7 @@
 		E9F97BCFD3B705C4E9DB7415 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E099194237BF0D71FD3C6424 /* Feed.swift */,
 				B38ACDB28857F0E41D3C492E /* JournalEntry.swift */,
 			);
 			path = Models;
@@ -167,9 +173,11 @@
 				E84CA41D7192C38A6B4BBFFB /* AtomFeedParserTests.swift in Sources */,
 				726E2BDEC0363FC1A23D0AAD /* EntryDetailView.swift in Sources */,
 				844DF1D2B31BE048837E9B2A /* EntryListView.swift in Sources */,
+				22019299B142F9C6C8192940 /* Feed.swift in Sources */,
 				664458B2090B4F4F075E125D /* JournalApp.swift in Sources */,
 				5D7EBE7D411C4B9B8E890D29 /* JournalEntry.swift in Sources */,
 				BD71979F992F2F9CFF17813A /* JournalFeedService.swift in Sources */,
+				65959DE874A252B4341CB060 /* ManageFeedsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +218,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 202607071200;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QMM486NPYC;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -224,7 +232,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -269,7 +277,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 202607071200;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QMM486NPYC;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -289,7 +297,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;

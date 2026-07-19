@@ -6,4 +6,5 @@ struct JournalEntry: Codable, Identifiable, Hashable {
     let url: String
     let date: Date
     let htmlContent: String
+    var sourceTitle: String = ""
 }
