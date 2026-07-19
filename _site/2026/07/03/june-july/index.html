@@ -61,7 +61,7 @@
 
 <p class="post-meta">
   <time datetime="2026-07-03T09:00:00-0700">July 2026</time>
-  &middot; 89 min
+  &middot; 91 min
 </p>
 
   <p><img src="/assets/2026-07-03-week.svg" alt="June-July" /></p>
@@ -550,6 +550,14 @@
 <p>While I was in there, went ahead and renamed it to Sparkjar everywhere — repo, domain, Vercel — since that’s the real name and the codebase had drifted from it. Repo moved from nulljosh/spark to nulljosh/sparkjar, local folder renamed to match, domain swapped from spark.heyitsmejosh.com to sparkjar.heyitsmejosh.com via a Cloudflare CNAME swap (old one deleted), and every README/CLAUDE.md/package.json reference updated. Also did a quick DNS sweep while poking around Cloudflare and found three confirmed-stale CNAMEs left over from old app renames (tally, lingo, beep) — cleaned those up too. Bundle ID rename and the matching new ASC app registration are deliberately parked for a dedicated session so they don’t undo tonight’s provisioning-profile fix.</p>
 
 <p>Final nightly wrap (2026-07-18): Ended the night with 99 commits across 13 repos. Major shipping: Spinelist app name collision resolved and ASC app record live (bundle ready for build upload), Sparkjar iOS provisioning profiles regenerated and icon restyle complete (export + TestFlight queued), Brief renamed to Litigate with icon badge removed and build 3 on ASC, and SwiftLint build-time linting verified working on Epiphany and Talli with the fix documented for rollout to other apps. Accessibility audit across 18 apps identified 78 findings; fixed canlii-app’s error-alert binding but the push failed due to a missing GitHub remote. The Spine rename cascade (repo, DNS, ASC registration) and Sparkjar cleanup (repo rename, domain swap, DNS cleanup) both completed—next steps are build uploads and bundle ID registration work for a dedicated follow-up.</p>
+
+<p>Finally folded the little CanLII case-search app into Litigate as a proper tab instead of letting it sit as a separate half-finished project. Added ios/Sources/CaseLaw/ with the models, API client, and UI views (CanLIIModels.swift, CanLIIClient.swift, CaseLawView.swift, CaseLawDetailView.swift), wired it as a 5th tab in ContentView.swift, and verified the build clean via xcodebuild. Dropped the SwiftData bookmark persistence from the canlii-app merge (Litigate doesn’t use SwiftData yet). Cleaned up the local folder name too: renamed ~/Documents/Code/brief → ~/Documents/Code/litigate to match the GitHub repo and app name.</p>
+
+<h2 id="sunday-2026-07-19">Sunday (2026-07-19)</h2>
+
+<p>Spent the evening un-paywalling all of Lexly’s courses. They were locked behind a Stripe checkout that never actually worked—five course categories gated as paid content that nobody could actually buy. Flipped the model: everything’s free and unlocked now, with Pro reframed as a perk tier (unlimited streak freezes to start, refills later) instead of a content gate. Apple’s rejection made it clear they wanted honest answers about paid features, and this pivot honestly answers it—there are no paid course categories anymore. Added an iOS Settings view, moved Sign Out into it, and pushed the clean resubmit to App Review as v1.1.1. Also fixed the age-rating declaration gaps (was missing Social Media fields) via the CLI.</p>
+
+<p>Tackled the macOS platform merge that’s been sitting for days. Added the native macOS platform to the existing Lexly app record on App Store Connect (required the web dashboard—no API for it), archived a fresh native macOS build, and attached it to the iOS upload as a unified v1.1.1 multi-platform submission. The build’s ready to ship once the screenshot automation gets fixed (currently hitting an ambiguous “Sign In” element match). Still keeping the separate “Lexly Mac” app record around for now since the merged submission hasn’t cleared review yet—deletion can wait until the iOS+Mac build ships and the old one’s confirmed dead.</p>
 
 </article>
 
