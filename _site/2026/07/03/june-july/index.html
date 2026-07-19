@@ -559,6 +559,8 @@
 
 <p>Tackled the macOS platform merge that’s been sitting for days. Added the native macOS platform to the existing Lexly app record on App Store Connect (required the web dashboard—no API for it), archived a fresh native macOS build, and attached it to the iOS upload as a unified v1.1.1 multi-platform submission. The build’s ready to ship once the screenshot automation gets fixed (currently hitting an ambiguous “Sign In” element match). Still keeping the separate “Lexly Mac” app record around for now since the merged submission hasn’t cleared review yet—deletion can wait until the iOS+Mac build ships and the old one’s confirmed dead.</p>
 
+<p>Later that night I actually cracked the screenshot bug—turned out to be two identically-labeled “Sign In” buttons confusing the automation, plus I needed a way to skip the login screen entirely since the demo account Apple flagged is still broken. Got a clean native Mac screenshot and submitted the merged macOS 1.1.1 build to App Review, so both iOS and Mac are officially in review now. Tried to clean up the old standalone “Lexly Mac” app record while I was in there and hit a wall—deletion’s blocked on Apple’s side even after canceling its stuck review, so that one needs an actual support ticket, not more scripting. Also briefly considered renaming back to “Lingo,” its original name before lingo→parlay→lexly, but the availability check showed it’s already taken by a totally different developer. Stopped before touching anything. Staying “Lexly.”</p>
+
 </article>
 
       <button title="Toggle Theme" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
