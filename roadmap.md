@@ -16,4 +16,4 @@
 - [ ] Add a splash screen (currently has none).
 
 ## Stashed 2026-07-19
-- [ ] Inkpress iOS 1.0.2 REJECTED (submission 409ce5a3 UNRESOLVED_ISSUES): blocker = app availability missing (dashboard-only, no CLI path). Set Pricing & Availability in ASC web for app 6787759999, resolve App Review issue, resubmit.
+- [ ] Inkpress iOS 1.0.2 REJECTED — real reason (pulled from App Review thread 2026-07-19): **Guideline 4.2 Minimum Functionality** — reviewer (iPad Air 11 M3, 07-14) says app lacks sufficient content/features to be useful and app-like. Needs a feature pass before resubmitting (ideas: on-device drafts/editor, offline reading, share extension, widgets). ALSO still needs availability set in dashboard (CLI 404s). Submission 409ce5a3; can reply to thread in ASC.
