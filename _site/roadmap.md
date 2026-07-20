@@ -1,19 +1,20 @@
 # journal Roadmap
 
 ## From Icons.pdf / Asc.pdf (imported 2026-07-12)
-- [ ] Inkpress 1.0.2 waiting for review — monitor only
+- [x] ~~Inkpress 1.0.2 waiting for review — monitor only~~ — superseded, see Stashed section: actually REJECTED (verified via `asc status --app 6787759999` 2026-07-20).
 
 ## 2026-07-14 dump
-- [ ] Verify entry styling fix (existing + new entries, survives nav/reload/restart)
+- [x] Verify entry styling fix — confirmed in code: `fefd0fe`/`243aa5a` wrap HTML render in a system-font/spacing `<style>` block + strip baked-in colors for dark mode (`ios/Sources/Shared/Views/EntryDetailView.swift`). Already included in the currently-uploaded build 1.0.2 (202607071200, VALID).
 - [ ] Improve /journal skill prose — entries too spammy, want native English
 
-## Idea: Inkpress as RSS reader (from Inkpress.pdf, imported 2026-07-14)
-- [ ] Idea: add features to connect Inkpress to a custom journal/feed — could grow into a full RSS feed reader app. Exploratory, no scope/deadline defined yet — needs a follow-up conversation to pin down what "connect to custom journal" means before this becomes a real task.
+## RSS reader feature — DONE IN CODE, NOT YET SHIPPED (was "Idea: Inkpress as RSS reader")
+- [x] Multi-feed RSS/Atom reader (add/remove feeds, aggregated timeline) — implemented, commit `0ab2592` "Inkpress: multi-feed RSS reader".
+- [ ] **Not yet built/uploaded/resubmitted** — `asc status --app 6787759999` (2026-07-20) still shows build 1.0.2/202607071200 (uploaded 2026-07-07, before the RSS-reader commit) as the latest, and submission `409ce5a3` still REJECTED/UNRESOLVED_ISSUES. Top-level `~/Documents/Code/CLAUDE.md` claiming "resubmitted 2026-07-19" is stale — correct it. Needs: new archive with the RSS-reader code, upload, resubmit addressing Guideline 4.2 (this feature is the intended fix).
 
 ## From Inkpress.pdf (imported 2026-07-19)
-- [ ] iOS app (TestFlight 1.0.0) still has an entry-open styling glitch (styling doesn't load properly when tapping an entry). User's note: "I think we fixed this but never shipped the fix" — check recent commits for an unshipped entry-styling fix before re-diagnosing from scratch, then cut + upload a new TestFlight build.
-- [ ] App still needs full rename to Inkpress — Home Screen icon and in-app header both still say "journal by Josh". Needs new icon asset + display name + in-app header text updated together, then rebuild.
-- [ ] Add a splash screen (currently has none).
+- [x] Entry-open styling glitch — same fix as above (`fefd0fe`/`243aa5a`), already in the reviewed build. Not a new bug.
+- [x] Rename to Inkpress — verified complete: `CFBundleDisplayName` = "Inkpress" (`ios/Sources/iOS/Info.plist`), nav title = "Inkpress" (`EntryListView.swift:26`), real AppIcon PNG present (`AppIcon.appiconset/icon-1024.png`, 12K, not a placeholder).
+- [ ] Add a splash screen — still missing (`UILaunchScreen` is an empty dict in Info.plist = default blank screen). Needs a design asset, not just code.
 
 ## Stashed 2026-07-19
-- [ ] Inkpress iOS 1.0.2 REJECTED — real reason (pulled from App Review thread 2026-07-19): **Guideline 4.2 Minimum Functionality** — reviewer (iPad Air 11 M3, 07-14) says app lacks sufficient content/features to be useful and app-like. Needs a feature pass before resubmitting (ideas: on-device drafts/editor, offline reading, share extension, widgets). ALSO still needs availability set in dashboard (CLI 404s). Submission 409ce5a3; can reply to thread in ASC.
+- [ ] Inkpress iOS 1.0.2 REJECTED — Guideline 4.2 Minimum Functionality (reviewer: app lacks sufficient content/features). **Update 2026-07-20: the fix (multi-feed RSS reader) already exists in code (see above) but was never built+uploaded+resubmitted** — do that next, it directly addresses the rejection reason. ALSO still needs availability set in dashboard (CLI 404s). Submission `409ce5a3`; can reply to thread in ASC.
