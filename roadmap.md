@@ -14,3 +14,6 @@
 - [ ] iOS app (TestFlight 1.0.0) still has an entry-open styling glitch (styling doesn't load properly when tapping an entry). User's note: "I think we fixed this but never shipped the fix" — check recent commits for an unshipped entry-styling fix before re-diagnosing from scratch, then cut + upload a new TestFlight build.
 - [ ] App still needs full rename to Inkpress — Home Screen icon and in-app header both still say "journal by Josh". Needs new icon asset + display name + in-app header text updated together, then rebuild.
 - [ ] Add a splash screen (currently has none).
+
+## Stashed 2026-07-19
+- [ ] Inkpress iOS 1.0.2 REJECTED (submission 409ce5a3 UNRESOLVED_ISSUES): blocker = app availability missing (dashboard-only, no CLI path). Set Pricing & Availability in ASC web for app 6787759999, resolve App Review issue, resubmit.
