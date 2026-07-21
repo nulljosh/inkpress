@@ -6,15 +6,16 @@ struct Feed: Codable, Identifiable, Hashable {
     let url: String
 }
 
-/// Persisted list of subscribed feeds. Seeded with the journal so the app has content
-/// on first launch, but the user can add or remove any RSS/Atom feed.
+/// Persisted list of subscribed feeds. Seeded with the author's blog so the app has content
+/// on first launch, but the user can add or remove any RSS/Atom feed. The seed feed is just
+/// a regular subscription like any other — Inkpress has no code coupling to that blog.
 @MainActor
 final class FeedStore: ObservableObject {
     @Published var feeds: [Feed] {
         didSet { save() }
     }
 
-    private static let defaultFeed = Feed(title: "Inkpress Journal", url: "https://journal.heyitsmejosh.com/feed.xml")
+    private static let defaultFeed = Feed(title: "Journal", url: "https://journal.heyitsmejosh.com/feed.xml")
 
     private let storeURL: URL = {
         let dir = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]

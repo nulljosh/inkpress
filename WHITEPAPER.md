@@ -1,46 +1,38 @@
-# Journal Technical Whitepaper
+# Inkpress Technical Whitepaper
 
-**v2.3.0** | July 2026
+**v1.0.2** | July 2026
 
-Journal is a personal Jekyll blog, one post per month, shipped as a prebuilt
-static site rather than a server-rendered Ruby app. Live at
-[journal.heyitsmejosh.com](https://journal.heyitsmejosh.com), with a companion
-iOS app (Inkpress).
-
-## Build and Deploy Path
-
-The only publish path is `./scripts/deploy.sh`: it runs Jekyll locally, then
-ships the resulting `_site` directory to the Vercel `journal` project via the
-Build Output API (`vercel deploy --prebuilt`). Vercel itself never runs Ruby
-or Bundler — it only serves the static output handed to it. A plain
-`git push` does not deploy; the script is required.
+Inkpress is a multi-feed RSS/Atom reader for iOS. Add any feed, get an
+aggregated, reverse-chronological timeline across all of them. Split from
+the `journal` repo (a personal Jekyll blog) on 2026-07-21 — the two are
+unrelated products that only used to share a folder for naming-history
+reasons.
 
 ## Content Model
 
-Posts live in `_posts/` as `YYYY-MM-DD-slug.md`. The URL is derived from the
-filename's slug portion, not the `title:` front matter — `2026-04-13-week.md`
-ships at `/2026/04/13/week/` regardless of what the post's title says.
-Filename date and front-matter `date:` must match. Cadence is one post per
-calendar month (changed from weekly in 2026-07 — weekly posts read as
-changelog spam); if multiple posts land in the same month they get merged
-into one and the extras deleted.
+Feeds are a simple persisted list (`FeedStore`, `Application Support/feeds.json`
+on-device, no server sync). Seeded with one feed on first launch
+(`journal.heyitsmejosh.com/feed.xml`, the author's own blog) purely so the
+app isn't empty on first open — it's a regular subscription, fully
+removable, with no special handling versus any other feed the user adds.
 
-## Design
+## Parsing
 
-Shares the portfolio's design tokens (`heyitsmejosh.com/tokens.css`) for
-color/spacing, keeping the blue `--accent` and text-hierarchy variables in
-sync across sites, but keeps body text in Geist rather than the portfolio's
-monospace, for reading comfort at length.
+`JournalFeedService` fetches and parses both RSS and Atom formats. Entry
+HTML content is wrapped in a forced `<style>` block before rendering, since
+`NSAttributedString`'s HTML importer has no default CSS and would otherwise
+render unstyled serif text with no spacing.
 
-## Companion App
+## Scope
 
-| Platform | Framework | Notes |
-|----------|-----------|-------|
-| iOS | — | Inkpress, reads the same published content |
+No accounts, no user-authored content, no writing/logging feature — Inkpress
+only reads feeds. Cross-device sync of subscriptions would need accounts;
+not started, no current need.
 
 ## Security / Privacy
 
-Fully static output, no backend, no user accounts, no data collection.
+No backend, no user accounts, no data collection. Feed subscriptions are
+stored locally on-device only.
 
 ## License
 
