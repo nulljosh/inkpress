@@ -8,7 +8,8 @@ v2.3.0
 - Live site is `journal.heyitsmejosh.com`.
 - Posts live in `_posts/`.
 - `./scripts/deploy.sh` is the only publish path. It builds Jekyll locally and ships `_site` to the Vercel `journal` project via the Build Output API (`vercel deploy --prebuilt`), so Vercel never runs Ruby/bundler. There is no GitHub Pages / gh-pages flow and no remote build; a plain `git push` does not deploy.
-- One post per month (changed 2026-07-04 from weekly; 13 weekly posts felt like changelog spam and got merged into 4 monthly entries covering Feb-Jul). Never create more than one entry in the same calendar month. Dated the last Friday or Sunday of the month covered. If multiple entries exist in the same month, merge them into one and delete the extras.
+- One post per month by default (changed 2026-07-04 from weekly; 13 weekly posts felt like changelog spam and got merged into 4 monthly entries covering Feb-Jul). Dated the last Friday or Sunday of the month covered. If multiple entries exist in the same month with no size reason, merge them into one and delete the extras.
+- **Size/staleness exception (added 2026-07-21):** if the current month's post exceeds ~20KB, or today's date is more than ~10 days past its frontmatter `date:`, start a NEW post instead of appending further — even if it's the same calendar month. This is what "one post per month" is *for* (readable entries), not a hard rule to violate that goal. Split at a clean `##` day-heading boundary. (2026-07-03-june-july.md hit 157KB/18 days stale before this rule existed and had to be split retroactively into itself + 2026-07-21-ship-rename-repeat.md.)
 - Filename date and front matter date must match.
 - Write in natural English, not tool-name spam.
 - Post titles must be short and punchy — under 6 words. No changelog-style summaries, no feature lists. Write a label, not a sentence.
