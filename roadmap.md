@@ -9,7 +9,7 @@
 
 ## RSS reader feature — DONE IN CODE, NOT YET SHIPPED (was "Idea: Inkpress as RSS reader")
 - [x] Multi-feed RSS/Atom reader (add/remove feeds, aggregated timeline) — implemented, commit `0ab2592` "Inkpress: multi-feed RSS reader".
-- [ ] **Not yet built/uploaded/resubmitted** — `asc status --app 6787759999` (2026-07-20) still shows build 1.0.2/202607071200 (uploaded 2026-07-07, before the RSS-reader commit) as the latest, and submission `409ce5a3` still REJECTED/UNRESOLVED_ISSUES. Top-level `~/Documents/Code/CLAUDE.md` claiming "resubmitted 2026-07-19" is stale — correct it. Needs: new archive with the RSS-reader code, upload, resubmit addressing Guideline 4.2 (this feature is the intended fix).
+- [x] **Shipped 2026-07-21**: archived/exported/uploaded build 202607211502 (v1.0.1) with the RSS-reader code — bumped `CURRENT_PROJECT_VERSION` from stale "2" to a fresh date-based number (`asc builds next-build-number` confirmed old builds used timestamp numbering, not the committed value). Upload confirmed via `asc builds upload --wait`. Still needs: attach build to version + resubmit once it finishes processing (Apple's guideline 4.2 rejection was against the pre-RSS-reader 1.0.2 build — this one should address it).
 
 ## From Inkpress.pdf (imported 2026-07-19)
 - [x] Entry-open styling glitch — same fix as above (`fefd0fe`/`243aa5a`), already in the reviewed build. Not a new bug.
