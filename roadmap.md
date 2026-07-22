@@ -17,4 +17,4 @@
 - [ ] Add a splash screen — still missing (`UILaunchScreen` is an empty dict in Info.plist = default blank screen). Needs a design asset, not just code. BLOCKED: no source asset to work from.
 
 ## Stashed 2026-07-19
-- [ ] Inkpress iOS 1.0.2 REJECTED — Guideline 4.2 Minimum Functionality (reviewer: app lacks sufficient content/features). **Update 2026-07-20: the fix (multi-feed RSS reader) already exists in code (see above) but was never built+uploaded+resubmitted** — do that next, it directly addresses the rejection reason. ALSO still needs availability set in dashboard (CLI 404s). Submission `409ce5a3`; can reply to thread in ASC.
+- [x] Inkpress iOS 1.0.2 REJECTED — Guideline 4.2 Minimum Functionality. Duplicate of the item resolved above (line 12) on 2026-07-21: RSS-reader build resubmitted, pricing/availability set via CLI (the "dashboard/404" blocker was stale — `asc pricing schedule create --free` / `asc pricing availability create` worked directly). 1.0.2 confirmed WAITING_FOR_REVIEW as of 2026-07-21T22:27 via `asc review status --app 6787759999`. Nothing further to do but wait for Apple's review outcome.
