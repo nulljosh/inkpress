@@ -7,6 +7,8 @@
 Multi-feed RSS/Atom reader for iOS. Add any feed, get an aggregated timeline
 across all of them.
 
+Live on the [App Store](https://apps.apple.com/app/id6787759999)
+
 Split from the `journal` repo 2026-07-21 — this repo now holds only the iOS
 app. The blog that used to share this folder lives at
 [github.com/nulljosh/journal](https://github.com/nulljosh/journal); Inkpress
