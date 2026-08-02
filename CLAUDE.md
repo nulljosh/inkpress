@@ -1,5 +1,8 @@
 # Inkpress
-v1.0.2
+v1.0.2 (v1.0.3 metadata submitted 2026-08-02, build not yet resubmitted)
+
+## Open
+- Live ASC listing had stale "Journal" copy (subtitle "Monthly engineering journal", journal-only description/keywords) from before the journal/inkpress split — fixed on v1.0.3 metadata via `asc metadata push` 2026-08-02 (subtitle now "RSS & Atom feed reader", description/keywords rewritten for multi-feed RSS reader). Screenshot (`ios/.asc/screenshots/01-list-light.png`) still shows the old single-feed "Journal" list UI and needs regenerating — the app only auto-subscribes to journal.heyitsmejosh.com by default, so a fresh install's screenshot reads as a dedicated journal app unless a second demo feed is added first. Next: add 1-2 demo feeds in the sim, recapture, `asc screenshots upload`, then submit v1.0.3 for review.
 
 ## Rules
 - Multi-feed RSS/Atom reader, iOS only. Split from the `journal` repo 2026-07-21 — that repo now holds only the Jekyll blog. No shared code between the two; `FeedStore.defaultFeed` in `ios/Sources/Shared/Models/Feed.swift` subscribes to the blog's `feed.xml` on first launch as a regular feed, same as anything a user adds themselves.
