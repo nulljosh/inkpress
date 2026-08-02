@@ -11,8 +11,8 @@ Goal: Inkpress stays an RSS reader AND becomes a WordPress/Ghost-style CMS+CRM c
 
 Phased so each phase ships something real instead of one giant unshippable build:
 
-- [ ] **Phase 0 — backend decision.** CMS write features need a write API + auth (currently none). Candidates: reuse `journal`'s Jekyll repo via a small write API (git commit per post), or a proper backend (Supabase, reusing the shared `spark` project per house convention) with posts/pages/subscribers tables. Ghost/WordPress both use a DB-backed API — recommend Supabase over git-commit-as-CMS for CRM-style querying (contacts, subscriber lists) later.
-- [ ] **Phase 1 — svbtle-style upvote.** Hover/tap empty circle fills to solid on `EntryDetailView`/`EntryListView`. Self-contained UI, no backend, ship first. (Ref: svbtle.com interaction Joshua wants copied.)
+- [x] **Phase 0 — backend decision.** Decided 2026-08-02: Supabase, shared `spark` project (`tjsxsqlxjmanwvmywwvw`). `inkpress_posts` + `inkpress_contacts` tables created, RLS enabled, no policies yet (service-role-only). See `inkpress/CLAUDE.md` Backend section.
+- [x] **Phase 1 — svbtle-style upvote.** Shipped 2026-08-02: `UpvoteButton.swift`, tap-toggle circle→circle.fill, UserDefaults-backed, wired into `EntryListView` row.
 - [ ] **Phase 2 — CMS read+write MVP.** Compose/edit a post in-app, publish to the chosen backend (Phase 0). Draft/scheduled/published states like Ghost. Needs accounts (single-user auth is enough at first).
 - [ ] **Phase 3 — CRM layer.** Contacts/subscribers list (name, email, notes, source), tied to the same backend. Newsletter-subscriber-as-CRM-contact is the natural Ghost-esque bridge, not a separate sales-pipeline CRM.
 - [ ] **Phase 4 — polish.** Theming/pages (WordPress-style), tags/categories, search.

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22019299B142F9C6C8192940 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099194237BF0D71FD3C6424 /* Feed.swift */; };
+		34463D6FC9DD49B4DEB0F0E7 /* UpvoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F49BC6821B601EA8ECDFE /* UpvoteButton.swift */; };
 		5D7EBE7D411C4B9B8E890D29 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38ACDB28857F0E41D3C492E /* JournalEntry.swift */; };
 		65959DE874A252B4341CB060 /* ManageFeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA21421125A16812D6815E /* ManageFeedsView.swift */; };
 		664458B2090B4F4F075E125D /* JournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2FC2F32D71F065BB94DA3 /* JournalApp.swift */; };
@@ -26,6 +27,7 @@
 		8286BB5BF361BF084AB417E5 /* EntryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListView.swift; sourceTree = "<group>"; };
 		B29B9530A60D6C424502F145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B38ACDB28857F0E41D3C492E /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		B86F49BC6821B601EA8ECDFE /* UpvoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpvoteButton.swift; sourceTree = "<group>"; };
 		D9B2FC2F32D71F065BB94DA3 /* JournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalApp.swift; sourceTree = "<group>"; };
 		E099194237BF0D71FD3C6424 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		EEC44D06947275059DED3B30 /* JournalFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalFeedService.swift; sourceTree = "<group>"; };
@@ -39,6 +41,7 @@
 				409A12C7017D00F584C499DF /* EntryDetailView.swift */,
 				8286BB5BF361BF084AB417E5 /* EntryListView.swift */,
 				F6EA21421125A16812D6815E /* ManageFeedsView.swift */,
+				B86F49BC6821B601EA8ECDFE /* UpvoteButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				5D7EBE7D411C4B9B8E890D29 /* JournalEntry.swift in Sources */,
 				BD71979F992F2F9CFF17813A /* JournalFeedService.swift in Sources */,
 				65959DE874A252B4341CB060 /* ManageFeedsView.swift in Sources */,
+				34463D6FC9DD49B4DEB0F0E7 /* UpvoteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

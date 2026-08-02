@@ -8,19 +8,23 @@ struct EntryListView: View {
     var body: some View {
         NavigationStack {
             List(feed.entries) { entry in
-                NavigationLink(value: entry) {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(entry.title).font(.headline)
-                        HStack(spacing: 6) {
-                            if !entry.sourceTitle.isEmpty {
-                                Text(entry.sourceTitle)
-                                Text("·")
+                HStack {
+                    NavigationLink(value: entry) {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(entry.title).font(.headline)
+                            HStack(spacing: 6) {
+                                if !entry.sourceTitle.isEmpty {
+                                    Text(entry.sourceTitle)
+                                    Text("·")
+                                }
+                                Text(entry.date.formatted(date: .abbreviated, time: .omitted))
                             }
-                            Text(entry.date.formatted(date: .abbreviated, time: .omitted))
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
                         }
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
                     }
+                    Spacer()
+                    UpvoteButton(entryID: entry.id)
                 }
             }
             .navigationTitle("Inkpress")

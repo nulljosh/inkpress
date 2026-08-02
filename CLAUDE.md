@@ -7,9 +7,14 @@ v1.0.2 (v1.0.3 metadata submitted 2026-08-02, build not yet resubmitted)
 ## Rules
 - Multi-feed RSS/Atom reader, iOS only. Split from the `journal` repo 2026-07-21 — that repo now holds only the Jekyll blog. No shared code between the two; `FeedStore.defaultFeed` in `ios/Sources/Shared/Models/Feed.swift` subscribes to the blog's `feed.xml` on first launch as a regular feed, same as anything a user adds themselves.
 - Renamed from "Journal" to "Inkpress" 2026-07-06 to avoid a name collision with Apple's own Journal app. ASC app id 6787759999, GitHub `nulljosh/inkpress`.
-- General-purpose product, not personal-data-specific: no accounts, no journaling/writing feature, no user-authored content — it only reads feeds. If a writing/logging feature is ever wanted, that's a distinct feature decision (needs accounts + a write backend) — don't bolt it on without reconsidering scope.
+- **Superseded 2026-08-02**: the "no accounts, no writing feature" rule below is being phased out — Inkpress is pivoting to also be a CMS/CRM client (WordPress/Ghost-inspired), staying an RSS reader too. See CMS/CRM Pivot roadmap in `roadmap.md`. Old rule, now historical: no accounts, no journaling/writing feature, no user-authored content — it only reads feeds.
 - Build via xcodegen (`project.yml`), no checked-in `.xcodeproj` diffs expected beyond what xcodegen regenerates.
 - No emojis, no monospace UI chrome (see house style).
+
+## Backend (CMS/CRM pivot, Phase 0 decided 2026-08-02)
+- Supabase, reusing the shared `spark` project (`tjsxsqlxjmanwvmywwvw`) per house convention (free tier capped at 2 projects) — not git-commit-to-Jekyll, because Phase 3 (subscriber contacts) needs real queryable tables.
+- Tables: `inkpress_posts` (title, body_html, status draft/published, timestamps), `inkpress_contacts` (email unique, name, source, created_at). Both RLS-enabled with no policies yet — service-role-only writes until Phase 2 adds authenticated single-user write (Supabase Swift SDK pattern, same as litigate/epiphany).
+- No Swift code or UI against these tables yet — that's Phase 2+.
 
 ## Run
 ```bash
