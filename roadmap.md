@@ -18,3 +18,9 @@ Phased so each phase ships something real instead of one giant unshippable build
 - [ ] **Phase 4 — polish.** Theming/pages (WordPress-style), tags/categories, search.
 
 Note: this pulls Inkpress away from its current "general-purpose reader, no accounts, no user-authored content" rule in its own CLAUDE.md — update that file once Phase 0 is decided.
+
+## TestFlight signing defect (found 2026-08-03)
+
+- [ ] **iOS builds are likely TestFlight-ineligible (ITMS-90886).** This repo has **no `.entitlements` file and no `CODE_SIGN_ENTITLEMENTS`** anywhere, so the app signs without an `application-identifier` while the provisioning profile has one. Apple reports it as "not required to fix", which is why it went unnoticed — but the build cannot be distributed via TestFlight.
+  Fix proven on Uprighty 2026-08-03 (commit `df346b8`): add `<Target>.entitlements` with `application-identifier` = `$(AppIdentifierPrefix)$(CFBundleIdentifier)`, wire via `CODE_SIGN_ENTITLEMENTS` in `project.yml`, hand-commit it (xcodegen silently drops keys).
+  Verify: `codesign -d --entitlements :- <exported>.app` should show `application-identifier`, `beta-reports-active: true`, `get-task-allow: false`. An entitlement change invalidates the profile — refetch with `asc signing fetch`.
