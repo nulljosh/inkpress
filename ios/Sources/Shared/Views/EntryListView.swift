@@ -7,24 +7,37 @@ struct EntryListView: View {
 
     var body: some View {
         NavigationStack {
-            List(feed.entries) { entry in
-                HStack {
-                    NavigationLink(value: entry) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(entry.title).font(.headline)
-                            HStack(spacing: 6) {
-                                if !entry.sourceTitle.isEmpty {
-                                    Text(entry.sourceTitle)
-                                    Text("·")
+            VStack(spacing: 0) {
+                if feed.isLoading && !feed.entries.isEmpty {
+                    ProgressView().progressViewStyle(.linear)
+                }
+                List(feed.entries) { entry in
+                    HStack {
+                        NavigationLink(value: entry) {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(entry.title).font(.headline)
+                                HStack(spacing: 6) {
+                                    if !entry.sourceTitle.isEmpty {
+                                        Text(entry.sourceTitle)
+                                        Text("·")
+                                    }
+                                    Text(entry.date.formatted(date: .abbreviated, time: .omitted))
                                 }
-                                Text(entry.date.formatted(date: .abbreviated, time: .omitted))
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
                             }
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
                         }
+                        Spacer()
+                        UpvoteButton(entryID: entry.id)
                     }
-                    Spacer()
-                    UpvoteButton(entryID: entry.id)
+                }
+                .refreshable { await feed.refresh(feeds: store.feeds) }
+                .overlay {
+                    if feed.entries.isEmpty && feed.isLoading {
+                        ProgressView()
+                    } else if feed.entries.isEmpty {
+                        ContentUnavailableView("No entries yet", systemImage: "doc.text", description: Text("Add a feed or pull to refresh"))
+                    }
                 }
             }
             .navigationTitle("Inkpress")
@@ -40,14 +53,6 @@ struct EntryListView: View {
             }
             .sheet(isPresented: $showFeeds) {
                 ManageFeedsView(store: store)
-            }
-            .refreshable { await feed.refresh(feeds: store.feeds) }
-            .overlay {
-                if feed.entries.isEmpty && feed.isLoading {
-                    ProgressView()
-                } else if feed.entries.isEmpty {
-                    ContentUnavailableView("No entries yet", systemImage: "doc.text", description: Text("Add a feed or pull to refresh"))
-                }
             }
             .task(id: store.feeds) { await feed.refresh(feeds: store.feeds) }
         }

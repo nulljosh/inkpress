@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inkpress — RSS &amp; Atom feed reader</title>
+<meta name="description" content="A clean multi-feed RSS and Atom reader for iOS.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 rx=%2232%22 fill=%22%23161412%22/><path d=%22M100 34 L146 92 L100 172 L54 92 Z%22 fill=%22%23ffb020%22/></svg>">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg2: #f5f5f5;
+    --text: #252a49;
+    --text2: #666;
+    --text3: #aaa;
+    --accent: #ffb020;
+    --border: #e8e8e8;
+    --font-body: -apple-system, system-ui, "Inter", sans-serif;
+    --radius-lg: 16px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111111;
+      --bg2: #1a1a1a;
+      --text: #e8e8f0;
+      --text2: rgba(232,232,240,0.60);
+      --text3: rgba(232,232,240,0.30);
+      --border: rgba(232,232,240,0.10);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 96px 24px 48px;
+    text-align: center;
+  }
+  .icon {
+    width: 88px;
+    height: 88px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+  }
+  p.lede {
+    font-size: 1.15rem;
+    color: var(--text2);
+    line-height: 1.5;
+    margin: 0 0 32px;
+  }
+  .cta {
+    display: inline-block;
+    background: var(--accent);
+    color: #161412;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-size: 1rem;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  .feature {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    background: var(--bg2);
+  }
+  .feature h2 {
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+  }
+  .feature p {
+    color: var(--text2);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  footer {
+    text-align: center;
+    color: var(--text3);
+    font-size: 0.85rem;
+    padding: 32px 24px 64px;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <svg class="icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="200" height="200" rx="32" fill="#161412"/>
+      <path d="M100 34 L146 92 L100 172 L54 92 Z" fill="#ffb020"/>
+      <line x1="100" y1="70" x2="100" y2="150" stroke="#161412" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="100" cy="92" r="8" fill="#161412"/>
+    </svg>
+    <h1>Inkpress</h1>
+    <p class="lede">A clean, fast RSS &amp; Atom reader for iOS. Follow any feed, read it your way.</p>
+    <a class="cta" href="https://apps.apple.com/app/id6787759999">Get it on the App Store</a>
+  </header>
+  <main>
+    <div class="features">
+      <div class="feature">
+        <h2>Any feed</h2>
+        <p>Subscribe to RSS or Atom feeds from any site — blogs, newsletters, publications.</p>
+      </div>
+      <div class="feature">
+        <h2>One clean list</h2>
+        <p>Every subscription merges into a single, distraction-free timeline.</p>
+      </div>
+      <div class="feature">
+        <h2>No accounts</h2>
+        <p>Nothing to sign up for. Your subscriptions stay on your device.</p>
+      </div>
+    </div>
+  </main>
+  <footer>Inkpress</footer>
+</body>
+</html>
