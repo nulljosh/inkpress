@@ -31,3 +31,13 @@ Phased so each phase ships something real instead of one giant unshippable build
 - [ ] **Phase 4 — polish.** Theming/pages (WordPress-style), tags/categories, search.
 
 Note: this pulls Inkpress away from its current "general-purpose reader, no accounts, no user-authored content" rule in its own CLAUDE.md — update that file once Phase 0 is decided.
+
+## Article rendering (2026-08-10)
+- [ ] **Native SwiftUI article renderer (optional).** v1.0.4 renders post bodies in a
+  `WKWebView` (`ios/Sources/Shared/Views/EntryDetailView.swift`) after the previous
+  `NSAttributedString` HTML importer produced blank bodies — SwiftUI `Text` renders nothing
+  for an `AttributedString` containing an `NSTextAttachment`, which is what the importer
+  makes of the `<img>` opening every post. The web view works and is the right lazy answer.
+  Only revisit if offline image caching or a reader mode is wanted; that needs a real
+  HTML→blocks parser. Related: [[project_webview_wrapper_gaps]] — this is a deliberate
+  web view for article bodies, not a whole-app WKWebView wrapper.
