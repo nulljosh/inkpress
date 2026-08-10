@@ -1,8 +1,15 @@
 # Inkpress
-v1.0.2 (v1.0.3 metadata submitted 2026-08-02, build not yet resubmitted)
+v1.0.3 WAITING_FOR_REVIEW (build 202608092030, submitted 2026-08-09)
 
 ## Open
-- Live ASC listing had stale "Journal" copy (subtitle "Monthly engineering journal", journal-only description/keywords) from before the journal/inkpress split — fixed on v1.0.3 metadata via `asc metadata push` 2026-08-02 (subtitle now "RSS & Atom feed reader", description/keywords rewritten for multi-feed RSS reader). Screenshot (`ios/.asc/screenshots/01-list-light.png`) still shows the old single-feed "Journal" list UI and needs regenerating — the app only auto-subscribes to journal.heyitsmejosh.com by default, so a fresh install's screenshot reads as a dedicated journal app unless a second demo feed is added first. Next: add 1-2 demo feeds in the sim, recapture, `asc screenshots upload`, then submit v1.0.3 for review.
+- Nothing blocking on v1.0.3 — awaiting Apple review. The stale "Journal"-branded screenshot was regenerated and the build shipped 2026-08-09; see `roadmap.md` for the full account.
+
+## Ship gotchas (learned 2026-08-09)
+- The App Store icon must be a **fully opaque square** — `AppIcon.appiconset/icon-1024.png` shipped with transparent rounded corners once and the upload failed with **90717**. iOS applies the corner mask itself. Flatten with `magick icon.png -background '#161412' -alpha remove -alpha off -type TrueColor PNG24:icon.png`.
+- `ITSAppUsesNonExemptEncryption=false` now lives in `Sources/iOS/Info.plist`; without it every upload needs a manual `asc builds update --uses-non-exempt-encryption=false`.
+- The 1284x2778 screenshot is `APP_IPHONE_65`, not `IPHONE_67` — `asc screenshots upload` rejects the wrong display type.
+- `asc review submit` can falsely report the prepared submission "does not contain target version". Fall back to `asc review submissions-submit --id <submission-id> --confirm`.
+- The xcodegen scheme is `Journal-iOS` (not `Inkpress`) — the bundle id `com.nulljosh.journal` and project name are Apple-locked from the pre-rename days.
 
 ## Rules
 - Multi-feed RSS/Atom reader, iOS only. Split from the `journal` repo 2026-07-21 — that repo now holds only the Jekyll blog. No shared code between the two; `FeedStore.defaultFeed` in `ios/Sources/Shared/Models/Feed.swift` subscribes to the blog's `feed.xml` on first launch as a regular feed, same as anything a user adds themselves.
@@ -20,7 +27,7 @@ v1.0.2 (v1.0.3 metadata submitted 2026-08-02, build not yet resubmitted)
 ```bash
 cd ios
 xcodegen generate
-xcodebuild -scheme Inkpress -destination 'generic/platform=iOS Simulator' build
+xcodebuild -project journal.xcodeproj -scheme Journal-iOS -destination 'generic/platform=iOS Simulator' build
 ```
 
 ## Key Files
