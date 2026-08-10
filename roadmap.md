@@ -5,11 +5,10 @@ Live state from `asc versions list --app 6787759999`:
 
 | Version | State | Created |
 |---|---|---|
-| 1.0.3 | `WAITING_FOR_REVIEW` | 2026-08-02 |
+| 1.0.3 | `READY_FOR_SALE` | 2026-08-10 |
 | 1.0.2 | `READY_FOR_SALE` | 2026-07-05 |
 
-So **1.0.3 is already in review** — the "currently iOS 1.0.2 only" note below was stale.
-Nothing to do on iOS but wait. No `MAC_OS` version row exists on the record.
+**v1.0.3 APPROVED and LIVE** (approved 2026-08-10, icon redesign + loading indicator + multi-feed screenshot). **v1.0.4 READY** (blank-article fix via WKWebView rendering, not submitted due to Guideline 5.6 freeze until 2026-08-18). No `MAC_OS` version row exists on the record.
 
 ## From App Store.pdf (imported 2026-07-28)
 - [ ] Ship a macOS version of InkPress. **Re-scoped 2026-08-10 — this is real dev work, not an
