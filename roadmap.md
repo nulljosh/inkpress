@@ -1,7 +1,24 @@
 # Inkpress Roadmap
 
+## ASC state verified 2026-08-10
+Live state from `asc versions list --app 6787759999`:
+
+| Version | State | Created |
+|---|---|---|
+| 1.0.3 | `WAITING_FOR_REVIEW` | 2026-08-02 |
+| 1.0.2 | `READY_FOR_SALE` | 2026-07-05 |
+
+So **1.0.3 is already in review** — the "currently iOS 1.0.2 only" note below was stale.
+Nothing to do on iOS but wait. No `MAC_OS` version row exists on the record.
+
 ## From App Store.pdf (imported 2026-07-28)
-- [ ] Ship a macOS version of InkPress — needs a macOS platform/availability row added to the ASC record first (currently iOS 1.0.2 Ready for Distribution only, no macOS row). Merged with the duplicate entry that tracked the ASC half separately.
+- [ ] Ship a macOS version of InkPress. **Re-scoped 2026-08-10 — this is real dev work, not an
+  ASC toggle.** The repo has no `macos/` directory at all (only `ios/`, `web/`, `metadata/`,
+  `signing/`), so there is no macOS target to build. A macOS platform row is *created by
+  submitting a macOS build*; it is not a row you add first and fill in later. Correct order:
+  scaffold a macOS target in xcodegen (`macos/project.yml`, same pattern as healstack/sparkjar)
+  → archive → upload → the `MAC_OS` row appears on `6787759999`. Estimate this as a build task,
+  not a five-minute ASC chore.
 
 ## CMS/CRM pivot (scoped 2026-08-02, big — needs backend, phase before building)
 Goal: Inkpress stays an RSS reader AND becomes a WordPress/Ghost-style CMS+CRM client. Currently pure read-only (no accounts, no write backend) per its own CLAUDE.md — this is a real scope change, not a bolt-on.
