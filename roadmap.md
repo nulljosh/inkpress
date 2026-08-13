@@ -44,8 +44,6 @@ Phased so each phase ships something real instead of one giant unshippable build
 
 Note: this pulls Inkpress away from its current "general-purpose reader, no accounts, no user-authored content" rule in its own CLAUDE.md — update that file once Phase 0 is decided.
 
-## Someday / Explore
-
 ### Article rendering (2026-08-10)
 - **Native SwiftUI article renderer (optional).** Reclassified 2026-08-13: this is conditional on a
   future want, not a pending action — the current web view is the correct answer until one of the
