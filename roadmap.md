@@ -55,3 +55,7 @@ Note: this pulls Inkpress away from its current "general-purpose reader, no acco
   Only revisit if offline image caching or a reader mode is wanted; that needs a real
   HTML→blocks parser. Related: [[project_webview_wrapper_gaps]] — this is a deliberate
   web view for article bodies, not a whole-app WKWebView wrapper.
+
+### From Notes (2026-08-14)
+- [ ] **Landing page.** Inkpress has none. Use bookrank + nyc as the reference, and nimble as the
+  bar to clear — those three are the ones that landed. Sibling: sparkjar needs a UI bump on its own.
