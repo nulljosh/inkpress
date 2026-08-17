@@ -1,136 +1,224 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Inkpress — RSS &amp; Atom feed reader</title>
-<meta name="description" content="A clean multi-feed RSS and Atom reader for iOS.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 rx=%2232%22 fill=%22%23161412%22/><path d=%22M100 34 L146 92 L100 172 L54 92 Z%22 fill=%22%23ffb020%22/></svg>">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inkpress — RSS &amp; Atom feed reader for iOS</title>
+<meta name="description" content="A fast, clean multi-feed RSS and Atom reader for iOS. Add any blog or news feed and read every entry in one place — no accounts, no tracking, no clutter.">
+<meta name="theme-color" content="#ffb020">
+<meta property="og:title" content="Inkpress — RSS &amp; Atom feed reader for iOS">
+<meta property="og:description" content="Add any blog or news feed and read every entry in one place — no accounts, no tracking, no clutter.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://inkpress.heyitsmejosh.com">
+<link rel="icon" href="icon.svg">
 <style>
-  :root {
-    --bg: #ffffff;
-    --bg2: #f5f5f5;
-    --text: #252a49;
-    --text2: #666;
-    --text3: #aaa;
+@import url("https://heyitsmejosh.com/tokens.css");
+
+:root {
+  --accent: #b8730a;
+  --accent-ink: #ffb020;
+  --accent-soft: #fdf5e7;
+  --bg: #ffffff;
+  --bg2: #f7f7f8;
+  --text: #1c1d22;
+  --text2: #5c5f6a;
+  --border: #e6e7ea;
+  --nib: #161412;
+  --font-body: -apple-system, system-ui, "Inter", "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
     --accent: #ffb020;
-    --border: #e8e8e8;
-    --font-body: -apple-system, system-ui, "Inter", sans-serif;
-    --radius-lg: 16px;
+    --accent-soft: #1d1810;
+    --bg: #121316;
+    --bg2: #1a1b1f;
+    --text: #ececf0;
+    --text2: rgba(236,236,240,0.62);
+    --border: rgba(236,236,240,0.12);
+    --nib: #ffb020;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #111111;
-      --bg2: #1a1a1a;
-      --text: #e8e8f0;
-      --text2: rgba(232,232,240,0.60);
-      --text3: rgba(232,232,240,0.30);
-      --border: rgba(232,232,240,0.10);
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-body);
-    -webkit-font-smoothing: antialiased;
-  }
-  header {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 96px 24px 48px;
-    text-align: center;
-  }
-  .icon {
-    width: 88px;
-    height: 88px;
-    border-radius: 20px;
-    margin-bottom: 28px;
-  }
-  h1 {
-    font-size: 2.5rem;
-    margin: 0 0 12px;
-    letter-spacing: -0.02em;
-  }
-  p.lede {
-    font-size: 1.15rem;
-    color: var(--text2);
-    line-height: 1.5;
-    margin: 0 0 32px;
-  }
-  .cta {
-    display: inline-block;
-    background: var(--accent);
-    color: #161412;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 100px;
-    font-size: 1rem;
-  }
-  main {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 24px 96px;
-  }
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 24px;
-  }
-  .feature {
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 24px;
-    background: var(--bg2);
-  }
-  .feature h2 {
-    font-size: 1.05rem;
-    margin: 0 0 8px;
-  }
-  .feature p {
-    color: var(--text2);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 0;
-  }
-  footer {
-    text-align: center;
-    color: var(--text3);
-    font-size: 0.85rem;
-    padding: 32px 24px 64px;
-  }
+}
+:root[data-theme="dark"] {
+  --accent: #ffb020;
+  --accent-soft: #1d1810;
+  --bg: #121316;
+  --bg2: #1a1b1f;
+  --text: #ececf0;
+  --text2: rgba(236,236,240,0.62);
+  --border: rgba(236,236,240,0.12);
+  --nib: #ffb020;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--accent-ink); color: #161412; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+
+.container { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+
+.hero { background: var(--accent-soft); padding: 5.5rem 0 4.5rem; text-align: center; }
+.hero-icon { width: 88px; height: 88px; margin: 0 auto 1.75rem; display: block; }
+.hero h1 {
+  font-size: clamp(2.25rem, 6.5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin-bottom: 0.85rem;
+}
+.hero p {
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  color: var(--text2);
+  max-width: 34rem;
+  margin: 0 auto 2.25rem;
+}
+
+.buttons { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 100px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  border: 1.5px solid transparent;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-1px); }
+.btn-primary { background: var(--nib); color: var(--bg); }
+.btn-primary:hover { opacity: 0.88; }
+.btn-outline { border-color: var(--border); color: var(--text); background: var(--bg); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+section { padding: 4rem 0; }
+.features h2, .closing h2, .shot h2 {
+  font-size: clamp(1.5rem, 3.6vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.25rem;
+  text-align: center;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.feature {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem;
+}
+.feature h3 { font-size: 1rem; font-weight: 650; margin-bottom: 0.4rem; }
+.feature p { font-size: 0.93rem; color: var(--text2); }
+
+.shot { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.shot figure { text-align: center; }
+.shot img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  display: block;
+  margin: 0 auto;
+}
+.shot figcaption {
+  color: var(--text2);
+  font-size: 0.92rem;
+  margin-top: 1.25rem;
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.closing { text-align: center; }
+.closing p { color: var(--text2); max-width: 34rem; margin: 0 auto 1.75rem; }
+
+footer { padding: 2.5rem 0 3.5rem; text-align: center; font-size: 0.9rem; color: var(--text2); border-top: 1px solid var(--border); }
+footer p + p { margin-top: 0.35rem; }
 </style>
 </head>
 <body>
-  <header>
-    <svg class="icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect width="200" height="200" rx="32" fill="#161412"/>
-      <path d="M100 34 L146 92 L100 172 L54 92 Z" fill="#ffb020"/>
-      <line x1="100" y1="70" x2="100" y2="150" stroke="#161412" stroke-width="5" stroke-linecap="round"/>
-      <circle cx="100" cy="92" r="8" fill="#161412"/>
-    </svg>
+
+<section class="hero">
+  <div class="container">
+    <img class="hero-icon" src="icon.svg" alt="Inkpress icon" width="88" height="88">
     <h1>Inkpress</h1>
-    <p class="lede">A clean, fast RSS &amp; Atom reader for iOS. Follow any feed, read it your way.</p>
-    <a class="cta" href="https://apps.apple.com/app/id6787759999">Get it on the App Store</a>
-  </header>
-  <main>
-    <div class="features">
+    <p>A fast, clean multi-feed RSS and Atom reader for iOS. Add any blog or news feed and read every entry in one place — no accounts, no tracking, no clutter.</p>
+    <div class="buttons">
+      <a href="https://apps.apple.com/app/id6787759999" class="btn btn-primary">Get it on the App Store</a>
+      <a href="https://github.com/nulljosh/inkpress" class="btn btn-outline">Source</a>
+    </div>
+  </div>
+</section>
+
+<section class="shot">
+  <div class="container">
+    <h2>Every feed, one list</h2>
+    <figure>
+      <img src="screenshot-feed.png" alt="Inkpress on iPhone showing a merged feed list with entries from Hacker News, Daring Fireball and The Verge" width="1284" height="2778" loading="lazy">
+      <figcaption>Subscriptions merge into a single timeline, newest first, with the source and date on every entry.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2>What it does</h2>
+    <div class="grid">
       <div class="feature">
-        <h2>Any feed</h2>
-        <p>Subscribe to RSS or Atom feeds from any site — blogs, newsletters, publications.</p>
+        <h3>Any RSS or Atom feed</h3>
+        <p>Subscribe to blogs, newsletters and publications — anything that publishes a feed.</p>
       </div>
       <div class="feature">
-        <h2>One clean list</h2>
-        <p>Every subscription merges into a single, distraction-free timeline.</p>
+        <h3>One merged timeline</h3>
+        <p>Every subscription collapses into a single distraction-free list instead of per-site silos.</p>
       </div>
       <div class="feature">
-        <h2>No accounts</h2>
-        <p>Nothing to sign up for. Your subscriptions stay on your device.</p>
+        <h3>Reads offline</h3>
+        <p>Entries cache on the device, so everything you have already pulled down stays readable.</p>
+      </div>
+      <div class="feature">
+        <h3>Native reading view</h3>
+        <p>Article bodies render fast and clean, built in SwiftUI rather than wrapped in a browser shell.</p>
+      </div>
+      <div class="feature">
+        <h3>Light and dark</h3>
+        <p>Follows the system appearance without a settings trip.</p>
+      </div>
+      <div class="feature">
+        <h3>No accounts, no tracking</h3>
+        <p>Nothing to sign up for. Subscriptions live on your device and go nowhere else.</p>
       </div>
     </div>
-  </main>
-  <footer>Inkpress</footer>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container">
+    <h2>Start reading</h2>
+    <p>Free on the App Store for iPhone and iPad. Add a feed and it works immediately.</p>
+    <div class="buttons">
+      <a href="https://apps.apple.com/app/id6787759999" class="btn btn-primary">Get it on the App Store</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Inkpress &mdash; by <a href="https://heyitsmejosh.com">Joshua Trommel</a></p>
+    <p><a href="https://github.com/nulljosh/inkpress">Source on GitHub</a> &middot; <a href="https://journal.heyitsmejosh.com">Privacy</a></p>
+  </div>
+</footer>
+
 </body>
 </html>
