@@ -34,3 +34,7 @@ xcodebuild -scheme Inkpress -destination 'generic/platform=iOS Simulator' build
 
 ## License
 MIT 2026 Joshua Trommel
+
+## Whitepaper
+
+[Technical whitepaper](WHITEPAPER.md)
