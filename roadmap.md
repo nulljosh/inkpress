@@ -55,13 +55,3 @@ Note: this pulls Inkpress away from its current "general-purpose reader, no acco
   Only revisit if offline image caching or a reader mode is wanted; that needs a real
   HTML→blocks parser. Related: [[project_webview_wrapper_gaps]] — this is a deliberate
   web view for article bodies, not a whole-app WKWebView wrapper.
-
-### From Notes (2026-08-14)
-- [x] **Landing page.** Rebuilt to the bookrank house pattern 2026-08-17 and deployed to the
-  `inkpress` Pages project (live at inkpress.heyitsmejosh.com). The note's "Inkpress has none" was
-  stale — a thin page shipped in `f34af4b`; this replaces it. Adds the real 1284x2778 app
-  screenshot (`web/screenshot-feed.png`, copied from `ios/.asc/screenshots/01-list-light.png`),
-  shared `tokens.css` import, og/theme-color meta, six feature cards written from the actual
-  App Store metadata, and light/dark via `prefers-color-scheme` + `[data-theme]`. Amber #ffb020
-  from the nib icon is the accent; link/text amber darkened to #b8730a in light mode for contrast.
-  Sibling item still open: sparkjar needs a UI bump on its own.
