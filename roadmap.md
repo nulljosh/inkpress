@@ -59,6 +59,19 @@ Note: this pulls Inkpress away from its current "general-purpose reader, no acco
 ## Ingested 2026-08-22
 - [ ] Audit the journal repo for sensitive/personal data and clean it up. From Notes: "Clean up any sensitive data, or anything personal. All info should remain about code, not personal relationships etc." Applies to the journal content repo and anything already deployed.
 
+## Landing page (2026-08-23)
+- [ ] Point App Store Connect at the real pages once `inkpress.heyitsmejosh.com` is
+  serving. `metadata/app-info/en-US.json` has `privacyPolicyUrl` and
+  `metadata/version/1.0.3/en-US.json` has `supportUrl`, both set to
+  `https://journal.heyitsmejosh.com` — the Jekyll blog homepage, which is neither a
+  privacy policy nor a support page. Should become
+  `https://inkpress.heyitsmejosh.com/privacy.html` and `.../support.html`. Left
+  unchanged for now because pointing Apple at URLs that do not resolve yet is worse
+  than the current wrong-but-live URL. Order: deploy Pages, confirm both pages load,
+  then edit the metadata and sync with `asc`.
+- [ ] Add the landing page to the portfolio so it links there rather than straight to
+  the App Store listing.
+
 ## 2026-08-23 — needs real test coverage
 iOS 1.0.3 is Ready for Distribution and the App Store side is fine. The gap is testing, not review.
 - [ ] Add tests over the core write/save/publish path; run them before the next version bump.

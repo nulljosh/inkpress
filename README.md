@@ -7,7 +7,7 @@
 Multi-feed RSS/Atom reader for iOS. Add any feed, get an aggregated timeline
 across all of them.
 
-Live on the [App Store](https://apps.apple.com/app/id6787759999)
+Live on the [App Store](https://apps.apple.com/app/id6787759999) — landing page at [inkpress.heyitsmejosh.com](https://inkpress.heyitsmejosh.com)
 
 Split from the `journal` repo 2026-07-21 — this repo now holds only the iOS
 app. The blog that used to share this folder lives at
@@ -27,6 +27,25 @@ cd ios
 xcodegen generate
 xcodebuild -scheme Inkpress -destination 'generic/platform=iOS Simulator' build
 ```
+
+## Landing page
+
+Static site in `web/` — `index.html`, plus `privacy.html` and `support.html`
+(intended as the App Store privacy-policy and support URLs — App Store
+Connect still points both at the blog, see `roadmap.md`). No build step; the
+three pages share `web/style.css`.
+
+Preview locally:
+
+```bash
+cd web && python3 -m http.server 8000
+```
+
+Deploys to Cloudflare Pages from `main` whenever `web/` changes, via
+`.github/workflows/deploy-web.yml`. The workflow runs `scripts/check-links.py`
+first so a broken internal link fails the build instead of shipping. Needs
+repo secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`; the custom
+domain is attached once in the Cloudflare dashboard.
 
 ## Roadmap
 - [ ] Splash screen (needs a design asset, not just code)
