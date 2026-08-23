@@ -60,6 +60,24 @@ Note: this pulls Inkpress away from its current "general-purpose reader, no acco
 - [ ] Audit the journal repo for sensitive/personal data and clean it up. From Notes: "Clean up any sensitive data, or anything personal. All info should remain about code, not personal relationships etc." Applies to the journal content repo and anything already deployed.
 
 ## Landing page (2026-08-23)
+Pages exist and are pushed (`web/`: `index.html`, `privacy.html`, `support.html`).
+Everything below is account setup that needs Cloudflare and GitHub credentials — all
+of it is doable from a phone browser, no terminal required.
+
+- [ ] **Create the Cloudflare Pages project.** dash.cloudflare.com > Workers & Pages >
+  Create > Pages > Connect to Git > `nulljosh/inkpress`. Production branch `main`,
+  framework preset None, build command empty, output directory `web`. Project name must
+  be `inkpress` to match `wrangler.toml` and the deploy workflow.
+- [ ] **Attach the domain.** Same project > Custom domains > `inkpress.heyitsmejosh.com`.
+  DNS is already on Cloudflare, so the CNAME is added automatically.
+- [ ] **Add the two repo secrets.** github.com/nulljosh/inkpress > Settings > Secrets and
+  variables > Actions: `CLOUDFLARE_API_TOKEN` (My Profile > API Tokens > Create, template
+  "Edit Cloudflare Workers", or a custom token with Account > Cloudflare Pages > Edit) and
+  `CLOUDFLARE_ACCOUNT_ID` (right-hand sidebar of any Cloudflare dashboard page).
+  Only needed for the GitHub Actions path — if the Git integration above is connected,
+  Cloudflare builds on its own and the workflow is belt-and-braces.
+- [ ] **Confirm both pages load** at `/privacy.html` and `/support.html` before touching
+  App Store Connect.
 - [ ] Point App Store Connect at the real pages once `inkpress.heyitsmejosh.com` is
   serving. `metadata/app-info/en-US.json` has `privacyPolicyUrl` and
   `metadata/version/1.0.3/en-US.json` has `supportUrl`, both set to
