@@ -69,7 +69,8 @@ of it is doable from a phone browser, no terminal required.
   framework preset None, build command empty, output directory `web`. Project name must
   be `inkpress` to match `wrangler.toml` and the deploy workflow.
 - [ ] **Attach the domain.** Same project > Custom domains > `inkpress.heyitsmejosh.com`.
-  DNS is already on Cloudflare, so the CNAME is added automatically.
+  If `heyitsmejosh.com` is on Cloudflare DNS the record is added for you; if it is
+  hosted elsewhere, add the CNAME Cloudflare shows you at the current DNS provider.
 - [ ] **Add the two repo secrets.** github.com/nulljosh/inkpress > Settings > Secrets and
   variables > Actions: `CLOUDFLARE_API_TOKEN` (My Profile > API Tokens > Create, template
   "Edit Cloudflare Workers", or a custom token with Account > Cloudflare Pages > Edit) and
