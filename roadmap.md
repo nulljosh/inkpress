@@ -58,3 +58,7 @@ Note: this pulls Inkpress away from its current "general-purpose reader, no acco
 
 ## Ingested 2026-08-22
 - [ ] Audit the journal repo for sensitive/personal data and clean it up. From Notes: "Clean up any sensitive data, or anything personal. All info should remain about code, not personal relationships etc." Applies to the journal content repo and anything already deployed.
+
+## 2026-08-23 — needs real test coverage
+iOS 1.0.3 is Ready for Distribution and the App Store side is fine. The gap is testing, not review.
+- [ ] Add tests over the core write/save/publish path; run them before the next version bump.
