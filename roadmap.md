@@ -55,3 +55,6 @@ Note: this pulls Inkpress away from its current "general-purpose reader, no acco
   Only revisit if offline image caching or a reader mode is wanted; that needs a real
   HTML→blocks parser. Related: [[project_webview_wrapper_gaps]] — this is a deliberate
   web view for article bodies, not a whole-app WKWebView wrapper.
+
+## Ingested 2026-08-22
+- [ ] Audit the journal repo for sensitive/personal data and clean it up. From Notes: "Clean up any sensitive data, or anything personal. All info should remain about code, not personal relationships etc." Applies to the journal content repo and anything already deployed.
