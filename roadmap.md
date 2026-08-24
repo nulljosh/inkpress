@@ -97,5 +97,4 @@ iOS 1.0.3 is Ready for Distribution and the App Store side is fine. The gap is t
 
 ## Ingested 2026-08-24
 
-- [x] **GitHub Actions "Deploy landing page" was failing on every push** (Notes 2026-08-24, run 32651284354). Root cause: the `cloudflare/wrangler-action` step had no `CLOUDFLARE_API_TOKEN` — the secret is not set on this repo (no repo in ~/Documents/Code has it) and the only local Cloudflare token is DNS-scoped, so it could not deploy Pages either. Fixed 2026-08-24 by dropping the deploy step and keeping the link check; the workflow is now `Check landing page`. Deploys stay manual (`npx wrangler pages deploy --project-name=inkpress`).
 - [ ] Optional follow-up: mint a Pages-scoped Cloudflare token, add it as the `CLOUDFLARE_API_TOKEN` repo secret, and restore the deploy step (it is preserved as a comment in `.github/workflows/deploy-web.yml`). Needs the Cloudflare dashboard — the wrangler OAuth token can't create API tokens.
