@@ -94,3 +94,7 @@ of it is doable from a phone browser, no terminal required.
 ## 2026-08-23 — needs real test coverage
 iOS 1.0.3 is Ready for Distribution and the App Store side is fine. The gap is testing, not review.
 - [ ] Add tests over the core write/save/publish path; run them before the next version bump.
+
+## Ingested 2026-08-24
+
+- [ ] **GitHub Actions "Deploy landing page" is failing on `main`** (Notes 2026-08-24). Run #1, commit `1a60039` ("web: add privacy and support pages, fix landing page claims"), triggered via pull request by nulljosh. All jobs failed; the `deploy` job failed after 19s with 3 annotations. Pull the run log with `gh run view` and fix.
