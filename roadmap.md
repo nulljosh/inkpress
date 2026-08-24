@@ -98,3 +98,10 @@ iOS 1.0.3 is Ready for Distribution and the App Store side is fine. The gap is t
 ## Ingested 2026-08-24
 
 - [ ] Optional follow-up: mint a Pages-scoped Cloudflare token, add it as the `CLOUDFLARE_API_TOKEN` repo secret, and restore the deploy step (it is preserved as a comment in `.github/workflows/deploy-web.yml`). Needs the Cloudflare dashboard — the wrangler OAuth token can't create API tokens.
+- [ ] **Extend Inkpress from a text/RSS reader into podcasts.** From Notes 2026-08-24, confirmed
+      the same day: this rides on Inkpress rather than becoming a separate app, since the feed
+      plumbing already exists — a podcast feed is just RSS with `<enclosure>` audio. Use Apple's
+      Podcasts app as the design reference. Needs: enclosure parsing, an audio player with
+      background playback and lock-screen controls (`MPNowPlayingInfoCenter` / `AVAudioSession`),
+      per-episode playback position, and downloads for offline. Note this widens Inkpress from a
+      reading product into a listening one — worth a positioning check before it grows further.
