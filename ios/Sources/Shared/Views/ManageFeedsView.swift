@@ -32,6 +32,25 @@ struct ManageFeedsView: View {
                     }
                     .onDelete(perform: store.remove)
                 }
+
+                if !store.unsubscribedSeeds.isEmpty {
+                    Section("Suggested") {
+                        ForEach(store.unsubscribedSeeds) { feed in
+                            Button { store.add(feed) } label: {
+                                HStack {
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text(feed.title).font(.body)
+                                        Text(feed.url).font(.caption)
+                                            .foregroundStyle(.secondary).lineLimit(1)
+                                    }
+                                    Spacer()
+                                    Image(systemName: "plus")
+                                }
+                            }
+                            .tint(.primary)
+                        }
+                    }
+                }
             }
             .navigationTitle("Feeds")
             .navigationBarTitleDisplayMode(.inline)

@@ -35,5 +35,12 @@ func feedParserDemo() {
     assert(r[0].title == "RSS Item", "rss title mismatch: \(r[0].title)")
     assert(r[0].url == "https://example.com/post", "rss url mismatch: \(r[0].url)")
     print("FeedParser demo: OK")
+
+    // Named-zone RFC822 (CBC ships EDT, BBC ships GMT); the offset-only format misses these.
+    assert(FeedParser.parseDate("Wed, 12 Aug 2026 15:00:00 EDT") != .distantPast, "EDT pubDate unparsed")
+    assert(FeedParser.parseDate("Tue, 25 Aug 2026 11:53:36 GMT") != .distantPast, "GMT pubDate unparsed")
+    assert(FeedParser.parseDate("Tue, 25 Aug 2026 11:20:18 -0400") != .distantPast, "offset pubDate unparsed")
+    // Junk must sink, not float to the top as "now".
+    assert(FeedParser.parseDate("not a date") == .distantPast, "unparseable date should sink")
 }
 #endif

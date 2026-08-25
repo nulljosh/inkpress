@@ -119,17 +119,23 @@ final class FeedParser: NSObject, XMLParserDelegate {
         ))
     }
 
-    /// Accept both ISO8601 (Atom) and RFC822 (RSS pubDate).
-    private static let rfc822: DateFormatter = {
+    /// Accept both ISO8601 (Atom) and RFC822 (RSS pubDate). Two RFC822 shapes, because the
+    /// zone is written either as an offset (`-0400`) or as a name (`EDT`, `GMT`) and `Z`
+    /// only reads the offset form — CBC ships named zones, so one format is not enough.
+    private static let rfc822: [DateFormatter] = ["EEE, dd MMM yyyy HH:mm:ss Z",
+                                                  "EEE, dd MMM yyyy HH:mm:ss zzz"].map {
         let f = DateFormatter()
         f.locale = Locale(identifier: "en_US_POSIX")
-        f.dateFormat = "EEE, dd MMM yyyy HH:mm:ss Z"
+        f.dateFormat = $0
         return f
-    }()
+    }
 
     static func parseDate(_ s: String) -> Date {
         if let d = ISO8601DateFormatter().date(from: s) { return d }
-        if let d = rfc822.date(from: s) { return d }
-        return Date()
+        for f in rfc822 { if let d = f.date(from: s) { return d } }
+        // ponytail: sink undated entries rather than defaulting to `Date()`. Entries are
+        // sorted newest-first, so "now" would pin every unparseable entry above real news
+        // forever — a whole feed's worth, if that feed uses a format we miss.
+        return .distantPast
     }
 }

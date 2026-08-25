@@ -1,5 +1,22 @@
 # Inkpress Roadmap
 
+## 1.0.5 — newsline feed merge, shipped 2026-08-25
+
+Inkpress no longer launches subscribed to one blog. `FeedStore.seedFeeds` now carries the 16
+curated outlets from newsline (`~/Documents/Code/newsline/src/feeds.js`) alongside the Journal
+feed, and Manage Feeds grew a **Suggested** section so a removed seed can be re-added. Only the
+*list* crossed over — Inkpress still parses RSS/Atom itself, so there is no runtime dependency
+on the newsline Worker, and newsline's bias scores were dropped (no bias bar here).
+
+Closes the "Phase 3 merges: newsline → inkpress" item in the cross-repo roadmap, and settles
+"Newsline: do NOT submit" — its value now lives inside a shipping app.
+
+Fixed in the same version, and worth remembering: `FeedParser.parseDate` only understood
+RFC822 zones written as an offset (`-0400`), not as a name (`EDT`, `GMT`). Unparsed dates fell
+back to `Date()`, so an entire feed could pin itself to the top of a newest-first list forever
+— invisible with one feed, glaring with seventeen. Now tries a named-zone format too and falls
+back to `.distantPast`, so anything genuinely undated sinks instead of floating.
+
 ## ASC state verified 2026-08-10
 Live state from `asc versions list --app 6787759999`:
 
