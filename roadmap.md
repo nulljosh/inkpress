@@ -1,6 +1,19 @@
 # Inkpress Roadmap
 
-## 1.0.5 — newsline feed merge, shipped 2026-08-25
+## 1.0.5 — newsline feed merge, `WAITING_FOR_REVIEW` 2026-08-25
+
+Submitted 16:45 UTC. Build `202608250942`, version id `2d6c2b40-2dc8-4d7f-ad99-4ee610b0bbd0`,
+submission `a26ac12d-8e2b-4468-ba96-9f2f53ee70ba`. `marketingUrl` set to heyitsmejosh.com in
+the same window (it locks at READY_FOR_SALE), so Inkpress comes off the cross-repo
+"still locked" list.
+
+**Gotcha for next time:** `asc workflow run ship-ios` archived, exported and uploaded fine, then
+failed its `publish` step on `submission-blocking localization fields are missing: en-US:
+whatsNew`. Writing `metadata/version/<v>/en-US.json` is not enough — the workflow never pushes
+it. Run `asc metadata push --app <id> --version <v> --platform IOS --dir ./metadata` *before*
+the workflow. And do not just re-run `publish` to recover: the build is already uploaded, so it
+dies on "bundle version must be higher". Recover with `asc review submit --app <id> --version
+<v> --build-id <id> --confirm` against the build that already landed.
 
 Inkpress no longer launches subscribed to one blog. `FeedStore.seedFeeds` now carries the 16
 curated outlets from newsline (`~/Documents/Code/newsline/src/feeds.js`) alongside the Journal
