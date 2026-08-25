@@ -88,8 +88,9 @@ of it is doable from a phone browser, no terminal required.
   unchanged for now because pointing Apple at URLs that do not resolve yet is worse
   than the current wrong-but-live URL. Order: deploy Pages, confirm both pages load,
   then edit the metadata and sync with `asc`.
-- [ ] Add the landing page to the portfolio so it links there rather than straight to
-  the App Store listing.
+- [x] Add the landing page to the portfolio so it links there rather than straight to
+  the App Store listing. DONE — verified 2026-08-24: `nulljosh.github.io/index.html:121`
+  points at `https://inkpress.heyitsmejosh.com` (commit `32234c0`), returns 200.
 
 ## 2026-08-23 — needs real test coverage
 iOS 1.0.3 is Ready for Distribution and the App Store side is fine. The gap is testing, not review.
