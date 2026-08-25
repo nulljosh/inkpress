@@ -105,3 +105,11 @@ iOS 1.0.3 is Ready for Distribution and the App Store side is fine. The gap is t
       background playback and lock-screen controls (`MPNowPlayingInfoCenter` / `AVAudioSession`),
       per-episode playback position, and downloads for offline. Note this widens Inkpress from a
       reading product into a listening one — worth a positioning check before it grows further.
+
+## Ingested 2026-08-24
+
+- [x] **Portfolio link 404 — NOT REPRODUCIBLE, closed.** A note reported the portfolio's Inkpress
+      link 404ing (it used to point at the App Store). Re-probed 2026-08-24: `nulljosh.github.io/index.html:121`
+      links to `https://inkpress.heyitsmejosh.com` which returns **200**, and the landing page's own
+      App Store link (`apps.apple.com/app/id6787759999`) resolves 200 to the live listing. Already
+      fixed by the switch to the landing page. Don't re-investigate without a fresh repro.
