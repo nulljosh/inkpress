@@ -1,6 +1,6 @@
 # Inkpress Technical Whitepaper
 
-**v1.0.2** | July 2026
+**v1.0.5** | August 2026
 
 Inkpress is a multi-feed RSS/Atom reader for iOS. Add any feed, get an
 aggregated, reverse-chronological timeline across all of them. Split from
@@ -24,6 +24,8 @@ HTML content is wrapped in a forced `<style>` block before rendering, since
 render unstyled serif text with no spacing.
 
 ## Scope
+
+v1.0.3 is live on the App Store; v1.0.5 (seeded newsline feeds) is in review.
 
 No accounts, no user-authored content, no writing/logging feature — Inkpress
 only reads feeds. Cross-device sync of subscriptions would need accounts;
