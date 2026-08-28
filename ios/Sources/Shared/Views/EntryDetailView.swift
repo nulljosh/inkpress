@@ -22,19 +22,25 @@ struct EntryDetailView: View {
         <meta name="supported-color-schemes" content="light dark">
         <style>
           :root { color-scheme: light dark; }
+          /* Feed HTML is arbitrary: fixed-width cards, wide tables and long
+             unbroken URLs all used to push the body past the viewport and clip
+             at the right edge. Clamp every element to its parent and let the
+             genuinely wide blocks scroll inside themselves instead. */
+          * { max-width: 100%; box-sizing: border-box; }
           body {
             font: -apple-system-body;
             font-family: -apple-system, system-ui;
             font-size: 17px; line-height: 1.5;
             margin: 0; padding: 16px 20px 40px;
             -webkit-text-size-adjust: 100%;
+            overflow-wrap: break-word;
           }
           h1 { font-size: 24px; margin: 0 0 4px; }
           h2 { font-size: 20px; margin: 24px 0 8px; }
           h3 { font-size: 18px; margin: 20px 0 8px; }
           p { margin: 0 0 14px; }
           img { max-width: 100%; height: auto; border-radius: 8px; }
-          pre { overflow-x: auto; }
+          pre, table, blockquote { display: block; overflow-x: auto; }
           code { font-size: 15px; }
           .date { color: gray; font-size: 13px; margin: 0 0 20px; }
         </style></head><body>

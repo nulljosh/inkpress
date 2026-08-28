@@ -153,3 +153,6 @@ coverage, and it makes the honest tools in the other repos harder to find.
 Shipped instead in: epiphany, healstack, roost, curvely, wiretext, litigate,
 cadence, sparkjar, lexly, talli, quotable, wordroot, newsline, nyc, notes,
 bookrank, homeward.
+
+## From Notes (imported 2026-08-27)
+- [x] Journal entries overflow horizontally on iPhone — the "Fortified" (2026-08-17) entry card is cut off at the right edge ("the journ…", "12 posts rewritten, 24 headers made visible" truncated). Constrain the entry card / wrap its content instead of letting it scroll off-screen.
