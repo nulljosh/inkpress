@@ -17,6 +17,7 @@
 <body>
 
 <section class="hero">
+  <div class="hero-wall" id="heroWall" aria-hidden="true"></div>
   <div class="container">
     <img class="hero-icon" src="icon.svg" alt="Inkpress icon" width="88" height="88">
     <h1>Inkpress</h1>
@@ -86,6 +87,48 @@
     <p><a href="privacy.html">Privacy</a> &middot; <a href="support.html">Support</a> &middot; <a href="https://github.com/nulljosh/inkpress">Source on GitHub</a></p>
   </div>
 </footer>
+
+<script>
+// hero wall: doubled columns of feed entries drifting in alternating directions
+(function () {
+  var items = [
+    ['What Happened to HackerOne?', 'news.ycombinator.com'],
+    ['How We Pushed CDC into Postgres', 'news.ycombinator.com'],
+    ['Japanese court overturns Red RAW video patent', 'news.ycombinator.com'],
+    ['Connect Your Agents to Your API', 'daringfireball.net'],
+    ['The Ambition Project', 'news.ycombinator.com'],
+    ['To recruit teachers, districts are building homes', 'www.npr.org'],
+    ['Tuxedo No. 2 - Cocktail recipes', 'news.ycombinator.com'],
+    ['New Zealand lost its music media', 'www.theverge.com'],
+    ['No Dogs in Space is a music history podcast', 'www.theverge.com'],
+    ['The case for a slower web', 'journal.heyitsmejosh.com'],
+    ['Inside the RSS revival', 'www.bbc.com'],
+    ['A quiet week in markets', 'www.bloomberg.com'],
+    ['Why offline-first still wins', 'daringfireball.net'],
+    ['Vancouver transit ridership hits a record', 'vancouversun.com'],
+    ['The long tail of independent blogs', 'news.ycombinator.com'],
+    ['Reading is not a feed problem', 'journal.heyitsmejosh.com']
+  ];
+  var wall = document.getElementById('heroWall');
+  var cols = Math.max(3, Math.ceil(window.innerWidth / 220));
+  var per = Math.max(3, Math.floor(items.length / cols));
+  for (var c = 0; c < cols; c++) {
+    var col = document.createElement('div');
+    col.className = 'wall-col ' + (c % 2 ? 'down' : 'up');
+    col.style.setProperty('--dur', (70 + c * 11) + 's');
+    var slice = items.slice((c * per) % items.length, (c * per) % items.length + per);
+    slice.concat(slice, slice).forEach(function (it) {  // tripled, so the loop is seamless
+      var card = document.createElement('div');
+      var t = document.createElement('b');
+      t.textContent = it[0];
+      card.appendChild(t);
+      card.appendChild(document.createTextNode(it[1]));
+      col.appendChild(card);
+    });
+    wall.appendChild(col);
+  }
+})();
+</script>
 
 </body>
 </html>
