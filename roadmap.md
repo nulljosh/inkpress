@@ -155,5 +155,4 @@ cadence, sparkjar, lexly, talli, quotable, wordroot, newsline, nyc, notes,
 bookrank, homeward.
 
 ## From Notes (imported 2026-08-27)
-- [x] Journal entries overflow horizontally on iPhone — the "Fortified" (2026-08-17) entry card is cut off at the right edge ("the journ…", "12 posts rewritten, 24 headers made visible" truncated). Constrain the entry card / wrap its content instead of letting it scroll off-screen.
 - [ ] Ship the entry-card overflow fix (`3265419`). Blocked on a version bump: `ios/project.yml` still reads MARKETING_VERSION 1.0.5 / build 202608250940, which is the version already WAITING_FOR_REVIEW — so the fix is not in any submitted binary. Decide whether to let 1.0.5 finish review and ship this as 1.0.6, or pull 1.0.5 and resubmit with the fix included.
