@@ -1,5 +1,6 @@
 # Inkpress
-v1.0.5 WAITING_FOR_REVIEW (build 202608250942, submitted 2026-08-25). v1.0.3 is live.
+iOS v1.0.5 READY_FOR_SALE. macOS build 202608250940 uploaded and VALID 2026-08-28,
+not submitted (4.3(a) wave). Web reader live at inkpress.heyitsmejosh.com/read.
 
 ## Open
 - Nothing blocking on v1.0.5 — awaiting Apple review. It seeds 16 curated news feeds on first launch (from newsline's list) instead of one blog, and fixes a date-parser bug where feeds stamping RFC822 zones by name (EDT, GMT) sorted to the top forever. See `roadmap.md`.
@@ -9,10 +10,11 @@ v1.0.5 WAITING_FOR_REVIEW (build 202608250942, submitted 2026-08-25). v1.0.3 is 
 - `ITSAppUsesNonExemptEncryption=false` now lives in `Sources/iOS/Info.plist`; without it every upload needs a manual `asc builds update --uses-non-exempt-encryption=false`.
 - The 1284x2778 screenshot is `APP_IPHONE_65`, not `IPHONE_67` — `asc screenshots upload` rejects the wrong display type.
 - `asc review submit` can falsely report the prepared submission "does not contain target version". Fall back to `asc review submissions-submit --id <submission-id> --confirm`.
+- macOS: scheme `Inkpress-macOS`; `asc xcode export` is iOS-only, so archive/export with raw xcodebuild + `ExportOptions-macOS.plist`, upload with `asc builds upload --pkg --version --build-number`.
 - The xcodegen scheme is `Journal-iOS` (not `Inkpress`) — the bundle id `com.nulljosh.journal` and project name are Apple-locked from the pre-rename days.
 
 ## Rules
-- Multi-feed RSS/Atom reader, iOS only. Split from the `journal` repo 2026-07-21 — that repo now holds only the Jekyll blog. No shared code between the two; `FeedStore.seedFeeds` in `ios/Sources/Shared/Models/Feed.swift` subscribes to the blog's `feed.xml` on first launch as one regular feed among the curated news seeds, same as anything a user adds themselves.
+- Multi-feed RSS/Atom reader: iOS, macOS (`Inkpress-macOS`, same bundle id, Universal Purchase) and a browser reader in `web/read.html`. Split from the `journal` repo 2026-07-21 — that repo now holds only the Jekyll blog. No shared code between the two; `FeedStore.seedFeeds` in `ios/Sources/Shared/Models/Feed.swift` subscribes to the blog's `feed.xml` on first launch as one regular feed among the curated news seeds, same as anything a user adds themselves.
 - Renamed from "Journal" to "Inkpress" 2026-07-06 to avoid a name collision with Apple's own Journal app. ASC app id 6787759999, GitHub `nulljosh/inkpress`.
 - **Superseded 2026-08-02**: the "no accounts, no writing feature" rule below is being phased out — Inkpress is pivoting to also be a CMS/CRM client (WordPress/Ghost-inspired), staying an RSS reader too. See CMS/CRM Pivot roadmap in `roadmap.md`. Old rule, now historical: no accounts, no journaling/writing feature, no user-authored content — it only reads feeds.
 - Build via xcodegen (`project.yml`), no checked-in `.xcodeproj` diffs expected beyond what xcodegen regenerates.
