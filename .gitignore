@@ -14,3 +14,4 @@ signing/
 **/.asc/release/
 **/.asc/runs/
 **/.asc/reports/
+.wrangler/
