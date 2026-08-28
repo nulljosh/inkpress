@@ -1,5 +1,13 @@
 # Inkpress Roadmap
 
+## Landing Page — animated hero + screenshot fix, shipped 2026-08-27
+
+Fixed two web/ bugs. Screenshots were rendering vertically stretched because the `img` height
+attribute locked aspect ratio while CSS `max-width` constrained width; added `height: auto` to
+restore proportions. Added animated hero matching Bookrank's style with drifting feed-headline
+cards instead of book covers, readability scrim, and prefers-reduced-motion guard. Deployed to
+Cloudflare Pages.
+
 ## 1.0.5 — newsline feed merge, `WAITING_FOR_REVIEW` 2026-08-25
 
 Submitted 16:45 UTC. Build `202608250942`, version id `2d6c2b40-2dc8-4d7f-ad99-4ee610b0bbd0`,
