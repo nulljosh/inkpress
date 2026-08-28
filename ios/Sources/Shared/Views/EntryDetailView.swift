@@ -1,5 +1,10 @@
 import SwiftUI
 import WebKit
+#if os(macOS)
+import AppKit
+#else
+import UIKit
+#endif
 
 struct EntryDetailView: View {
     let entry: JournalEntry
@@ -8,7 +13,9 @@ struct EntryDetailView: View {
         ArticleWebView(html: Self.page(for: entry), baseURL: URL(string: entry.url))
             .ignoresSafeArea(edges: .bottom)
             .navigationTitle(entry.title)
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
     }
 
     // ponytail: WKWebView instead of NSAttributedString's HTML importer. The importer
@@ -58,33 +65,49 @@ struct EntryDetailView: View {
     }
 }
 
-private struct ArticleWebView: UIViewRepresentable {
+// ponytail: one Coordinator, two thin platform shims — AppKit and UIKit differ only in
+// the make/update method names and the open-URL call.
+private struct ArticleWebView {
     let html: String
     let baseURL: URL?
 
-    func makeCoordinator() -> Coordinator { Coordinator() }
-
-    func makeUIView(context: Context) -> WKWebView {
+    func make() -> WKWebView {
         let view = WKWebView()
-        view.navigationDelegate = context.coordinator
-        view.isOpaque = false
-        view.backgroundColor = .clear
+        view.navigationDelegate = Self.sharedDelegate
         view.loadHTMLString(html, baseURL: baseURL)
         return view
     }
 
-    func updateUIView(_ view: WKWebView, context: Context) {}
+    static let sharedDelegate = Delegate()
 
-    final class Coordinator: NSObject, WKNavigationDelegate {
+    final class Delegate: NSObject, WKNavigationDelegate {
         func webView(_ webView: WKWebView,
                      decidePolicyFor action: WKNavigationAction,
                      decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-            // Tapped links go to Safari; the web view only ever shows the article itself.
+            // Tapped links go to the system browser; the web view only ever shows the article.
             if action.navigationType == .linkActivated, let url = action.request.url {
+                #if os(iOS)
                 UIApplication.shared.open(url)
+                #else
+                NSWorkspace.shared.open(url)
+                #endif
                 return decisionHandler(.cancel)
             }
             decisionHandler(.allow)
         }
     }
 }
+
+#if os(iOS)
+extension ArticleWebView: UIViewRepresentable {
+    func makeUIView(context: Context) -> WKWebView {
+        let v = make(); v.isOpaque = false; v.backgroundColor = .clear; return v
+    }
+    func updateUIView(_ view: WKWebView, context: Context) {}
+}
+#else
+extension ArticleWebView: NSViewRepresentable {
+    func makeNSView(context: Context) -> WKWebView { make() }
+    func updateNSView(_ view: WKWebView, context: Context) {}
+}
+#endif

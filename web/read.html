@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inkpress — read</title>
+<meta name="description" content="Read all your RSS and Atom feeds in one merged timeline, in the browser.">
+<meta name="theme-color" content="#ffb020">
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+<style>
+  .reader { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .bar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+  .bar h1 { font-size: 22px; margin: 0; flex: 1; }
+  .bar input { flex: 1 1 260px; padding: 8px 10px; font: inherit; color: var(--text);
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; }
+  .cols { display: grid; grid-template-columns: minmax(280px, 380px) 1fr; gap: 24px; align-items: start; }
+  @media (max-width: 800px) { .cols { grid-template-columns: 1fr; } }
+  ul.entries { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+  ul.entries li { border-bottom: 1px solid var(--border); }
+  ul.entries button { display: block; width: 100%; text-align: left; background: none;
+    border: 0; padding: 12px 8px; font: inherit; color: var(--text); cursor: pointer; }
+  ul.entries button:hover, ul.entries button[aria-current="true"] { background: var(--bg2); }
+  ul.entries b { display: block; font-weight: 600; margin-bottom: 3px; }
+  ul.entries small { color: var(--text2); }
+  .article { border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; }
+  .article img { max-width: 100%; height: auto; border-radius: 8px; }
+  .article pre, .article table { display: block; overflow-x: auto; }
+  .feeds { margin: 0 0 16px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+  .feeds li { font-size: 13px; background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 999px; padding: 3px 10px; }
+  .feeds button { background: none; border: 0; cursor: pointer; color: var(--text2); font: inherit; }
+  .muted { color: var(--text2); }
+</style>
+</head>
+<body>
+
+<div class="reader">
+  <div class="bar">
+    <h1><a href="index.html">Inkpress</a> — read</h1>
+    <input id="add" type="url" placeholder="Add feed URL (RSS or Atom), press Enter">
+    <button class="btn btn-outline" id="refresh">Refresh</button>
+  </div>
+  <ul class="feeds" id="feeds"></ul>
+  <div class="cols">
+    <ul class="entries" id="entries"><li class="muted" style="padding:12px 8px">Loading…</li></ul>
+    <div class="article" id="article"><p class="muted">Pick an entry.</p></div>
+  </div>
+</div>
+
+<script>
+// ponytail: seed list mirrors FeedStore.seedFeeds in the iOS app. Two copies beats
+// standing up an API to serve 17 URLs; if it drifts, nothing breaks but the defaults.
+var SEEDS = [
+  ['Journal', 'https://journal.heyitsmejosh.com/feed.xml'],
+  ['CBC', 'https://www.cbc.ca/webfeed/rss/rss-topstories'],
+  ['The Guardian', 'https://www.theguardian.com/world/rss'],
+  ['NPR', 'https://feeds.npr.org/1001/rss.xml'],
+  ['BBC', 'https://feeds.bbci.co.uk/news/world/rss.xml'],
+  ['Hacker News', 'https://hnrss.org/frontpage'],
+  ['Daring Fireball', 'https://daringfireball.net/feeds/main']
+].map(function (f) { return { title: f[0], url: f[1] }; });
+
+var feeds = load(), entries = [];
+
+function load() {
+  try { return JSON.parse(localStorage.getItem('inkpress.feeds')) || SEEDS; }
+  catch (e) { return SEEDS; }
+}
+function save() {
+  try { localStorage.setItem('inkpress.feeds', JSON.stringify(feeds)); } catch (e) {}
+}
+
+function text(node, names) {
+  for (var i = 0; i < names.length; i++) {
+    var el = node.querySelector(names[i]);
+    if (el && el.textContent.trim()) return el.textContent.trim();
+  }
+  return '';
+}
+
+// RSS <item> and Atom <entry> differ only in tag names and where the link lives.
+function parse(xml, source) {
+  var doc = new DOMParser().parseFromString(xml, 'application/xml');
+  if (doc.querySelector('parsererror')) return [];
+  var nodes = doc.querySelectorAll('item, entry');
+  return Array.prototype.map.call(nodes, function (n) {
+    var link = text(n, ['link']) ||
+      (n.querySelector('link[href]') ? n.querySelector('link[href]').getAttribute('href') : '');
+    var d = text(n, ['pubDate', 'updated', 'published', 'dc\\:date']);
+    return {
+      title: text(n, ['title']) || '(untitled)',
+      url: link,
+      date: d ? new Date(d) : new Date(0),
+      html: text(n, ['content\\:encoded', 'content', 'description', 'summary']),
+      source: source
+    };
+  }).filter(function (e) { return e.url; });
+}
+
+async function refresh() {
+  document.getElementById('entries').innerHTML =
+    '<li class="muted" style="padding:12px 8px">Loading…</li>';
+  var results = await Promise.all(feeds.map(async function (f) {
+    try {
+      var r = await fetch('/feed?url=' + encodeURIComponent(f.url));
+      if (!r.ok) return [];
+      return parse(await r.text(), f.title);
+    } catch (e) { return []; }
+  }));
+  entries = [].concat.apply([], results).sort(function (a, b) { return b.date - a.date; });
+  renderEntries();
+}
+
+function renderFeeds() {
+  var ul = document.getElementById('feeds');
+  ul.innerHTML = '';
+  feeds.forEach(function (f, i) {
+    var li = document.createElement('li');
+    li.textContent = f.title + ' ';
+    var b = document.createElement('button');
+    b.textContent = '×';
+    b.title = 'Unsubscribe';
+    b.onclick = function () { feeds.splice(i, 1); save(); renderFeeds(); refresh(); };
+    li.appendChild(b);
+    ul.appendChild(li);
+  });
+}
+
+function renderEntries() {
+  var ul = document.getElementById('entries');
+  ul.innerHTML = '';
+  if (!entries.length) {
+    ul.innerHTML = '<li class="muted" style="padding:12px 8px">No entries.</li>';
+    return;
+  }
+  entries.slice(0, 300).forEach(function (e) {
+    var li = document.createElement('li');
+    var btn = document.createElement('button');
+    var t = document.createElement('b');
+    t.textContent = e.title;
+    var s = document.createElement('small');
+    s.textContent = e.source + ' · ' +
+      (e.date.getTime() ? e.date.toLocaleDateString(undefined, { dateStyle: 'medium' }) : '');
+    btn.appendChild(t); btn.appendChild(s);
+    btn.onclick = function () {
+      Array.prototype.forEach.call(ul.querySelectorAll('button'), function (b) {
+        b.removeAttribute('aria-current');
+      });
+      btn.setAttribute('aria-current', 'true');
+      show(e);
+    };
+    li.appendChild(btn);
+    ul.appendChild(li);
+  });
+}
+
+function show(e) {
+  var box = document.getElementById('article');
+  box.innerHTML = '';
+  var h = document.createElement('h2');
+  h.textContent = e.title;
+  var meta = document.createElement('p');
+  meta.className = 'muted';
+  meta.textContent = e.source + ' · ' +
+    (e.date.getTime() ? e.date.toLocaleDateString(undefined, { dateStyle: 'long' }) : '');
+  box.appendChild(h);
+  box.appendChild(meta);
+  // Feed HTML is untrusted: parse it inert and drop scripts and event handlers before
+  // it ever reaches the live document.
+  var frag = new DOMParser().parseFromString(e.html || '', 'text/html');
+  frag.querySelectorAll('script, style, iframe, object, embed, link').forEach(function (n) {
+    n.remove();
+  });
+  frag.querySelectorAll('*').forEach(function (n) {
+    Array.prototype.slice.call(n.attributes).forEach(function (a) {
+      if (/^on/i.test(a.name) || /^\s*javascript:/i.test(a.value)) n.removeAttribute(a.name);
+    });
+  });
+  Array.prototype.forEach.call(frag.body.childNodes, function (n) {
+    box.appendChild(document.importNode(n, true));
+  });
+  var link = document.createElement('p');
+  var a = document.createElement('a');
+  a.href = e.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+  a.textContent = 'Open original →';
+  link.appendChild(a);
+  box.appendChild(link);
+}
+
+document.getElementById('add').addEventListener('keydown', function (ev) {
+  if (ev.key !== 'Enter') return;
+  var v = this.value.trim();
+  if (!v) return;
+  if (!/^https?:/i.test(v)) v = 'https://' + v;
+  if (feeds.some(function (f) { return f.url === v; })) { this.value = ''; return; }
+  try { feeds.push({ title: new URL(v).hostname, url: v }); } catch (e) { return; }
+  this.value = '';
+  save(); renderFeeds(); refresh();
+});
+document.getElementById('refresh').onclick = refresh;
+
+renderFeeds();
+refresh();
+</script>
+
+</body>
+</html>

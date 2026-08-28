@@ -12,9 +12,11 @@ struct ManageFeedsView: View {
                 Section {
                     HStack {
                         TextField("Add feed URL (RSS or Atom)", text: $newFeed)
+                            #if os(iOS)
                             .textInputAutocapitalization(.never)
-                            .autocorrectionDisabled()
                             .keyboardType(.URL)
+                            #endif
+                            .autocorrectionDisabled()
                             .onSubmit(add)
                         Button("Add", action: add)
                             .disabled(newFeed.trimmingCharacters(in: .whitespaces).isEmpty)
@@ -53,7 +55,9 @@ struct ManageFeedsView: View {
                 }
             }
             .navigationTitle("Feeds")
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } }
             }
