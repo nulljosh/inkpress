@@ -1,5 +1,16 @@
 # Inkpress Roadmap
 
+## macOS + web (2026-08-28)
+- macOS app target `Inkpress-macOS` shipped as a Universal Purchase build on ASC 6787759999
+  (1.0.5 / 202608250940, VALID). **Not submitted** — the 4.3(a) wave is still open, so the
+  build is sitting in ASC. To finish: create the MAC_OS version, push metadata, upload the
+  1280x800 screenshot (`ios/.asc/screenshots/mac/01-list.png`), `asc validate`, submit.
+- Web reader live at inkpress.heyitsmejosh.com/read (`web/read.html` + `functions/feed.js`
+  CORS proxy). Feeds/subscriptions in localStorage, no accounts.
+- **Next:** list rows are title + source + date only. Add thumbnails (feed `<media:content>` /
+  `<enclosure>` / first `<img>` in the body) across iOS, macOS and web.
+
+
 ## Landing Page — animated hero + screenshot fix, shipped 2026-08-27
 
 Fixed two web/ bugs. Screenshots were rendering vertically stretched because the `img` height

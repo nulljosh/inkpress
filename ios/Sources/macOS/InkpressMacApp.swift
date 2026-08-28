@@ -7,6 +7,7 @@ struct InkpressMacApp: App {
             EntryListView()
                 .frame(minWidth: 720, minHeight: 480)
         }
+        .defaultSize(width: 1280, height: 800)
         .commands { SidebarCommands() }
     }
 }

@@ -15,6 +15,7 @@
 		55232F726D603975C789905C /* JournalFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC44D06947275059DED3B30 /* JournalFeedService.swift */; };
 		58FD638CB00354888F344998 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38ACDB28857F0E41D3C492E /* JournalEntry.swift */; };
 		5D7EBE7D411C4B9B8E890D29 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38ACDB28857F0E41D3C492E /* JournalEntry.swift */; };
+		5DD73134B7FE90272D6E644E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D602399DFBE78D9E325E2FD /* Assets.xcassets */; };
 		65959DE874A252B4341CB060 /* ManageFeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA21421125A16812D6815E /* ManageFeedsView.swift */; };
 		664458B2090B4F4F075E125D /* JournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2FC2F32D71F065BB94DA3 /* JournalApp.swift */; };
 		726E2BDEC0363FC1A23D0AAD /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409A12C7017D00F584C499DF /* EntryDetailView.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D602399DFBE78D9E325E2FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20D2DA8FB37F1CDB4EB9D29E /* Inkpress-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inkpress-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		409A12C7017D00F584C499DF /* EntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailView.swift; sourceTree = "<group>"; };
 		4D618F75CD0D4C5B4BBCC223 /* AtomFeedParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomFeedParserTests.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		44509E4405767FDB854D4963 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				0D602399DFBE78D9E325E2FD /* Assets.xcassets */,
 				8D47AA2800395326FC174076 /* Info.plist */,
 				E08473F37E2167E26583B80C /* InkpressMacApp.swift */,
 			);
@@ -153,6 +156,7 @@
 			buildConfigurationList = DC5AF416AB10A7BBCE621E8C /* Build configuration list for PBXNativeTarget "Inkpress-macOS" */;
 			buildPhases = (
 				23DBCADA959C5D976AA737E0 /* Sources */,
+				E9F96C5826D1A55DBB07AC2B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -208,6 +212,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB8D13B635949509602FFCC4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9F96C5826D1A55DBB07AC2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DD73134B7FE90272D6E644E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
