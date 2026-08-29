@@ -68,6 +68,8 @@ final class FeedParser: NSObject, XMLParserDelegate {
     private var link = ""
     private var date = ""
     private var content = ""
+    private var mediaSrc = ""
+    private var enclosureSrc = ""
     private var inItem = false
 
     static func parse(data: Data) -> [JournalEntry] {
@@ -82,9 +84,20 @@ final class FeedParser: NSObject, XMLParserDelegate {
         element = elementName
         if elementName == "entry" || elementName == "item" {
             inItem = true; title = ""; link = ""; date = ""; content = ""
+            mediaSrc = ""; enclosureSrc = ""
         } else if elementName == "link", inItem, let href = attributeDict["href"] {
             // Atom links carry the URL in the href attribute.
             link = href
+        } else if inItem, elementName == "media:thumbnail" || elementName == "media:content" {
+            // <media:thumbnail> is an image by definition; <media:content> carries video too.
+            if mediaSrc.isEmpty, let u = attributeDict["url"],
+               elementName == "media:thumbnail" || Self.isImage(attributeDict, url: u) {
+                mediaSrc = u
+            }
+        } else if inItem, elementName == "enclosure" {
+            if enclosureSrc.isEmpty, let u = attributeDict["url"], Self.isImage(attributeDict, url: u) {
+                enclosureSrc = u
+            }
         }
     }
 
@@ -111,12 +124,67 @@ final class FeedParser: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName: String?) {
         guard elementName == "entry" || elementName == "item" else { return }
         inItem = false
+        let entryURL = link.trimmingCharacters(in: .whitespacesAndNewlines)
         entries.append(JournalEntry(
             title: title.trimmingCharacters(in: .whitespacesAndNewlines),
-            url: link.trimmingCharacters(in: .whitespacesAndNewlines),
+            url: entryURL,
             date: Self.parseDate(date.trimmingCharacters(in: .whitespacesAndNewlines)),
-            htmlContent: content
+            htmlContent: content,
+            imageURL: Self.pickImage(media: mediaSrc, enclosure: enclosureSrc,
+                                     html: content, entryURL: entryURL)
         ))
+    }
+
+    private static let imageExtensions: Set<String> = ["jpg", "jpeg", "png", "gif", "webp", "avif"]
+
+    /// A media/enclosure element is an image if it says so, or — when it declares neither a
+    /// type nor a medium — if the URL ends in an image extension.
+    static func isImage(_ attributes: [String: String], url: String) -> Bool {
+        if let type = attributes["type"] { return type.lowercased().hasPrefix("image/") }
+        if let medium = attributes["medium"] { return medium.lowercased() == "image" }
+        let ext = (URL(string: url)?.pathExtension ?? "").lowercased()
+        return imageExtensions.contains(ext)
+    }
+
+    private static let imgSrcRegex = try? NSRegularExpression(
+        pattern: "<img[^>]+src\\s*=\\s*[\"']([^\"']+)[\"']", options: .caseInsensitive)
+
+    static func firstImageSrc(inHTML html: String) -> String? {
+        guard let re = imgSrcRegex else { return nil }
+        let ns = html as NSString
+        guard let m = re.firstMatch(in: html, range: NSRange(location: 0, length: ns.length)),
+              m.numberOfRanges > 1 else { return nil }
+        return ns.substring(with: m.range(at: 1))
+    }
+
+    /// Resolve a feed-supplied src against the entry link. Handles protocol-relative
+    /// (`//host/x.jpg`) and plain relative paths, and refuses anything that is not http(s)
+    /// so `data:` blobs never reach AsyncImage.
+    static func resolve(_ src: String, against base: String) -> URL? {
+        let s = src.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !s.isEmpty else { return nil }
+        let baseURL = URL(string: base)
+        let resolved: URL?
+        if s.hasPrefix("//") {
+            resolved = URL(string: (baseURL?.scheme ?? "https") + ":" + s)
+        } else if let u = URL(string: s), u.scheme != nil {
+            resolved = u
+        } else {
+            resolved = URL(string: s, relativeTo: baseURL)?.absoluteURL
+        }
+        guard let out = resolved, let scheme = out.scheme?.lowercased(),
+              scheme == "https" || scheme == "http" else { return nil }
+        return out
+    }
+
+    /// media:* wins over <enclosure>, which wins over the first <img> in the body.
+    /// No match means no thumbnail — never a placeholder URL.
+    static func pickImage(media: String, enclosure: String, html: String, entryURL: String) -> URL? {
+        for candidate in [media, enclosure] where !candidate.isEmpty {
+            if let u = resolve(candidate, against: entryURL) { return u }
+        }
+        guard let src = firstImageSrc(inHTML: html) else { return nil }
+        return resolve(src, against: entryURL)
     }
 
     /// Accept both ISO8601 (Atom) and RFC822 (RSS pubDate). Two RFC822 shapes, because the

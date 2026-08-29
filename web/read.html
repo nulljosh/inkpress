@@ -18,8 +18,12 @@
   @media (max-width: 800px) { .cols { grid-template-columns: 1fr; } }
   ul.entries { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
   ul.entries li { border-bottom: 1px solid var(--border); }
-  ul.entries button { display: block; width: 100%; text-align: left; background: none;
+  ul.entries button { display: flex; gap: 10px; align-items: flex-start; width: 100%;
+    text-align: left; background: none;
     border: 0; padding: 12px 8px; font: inherit; color: var(--text); cursor: pointer; }
+  ul.entries .txt { flex: 1; min-width: 0; }
+  ul.entries img.thumb { flex: 0 0 56px; width: 56px; height: 56px; object-fit: cover;
+    border-radius: 6px; background: var(--bg2); }
   ul.entries button:hover, ul.entries button[aria-current="true"] { background: var(--bg2); }
   ul.entries b { display: block; font-weight: 600; margin-bottom: 3px; }
   ul.entries small { color: var(--text2); }
@@ -79,6 +83,46 @@ function text(node, names) {
   return '';
 }
 
+var IMG_EXT = /\.(jpe?g|png|gif|webp|avif)(\?|#|$)/i;
+
+// A media/enclosure element is an image if it says so, or - declaring neither type nor
+// medium - if the URL ends in an image extension.
+function isImageEl(el, url) {
+  var type = el.getAttribute('type');
+  if (type) return /^image\//i.test(type);
+  var medium = el.getAttribute('medium');
+  if (medium) return medium.toLowerCase() === 'image';
+  return IMG_EXT.test(url || '');
+}
+
+// Resolving against the entry link handles protocol-relative and plain relative srcs for
+// free. Anything not http(s) is refused so data: blobs never become an <img src>.
+function resolveImage(src, base) {
+  if (!src) return '';
+  try {
+    var u = new URL(src, base || location.href);
+    return (u.protocol === 'https:' || u.protocol === 'http:') ? u.href : '';
+  } catch (e) { return ''; }
+}
+
+// media:* beats <enclosure> beats the first <img> in the body. Mirrors FeedParser.pickImage
+// in the Swift app - the two parsers must agree or the same feed looks different per platform.
+function imageFor(node, html, link) {
+  var tags = ['media:thumbnail', 'media:content', 'enclosure'];
+  for (var i = 0; i < tags.length; i++) {
+    var els = node.getElementsByTagName(tags[i]);
+    for (var j = 0; j < els.length; j++) {
+      var url = els[j].getAttribute('url');
+      if (!url) continue;
+      if (tags[i] !== 'media:thumbnail' && !isImageEl(els[j], url)) continue;
+      var got = resolveImage(url, link);
+      if (got) return got;
+    }
+  }
+  var m = /<img[^>]+src\s*=\s*["']([^"']+)["']/i.exec(html || '');
+  return m ? resolveImage(m[1], link) : '';
+}
+
 // RSS <item> and Atom <entry> differ only in tag names and where the link lives.
 function parse(xml, source) {
   var doc = new DOMParser().parseFromString(xml, 'application/xml');
@@ -88,11 +132,13 @@ function parse(xml, source) {
     var link = text(n, ['link']) ||
       (n.querySelector('link[href]') ? n.querySelector('link[href]').getAttribute('href') : '');
     var d = text(n, ['pubDate', 'updated', 'published', 'dc\\:date']);
+    var html = text(n, ['content\\:encoded', 'content', 'description', 'summary']);
     return {
       title: text(n, ['title']) || '(untitled)',
       url: link,
       date: d ? new Date(d) : new Date(0),
-      html: text(n, ['content\\:encoded', 'content', 'description', 'summary']),
+      html: html,
+      image: imageFor(n, html, link),
       source: source
     };
   }).filter(function (e) { return e.url; });
@@ -142,7 +188,21 @@ function renderEntries() {
     var s = document.createElement('small');
     s.textContent = e.source + ' · ' +
       (e.date.getTime() ? e.date.toLocaleDateString(undefined, { dateStyle: 'medium' }) : '');
-    btn.appendChild(t); btn.appendChild(s);
+    var txt = document.createElement('span');
+    txt.className = 'txt';
+    txt.appendChild(t); txt.appendChild(s);
+    if (e.image) {
+      var img = document.createElement('img');
+      img.className = 'thumb';
+      img.src = e.image;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.referrerPolicy = 'no-referrer';
+      // Drop the element outright on a hotlink block, rather than leaving a broken icon.
+      img.onerror = function () { img.remove(); };
+      btn.appendChild(img);
+    }
+    btn.appendChild(txt);
     btn.onclick = function () {
       Array.prototype.forEach.call(ul.querySelectorAll('button'), function (b) {
         b.removeAttribute('aria-current');

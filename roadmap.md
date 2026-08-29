@@ -7,8 +7,18 @@
   1280x800 screenshot (`ios/.asc/screenshots/mac/01-list.png`), `asc validate`, submit.
 - Web reader live at inkpress.heyitsmejosh.com/read (`web/read.html` + `functions/feed.js`
   CORS proxy). Feeds/subscriptions in localStorage, no accounts.
-- **Next:** list rows are title + source + date only. Add thumbnails (feed `<media:content>` /
-  `<enclosure>` / first `<img>` in the body) across iOS, macOS and web.
+- Entry list rows show a thumbnail on iOS, macOS and web (2026-08-28). Priority is
+  `<media:thumbnail>`/`<media:content>` then `<enclosure type="image/*">` then the first
+  `<img>` in the body; protocol-relative and relative srcs resolve against the entry link,
+  and non-http(s) srcs are refused. No image means no thumbnail and an unchanged row - most
+  feeds carry none, so a reserved empty box would have indented the whole list for nothing.
+  The Swift and JS extractors mirror each other deliberately; change both or neither.
+- **Next:** macOS has still never shipped - no MAC_OS version record exists on 6787759999,
+  only the four IOS ones. Ship it as a first release now that the list is not text-only:
+  bump to 1.0.7, archive with raw `xcodebuild` + `asc builds upload --pkg` (`asc xcode
+  export` is iOS-only), push metadata BEFORE submit, reshoot the 1280x800 Mac screenshot
+  (`ios/.asc/screenshots/mac/01-list.png` predates thumbnails). Never submit the build
+  already sitting in ASC (202608250940, Aug 25) - it predates the overflow fix.
 
 
 ## Landing Page — animated hero + screenshot fix, shipped 2026-08-27

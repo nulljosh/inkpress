@@ -7,4 +7,6 @@ struct JournalEntry: Codable, Identifiable, Hashable {
     let date: Date
     let htmlContent: String
     var sourceTitle: String = ""
+    // Optional so entries cached before thumbnails existed still decode.
+    var imageURL: URL? = nil
 }
