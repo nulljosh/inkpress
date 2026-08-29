@@ -166,4 +166,6 @@ cadence, sparkjar, lexly, talli, quotable, wordroot, newsline, nyc, notes,
 bookrank, homeward.
 
 ## From Notes (imported 2026-08-27)
-- [ ] Ship the entry-card overflow fix (`3265419`). Blocked on a version bump: `ios/project.yml` still reads MARKETING_VERSION 1.0.5 / build 202608250940, which is the version already WAITING_FOR_REVIEW — so the fix is not in any submitted binary. Decide whether to let 1.0.5 finish review and ship this as 1.0.6, or pull 1.0.5 and resubmit with the fix included.
+- [ ] **1.0.6 staged, submit when ready.** Entry-card overflow fix (`3265419`, 2026-08-27) is in `main` but was not in any shipped binary — live 1.0.5 was built from build 202608250940 (Aug 25), which predates it. Bumped `ios/project.yml` to MARKETING_VERSION 1.0.6 / build 202608282023 on 2026-08-28; xcodegen regenerated, Release build for `generic/platform=iOS Simulator` succeeds and the built Info.plist reads 1.0.6 / 202608282023. Not archived or submitted yet — next step is archive + upload + submit.
+  - **The old "1.0.5 is WAITING_FOR_REVIEW" premise was stale.** Re-probed 2026-08-28 via `asc versions list --app 6787759999`: iOS 1.0.5 is **READY_FOR_SALE** (as are 1.0.3 and 1.0.2). Nothing is in review, so there is no submission to pull and no reason to wait.
+  - Note: `MARKETING_VERSION` lives in `settings.base`, so **Inkpress-macOS inherits 1.0.6 too** and now reads one version ahead of whatever Mac build is live. Cosmetic until a macOS archive is cut — don't ship macOS just to close the gap (same call as voxprint's 1.3.7).
