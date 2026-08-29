@@ -15,3 +15,5 @@ signing/
 **/.asc/runs/
 **/.asc/reports/
 .wrangler/
+.asc/metadata/
+**/.asc/metadata/

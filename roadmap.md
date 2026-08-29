@@ -1,10 +1,22 @@
 # Inkpress Roadmap
 
 ## macOS + web (2026-08-28)
-- macOS app target `Inkpress-macOS` shipped as a Universal Purchase build on ASC 6787759999
-  (1.0.5 / 202608250940, VALID). **Not submitted** — the 4.3(a) wave is still open, so the
-  build is sitting in ASC. To finish: create the MAC_OS version, push metadata, upload the
-  1280x800 screenshot (`ios/.asc/screenshots/mac/01-list.png`), `asc validate`, submit.
+- **macOS 1.0.7 SUBMITTED 2026-08-28 — first ever Mac release.** Version
+  `002bb992-bc3c-4866-8de8-a783a1b8bdaf`, build `202608282156`, submission
+  `daacdad3-5c27-4ac0-861e-bbef348b8801`, WAITING_FOR_REVIEW. Shipped once thumbnails
+  landed, so the listing is not a text-only list. iOS 1.0.6 was left untouched in review.
+  The old 1.0.5 / 202608250940 Mac build predates the entry-card overflow fix and must
+  never be submitted; it is superseded.
+- `asc validate` CANNOT run on this app while an iOS review is open: the age-rating fetch
+  dies on "multiple app infos found" (one WAITING_FOR_REVIEW, one READY_FOR_DISTRIBUTION)
+  and validate has no `--app-info` flag. `asc metadata` does, so pass
+  `--app-info 19c32d48-1d0b-4fa5-8c67-d5b1cf09e2be`. Readiness had to be checked by hand:
+  build attached + VALID, encryption declared false, screenshot uploaded, metadata verified
+  by re-pull. `asc review submit --dry-run` is the closest substitute.
+- **`whatsNew` cannot be set on a first release for a platform** — App Store Connect
+  rejects it with "Attribute 'whatsNew' cannot be edited at this time", and the whole
+  localization PATCH fails atomically, so nothing else in the same apply lands either.
+  Drop the field and re-apply.
 - Web reader live at inkpress.heyitsmejosh.com/read (`web/read.html` + `functions/feed.js`
   CORS proxy). Feeds/subscriptions in localStorage, no accounts.
 - Entry list rows show a thumbnail on iOS, macOS and web (2026-08-28). Priority is
