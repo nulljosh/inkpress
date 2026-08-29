@@ -27,6 +27,7 @@
 		D0A422350DBED4AD26329279 /* AtomFeedParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D618F75CD0D4C5B4BBCC223 /* AtomFeedParserTests.swift */; };
 		DB8D13B635949509602FFCC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29B9530A60D6C424502F145 /* Assets.xcassets */; };
 		E84CA41D7192C38A6B4BBFFB /* AtomFeedParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D618F75CD0D4C5B4BBCC223 /* AtomFeedParserTests.swift */; };
+		ED49EAACFA2A62AA0AAF567C /* ScreenshotCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AFC48B26A5664C3A03261 /* ScreenshotCapture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		57C34DF0FD4E76F2A5E5A7E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8286BB5BF361BF084AB417E5 /* EntryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListView.swift; sourceTree = "<group>"; };
 		8D47AA2800395326FC174076 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		917AFC48B26A5664C3A03261 /* ScreenshotCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotCapture.swift; sourceTree = "<group>"; };
 		B29B9530A60D6C424502F145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B38ACDB28857F0E41D3C492E /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		B86F49BC6821B601EA8ECDFE /* UpvoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpvoteButton.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				0D602399DFBE78D9E325E2FD /* Assets.xcassets */,
 				8D47AA2800395326FC174076 /* Info.plist */,
 				E08473F37E2167E26583B80C /* InkpressMacApp.swift */,
+				917AFC48B26A5664C3A03261 /* ScreenshotCapture.swift */,
 			);
 			name = macOS;
 			path = Sources/macOS;
@@ -238,6 +241,7 @@
 				58FD638CB00354888F344998 /* JournalEntry.swift in Sources */,
 				55232F726D603975C789905C /* JournalFeedService.swift in Sources */,
 				B08328162A3AE54CD4CC05A4 /* ManageFeedsView.swift in Sources */,
+				ED49EAACFA2A62AA0AAF567C /* ScreenshotCapture.swift in Sources */,
 				C031F90F94A411853E067D59 /* UpvoteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
