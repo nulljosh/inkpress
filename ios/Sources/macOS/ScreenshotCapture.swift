@@ -48,9 +48,16 @@ enum ScreenshotCapture {
         // Warm the on-disk entry cache first. `JournalFeedService.init` reads it, so the view
         // has real content the moment it is hosted instead of racing its own `.task`.
         let store = FeedStore()
+        let service = JournalFeedService()
+        // Trim the subscriptions before anything renders. The list view refreshes from this
+        // store, so without the trim it refetches all seventeen seeds and undoes the curation;
+        // and the feeds screen gets a real Following/Suggested split instead of one flat list.
+        // This writes feeds.json in the app's sandbox container — DEBUG-only, and the Mac app
+        // has never shipped, so there is no real subscription list to disturb.
+        store.feeds = store.feeds.filter { listSources.contains($0.title) }
+
         var article: JournalEntry?
         if state != .feeds {
-            let service = JournalFeedService()
             await_ { await service.refresh(feeds: store.feeds) }
             if service.entries.isEmpty {
                 fail("no entries fetched — check the network before trusting this frame")
@@ -61,7 +68,8 @@ enum ScreenshotCapture {
         let window = makeWindow()
         switch state {
         case .list:
-            window.contentViewController = NSHostingController(rootView: EntryListView())
+            window.contentViewController = NSHostingController(
+                rootView: EntryListView(feed: service, store: store))
         case .article:
             guard let article else {
                 fail("no entry from \(articleSources.joined(separator: " or ")) — refusing to " +
@@ -108,6 +116,15 @@ enum ScreenshotCapture {
         print(out.path)
         exit(0)
     }
+
+    /// Screenshots pull from a subset of the seed feeds rather than all seventeen. Every one of
+    /// these ships in the app, so the frames stay representative — but the tabloid seeds lead
+    /// with sportsbook promos often enough that one landed top-of-list on an early run, and a
+    /// gambling ad in the first row of a first-time listing is a fight nobody needs.
+    private static let listSources = [
+        "Journal", "BBC", "NPR", "The Guardian", "CBC", "Wall Street Journal",
+        "Global News", "Hacker News", "Daring Fireball",
+    ]
 
     /// Feeds whose newest item is safe to freeze into a store listing. The list shot is live
     /// news because that is honestly what the app shows, but a single article blown up to full

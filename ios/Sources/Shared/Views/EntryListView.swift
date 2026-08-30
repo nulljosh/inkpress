@@ -1,9 +1,17 @@
 import SwiftUI
 
 struct EntryListView: View {
-    @StateObject private var feed = JournalFeedService()
-    @StateObject private var store = FeedStore()
+    @StateObject private var feed: JournalFeedService
+    @StateObject private var store: FeedStore
     @State private var showFeeds = false
+
+    /// Both default to the real thing; the parameters exist so the macOS screenshot capture can
+    /// hand in a pre-loaded service and a trimmed feed list without writing to the user's saved
+    /// subscriptions. No caller in the app passes either.
+    init(feed: JournalFeedService? = nil, store: FeedStore? = nil) {
+        _feed = StateObject(wrappedValue: feed ?? JournalFeedService())
+        _store = StateObject(wrappedValue: store ?? FeedStore())
+    }
 
     var body: some View {
         NavigationStack {
