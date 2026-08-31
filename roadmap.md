@@ -1,9 +1,9 @@
 # Inkpress Roadmap
 
-## macOS + web (2026-08-28)
-- **macOS 1.0.7 SUBMITTED 2026-08-28 — first ever Mac release.** Version
+## macOS + web (2026-08-28 submitted, 2026-08-30 approved)
+- **macOS 1.0.7 APPROVED 2026-08-30 — first ever Mac release.** Version
   `002bb992-bc3c-4866-8de8-a783a1b8bdaf`, build `202608282156`, submission
-  `daacdad3-5c27-4ac0-861e-bbef348b8801`, WAITING_FOR_REVIEW. Shipped once thumbnails
+  `daacdad3-5c27-4ac0-861e-bbef348b8801`, now READY_FOR_SALE. Shipped once thumbnails
   landed, so the listing is not a text-only list. iOS 1.0.6 was left untouched in review.
   The old 1.0.5 / 202608250940 Mac build predates the entry-card overflow fix and must
   never be submitted; it is superseded.
@@ -81,13 +81,8 @@ Live state from `asc versions list --app 6787759999`:
 **v1.0.3 APPROVED and LIVE** (approved 2026-08-10, icon redesign + loading indicator + multi-feed screenshot). **v1.0.4 READY** (blank-article fix via WKWebView rendering, not submitted; the 5.6 freeze lifted 2026-08-18 but no 1.0.4 version row or build exists yet — needs archive + upload). No `MAC_OS` version row exists on the record.
 
 ## From App Store.pdf (imported 2026-07-28)
-- [ ] Ship a macOS version of InkPress. **Re-scoped 2026-08-10 — this is real dev work, not an
-  ASC toggle.** The repo has no `macos/` directory at all (only `ios/`, `web/`, `metadata/`,
-  `signing/`), so there is no macOS target to build. A macOS platform row is *created by
-  submitting a macOS build*; it is not a row you add first and fill in later. Correct order:
-  scaffold a macOS target in xcodegen (`macos/project.yml`, same pattern as healstack/sparkjar)
-  → archive → upload → the `MAC_OS` row appears on `6787759999`. Estimate this as a build task,
-  not a five-minute ASC chore.
+- [x] Ship a macOS version of InkPress. **Completed 2026-08-30.** Scaffolded macOS target in xcodegen,
+  archived, uploaded, and approved. macOS 1.0.7 now READY_FOR_SALE.
 
 ## CMS/CRM pivot (scoped 2026-08-02, big — needs backend, phase before building)
 Goal: Inkpress stays an RSS reader AND becomes a WordPress/Ghost-style CMS+CRM client. Currently pure read-only (no accounts, no write backend) per its own CLAUDE.md — this is a real scope change, not a bolt-on.
