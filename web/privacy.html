@@ -12,6 +12,9 @@
 <meta property="og:url" content="https://inkpress.heyitsmejosh.com/privacy.html">
 <link rel="icon" href="icon.svg">
 <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body>
 
@@ -72,5 +75,6 @@
   </div>
 </footer>
 
+  <script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'));</script>
 </body>
 </html>

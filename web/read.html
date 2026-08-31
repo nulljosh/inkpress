@@ -36,6 +36,9 @@
   .feeds button { background: none; border: 0; cursor: pointer; color: var(--text2); font: inherit; }
   .muted { color: var(--text2); }
 </style>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body>
 
@@ -264,5 +267,6 @@ renderFeeds();
 refresh();
 </script>
 
+  <script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'));</script>
 </body>
 </html>
