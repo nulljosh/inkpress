@@ -20,7 +20,7 @@ for page in pages:
     for attr, link in re.findall(r'(href|src)="([^"]+)"', html):
         if link.startswith(('http://', 'https://', 'mailto:', 'data:', '#')):
             continue
-        target = link.split('#')[0]
+        target = link.split('#')[0].lstrip('/')  # root-relative = web/ root
         if target in ('', './'):
             target = 'index.html'
         if not os.path.exists(target):
