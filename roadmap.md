@@ -80,10 +80,6 @@ Live state from `asc versions list --app 6787759999`:
 
 **v1.0.3 APPROVED and LIVE** (approved 2026-08-10, icon redesign + loading indicator + multi-feed screenshot). **v1.0.4 READY** (blank-article fix via WKWebView rendering, not submitted; the 5.6 freeze lifted 2026-08-18 but no 1.0.4 version row or build exists yet — needs archive + upload). No `MAC_OS` version row exists on the record.
 
-## From App Store.pdf (imported 2026-07-28)
-- [x] Ship a macOS version of InkPress. **Completed 2026-08-30.** Scaffolded macOS target in xcodegen,
-  archived, uploaded, and approved. macOS 1.0.7 now READY_FOR_SALE.
-
 ## CMS/CRM pivot (scoped 2026-08-02, big — needs backend, phase before building)
 Goal: Inkpress stays an RSS reader AND becomes a WordPress/Ghost-style CMS+CRM client. Currently pure read-only (no accounts, no write backend) per its own CLAUDE.md — this is a real scope change, not a bolt-on.
 
