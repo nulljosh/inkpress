@@ -2,18 +2,18 @@
 
 **v1.0.5** | August 2026
 
-Inkpress is a multi-feed RSS/Atom reader for iOS. Add any feed, get an
-aggregated, reverse-chronological timeline across all of them. Split from
-the `journal` repo (a personal Jekyll blog) on 2026-07-21 — the two are
-unrelated products that only used to share a folder for naming-history
-reasons.
+All your feeds, one timeline. An RSS and Atom reader for iOS.
+
+Add any feed and read everything in one stream, newest first. Split from the
+`journal` repo on 2026-07-21. The two only ever shared a folder by accident of
+naming.
 
 ## Content Model
 
 Feeds are a simple persisted list (`FeedStore`, `Application Support/feeds.json`
 on-device, no server sync). Seeded with one feed on first launch
 (`journal.heyitsmejosh.com/feed.xml`, the author's own blog) purely so the
-app isn't empty on first open — it's a regular subscription, fully
+app isn't empty on first open, it's a regular subscription, fully
 removable, with no special handling versus any other feed the user adds.
 
 ## Parsing
@@ -27,7 +27,7 @@ render unstyled serif text with no spacing.
 
 v1.0.3 is live on the App Store; v1.0.5 (seeded newsline feeds) is in review.
 
-No accounts, no user-authored content, no writing/logging feature — Inkpress
+No accounts, no user-authored content, no writing/logging feature, Inkpress
 only reads feeds. Cross-device sync of subscriptions would need accounts;
 not started, no current need.
 
