@@ -1,4 +1,5 @@
 @import url("https://heyitsmejosh.com/tokens.css");
+@import url("devices.css");
 
 :root {
   --accent: #b8730a;
@@ -144,14 +145,8 @@ section { padding: 4rem 0; }
 
 .shot { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .shot figure { text-align: center; }
-.shot img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 28px;
-  border: 1px solid var(--border);
-  display: block;
-  margin: 0 auto;
-}
+.shot .device-iphone { --device-w: 300px; }
+.shot .device-mac { --device-w: 720px; }
 .shot figcaption {
   color: var(--text2);
   font-size: 0.92rem;
