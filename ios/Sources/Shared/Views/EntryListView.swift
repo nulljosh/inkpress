@@ -4,6 +4,7 @@ struct EntryListView: View {
     @StateObject private var feed: JournalFeedService
     @StateObject private var store: FeedStore
     @State private var showFeeds = false
+    @State private var selectedEntryID: JournalEntry.ID?
 
     /// Both default to the real thing; the parameters exist so the macOS screenshot capture can
     /// hand in a pre-loaded service and a trimmed feed list without writing to the user's saved
@@ -13,34 +14,37 @@ struct EntryListView: View {
         _store = StateObject(wrappedValue: store ?? FeedStore())
     }
 
+    private var selectedEntry: JournalEntry? {
+        feed.entries.first { $0.id == selectedEntryID }
+    }
+
     var body: some View {
-        NavigationStack {
+        NavigationSplitView {
             VStack(spacing: 0) {
                 if feed.isLoading && !feed.entries.isEmpty {
                     ProgressView().progressViewStyle(.linear)
                 }
-                List(feed.entries) { entry in
+                List(feed.entries, selection: $selectedEntryID) { entry in
                     HStack {
-                        NavigationLink(value: entry) {
-                            HStack(spacing: 12) {
-                                EntryThumbnail(url: entry.imageURL)
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text(entry.title).font(.headline)
-                                    HStack(spacing: 6) {
-                                        if !entry.sourceTitle.isEmpty {
-                                            Text(entry.sourceTitle)
-                                            Text("·")
-                                        }
-                                        Text(entry.date.formatted(date: .abbreviated, time: .omitted))
+                        HStack(spacing: 12) {
+                            EntryThumbnail(url: entry.imageURL)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(entry.title).font(.headline)
+                                HStack(spacing: 6) {
+                                    if !entry.sourceTitle.isEmpty {
+                                        Text(entry.sourceTitle)
+                                        Text("·")
                                     }
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
+                                    Text(entry.date.formatted(date: .abbreviated, time: .omitted))
                                 }
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
                             }
                         }
                         Spacer()
                         UpvoteButton(entryID: entry.id)
                     }
+                    .tag(entry.id)
                 }
                 .refreshable { await feed.refresh(feeds: store.feeds) }
                 .overlay {
@@ -52,9 +56,6 @@ struct EntryListView: View {
                 }
             }
             .navigationTitle("Inkpress")
-            .navigationDestination(for: JournalEntry.self) { entry in
-                EntryDetailView(entry: entry)
-            }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button { showFeeds = true } label: {
@@ -66,6 +67,12 @@ struct EntryListView: View {
                 ManageFeedsView(store: store)
             }
             .task(id: store.feeds) { await feed.refresh(feeds: store.feeds) }
+        } detail: {
+            if let selectedEntry {
+                EntryDetailView(entry: selectedEntry)
+            } else {
+                ContentUnavailableView("No entry selected", systemImage: "doc.text", description: Text("Pick an entry from the list"))
+            }
         }
     }
 }
