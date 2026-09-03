@@ -4,7 +4,7 @@
 
 ![version](https://img.shields.io/badge/version-1.0.2-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Finkpress-black?logo=github)](https://github.com/nulljosh/inkpress)
 
-All your feeds, one timeline. An RSS and Atom reader for iOS.
+All your feeds, one timeline. An RSS and Atom reader for iOS, macOS, and Apple Watch.
 
 Add any feed. Read everything in one stream, newest first.
 
@@ -30,6 +30,22 @@ subscribes to its `feed.xml` by default, like any other feed. No code is shared.
 cd ios
 xcodegen generate
 xcodebuild -scheme Inkpress -destination 'generic/platform=iOS Simulator' build
+```
+
+## Apple Watch
+
+A standalone watchOS companion lives in `watchos/` (sibling to `ios/`, its own
+target, `WKWatchOnly`, no iOS host app pairing). It shows the latest entries from
+your journal feed (defaults to `journal.heyitsmejosh.com/feed.xml`, same as
+`FeedStore.seedFeeds[0]` on iOS), with the same upvote toggle as the iOS list, plus
+a Settings tab to paste an API token for a future personal API (nothing to
+authenticate against yet — entries load from public feeds without one).
+
+```bash
+cd watchos
+xcodegen generate
+xcodebuild -project InkpressWatch.xcodeproj -scheme InkpressWatch \
+  -destination 'generic/platform=watchOS' build
 ```
 
 ## Landing page
