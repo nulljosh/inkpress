@@ -10,6 +10,11 @@ Add any feed. Read everything in one stream, newest first.
 
 Live on the [App Store](https://apps.apple.com/app/id6787759999). Landing page at [inkpress.heyitsmejosh.com](https://inkpress.heyitsmejosh.com).
 
+<p>
+  <img src="web/screenshot-feed.png" width="260" alt="Inkpress timeline on iOS">
+  <img src="web/screenshot-mac.png" width="500" alt="Inkpress timeline on macOS">
+</p>
+
 This repo split from `journal` on 2026-07-21 and now holds only the iOS app. The blog
 lives at [github.com/nulljosh/journal](https://github.com/nulljosh/journal). Inkpress
 subscribes to its `feed.xml` by default, like any other feed. No code is shared.
