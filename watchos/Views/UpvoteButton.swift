@@ -3,6 +3,7 @@ import SwiftUI
 /// Mirrors iOS's `UpvoteStore`/`UpvoteButton` (Sources/Shared/Views/UpvoteButton.swift) —
 /// same UserDefaults key, same toggle semantics. Local to the watch (no App Group), since
 /// this app is standalone and shares no container with the iOS target.
+@MainActor
 @Observable
 final class WatchUpvoteStore {
     static let shared = WatchUpvoteStore()
