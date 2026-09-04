@@ -1,5 +1,11 @@
 # Inkpress Roadmap
 
+- [ ] Verify iPad split-view (EntryListView) visually on simulator -- 2026-09-02. Pushed
+  the NavigationSplitView conversion without a simulator screenshot; this machine's Xcode
+  only has the iOS 26.5 SDK but the iOS 26.2 runtime downloaded, so `xcodebuild` won't
+  recognize any simulator destination even by explicit UDID. Needs the matching platform
+  component installed, then a quick visual check.
+
 ## macOS + web (2026-08-28 submitted, 2026-08-30 approved)
 - **macOS 1.0.7 APPROVED 2026-08-30, first ever Mac release.** Version
   `002bb992-bc3c-4866-8de8-a783a1b8bdaf`, build `202608282156`, submission
