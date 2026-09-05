@@ -182,3 +182,6 @@ coverage, and it makes the honest tools in the other repos harder to find.
 Shipped instead in: epiphany, healstack, roost, curvely, wiretext, litigate,
 cadence, sparkjar, lexly, talli, quotable, wordroot, newsline, nyc, notes,
 bookrank, homeward.
+
+## TUI pilot (2026-09-05)
+- `inkpress-tui` SwiftPM target (SwiftTUI). `swift build && ./.build/debug/inkpress-tui <feed-url>` fetches through the CORS proxy and lists item titles via Foundation's XMLParser. Needs a real TTY.

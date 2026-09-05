@@ -17,3 +17,4 @@ signing/
 .wrangler/
 .asc/metadata/
 **/.asc/metadata/
+.build/
