@@ -21,6 +21,12 @@ This repo split from `journal` on 2026-07-21 and now holds only the iOS app. The
 lives at [github.com/nulljosh/journal](https://github.com/nulljosh/journal). Inkpress
 subscribes to its `feed.xml` by default, like any other feed. No code is shared.
 
+## Screenshots
+
+<p>
+<img src="screenshots/inkpress-1.jpg" alt="Inkpress">
+</p>
+
 ## Features
 - Add or remove any RSS or Atom feed
 - One timeline across every subscription, newest first
