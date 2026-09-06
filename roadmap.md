@@ -131,11 +131,11 @@ Pages exist and are pushed (`web/`: `index.html`, `privacy.html`, `support.html`
 Everything below is account setup that needs Cloudflare and GitHub credentials, all
 of it is doable from a phone browser, no terminal required.
 
-- [ ] **Create the Cloudflare Pages project.** dash.cloudflare.com > Workers & Pages >
+- [x] **Create the Cloudflare Pages project.** (exists, verified 2026-09-06) dash.cloudflare.com > Workers & Pages >
   Create > Pages > Connect to Git > `nulljosh/inkpress`. Production branch `main`,
   framework preset None, build command empty, output directory `web`. Project name must
   be `inkpress` to match `wrangler.toml` and the deploy workflow.
-- [ ] **Attach the domain.** Same project > Custom domains > `inkpress.heyitsmejosh.com`.
+- [x] **Attach the domain.** (inkpress.heyitsmejosh.com serves 200, verified 2026-09-06) Same project > Custom domains > `inkpress.heyitsmejosh.com`.
   If `heyitsmejosh.com` is on Cloudflare DNS the record is added for you; if it is
   hosted elsewhere, add the CNAME Cloudflare shows you at the current DNS provider.
 - [ ] **Add the two repo secrets.** github.com/nulljosh/inkpress > Settings > Secrets and
