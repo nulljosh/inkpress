@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://inkpress.heyitsmejosh.com/sitemap.xml
