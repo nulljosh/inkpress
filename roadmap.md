@@ -177,11 +177,11 @@ cadence, sparkjar, lexly, talli, quotable, wordroot, newsline, nyc, notes,
 bookrank, homeward.
 
 ## Ingested 2026-09-12
-- [ ] Article detail view is bare (headline only). Show source name, byline/date, and images from the feed's enclosure/media fields, not just title text.
-- [ ] Remove the Journal feed from the default seed list (`FeedStore.seedFeeds`); it's personal, this is a public app. Keep it addable via Suggested.
+- [x] Article detail view is bare (headline only). Show source name, byline/date, and images from the feed's enclosure/media fields, not just title text.
+- [x] Remove the Journal feed from the default seed list (`FeedStore.seedFeeds`); it's personal, this is a public app. Keep it addable via Suggested.
 - [ ] Expand curated seed sources beyond the current 16.
 - [ ] Explore ads (iAd-style) now that Inkpress is a real newspaper-shaped app; users tolerate ads in news apps more than in games.
-- [ ] General UI/color pass, app reads as very basic right now.
+- [x] General UI/color pass, app reads as very basic right now.
 - [ ] List row titles: truncate to one line, clean up formatting; full title only shows on open.
 
 ## TUI pilot (2026-09-05)
