@@ -26,8 +26,11 @@ final class FeedStore: ObservableObject {
     ///
     /// newsline scores these for political bias; Inkpress does not render a bias bar, so
     /// only title and URL cross over.
+    /// Not in `seedFeeds`: this is a public app, users don't need the author's personal blog
+    /// by default. Still addable manually or via `unsubscribedSeeds`.
+    static let journalFeed = Feed(title: "Journal", url: "https://journal.heyitsmejosh.com/feed.xml")
+
     static let seedFeeds: [Feed] = [
-        Feed(title: "Journal", url: "https://journal.heyitsmejosh.com/feed.xml"),
         Feed(title: "CBC", url: "https://www.cbc.ca/webfeed/rss/rss-topstories"),
         Feed(title: "The Guardian", url: "https://www.theguardian.com/world/rss"),
         Feed(title: "NPR", url: "https://feeds.npr.org/1001/rss.xml"),
@@ -79,7 +82,7 @@ final class FeedStore: ObservableObject {
 
     /// Seeds the user has not subscribed to, for the Suggested list.
     var unsubscribedSeeds: [Feed] {
-        Self.seedFeeds.filter { seed in !feeds.contains(where: { $0.url == seed.url }) }
+        ([Self.journalFeed] + Self.seedFeeds).filter { seed in !feeds.contains(where: { $0.url == seed.url }) }
     }
 
     func remove(at offsets: IndexSet) {

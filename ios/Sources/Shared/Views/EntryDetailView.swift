@@ -50,12 +50,24 @@ struct EntryDetailView: View {
           pre, table, blockquote { display: block; overflow-x: auto; }
           code { font-size: 15px; }
           .date { color: gray; font-size: 13px; margin: 0 0 20px; }
+          .hero { width: 100%; border-radius: 8px; margin: 0 0 16px; }
         </style></head><body>
         <h1>\(escape(entry.title))</h1>
-        <p class="date">\(entry.date.formatted(date: .long, time: .omitted))</p>
+        <p class="date">\(byline(for: entry))</p>
+        \(heroImage(for: entry))
         \(entry.htmlContent)
         </body></html>
         """
+    }
+
+    private static func byline(for entry: JournalEntry) -> String {
+        let dateString = entry.date.formatted(date: .long, time: .omitted)
+        return entry.sourceTitle.isEmpty ? dateString : "\(escape(entry.sourceTitle)) · \(dateString)"
+    }
+
+    private static func heroImage(for entry: JournalEntry) -> String {
+        guard let url = entry.imageURL else { return "" }
+        return "<img class=\"hero\" src=\"\(escape(url.absoluteString))\">"
     }
 
     private static func escape(_ s: String) -> String {
