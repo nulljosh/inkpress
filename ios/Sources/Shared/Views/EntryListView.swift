@@ -29,10 +29,10 @@ struct EntryListView: View {
                         HStack(spacing: 12) {
                             EntryThumbnail(url: entry.imageURL)
                             VStack(alignment: .leading, spacing: 4) {
-                                Text(entry.title).font(.headline)
+                                Text(entry.title).font(.headline).lineLimit(2)
                                 HStack(spacing: 6) {
                                     if !entry.sourceTitle.isEmpty {
-                                        Text(entry.sourceTitle)
+                                        Text(entry.sourceTitle).fontWeight(.medium)
                                         Text("·")
                                     }
                                     Text(entry.date.formatted(date: .abbreviated, time: .omitted))
@@ -44,6 +44,7 @@ struct EntryListView: View {
                         Spacer()
                         UpvoteButton(entryID: entry.id)
                     }
+                    .padding(.vertical, 6)
                     .tag(entry.id)
                 }
                 .refreshable { await feed.refresh(feeds: store.feeds) }
