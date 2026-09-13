@@ -14,6 +14,7 @@ struct InkpressMacApp: App {
         WindowGroup {
             EntryListView()
                 .frame(minWidth: 720, minHeight: 480)
+                .tint(.inkpressAccent)
                 .shareApp("https://inkpress.heyitsmejosh.com")
         }
         .defaultSize(width: 1280, height: 800)

@@ -1,6 +1,6 @@
 // ponytail: network-first for pages, cache-first for the hashed assets they name.
 // Bump CACHE to evict everything a previous version stored.
-const CACHE = "inkpress-v3";
+const CACHE = "inkpress-v4";
 const FILES = ["/", "/index.html","/privacy.html","/read.html","/support.html", "/manifest.webmanifest"];
 
 self.addEventListener("install", e => {
@@ -27,6 +27,10 @@ const save = (req, res) => {
 self.addEventListener("fetch", e => {
   // Same-origin GETs only; APIs are cross-origin and stay network-only.
   if (e.request.method !== "GET" || new URL(e.request.url).origin !== location.origin) return;
+
+  // /feed?url=... is a dynamic proxy, not a hashed asset: ignoreSearch below would match
+  // it to whichever feed URL got cached first and serve that for every other feed.
+  if (new URL(e.request.url).pathname === "/feed") return;
 
   // HTML must never come from cache first: it names the hashed bundles, so one
   // stale page pins a whole stale build and the site stops shipping updates to

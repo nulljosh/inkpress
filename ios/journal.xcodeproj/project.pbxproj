@@ -18,6 +18,7 @@
 		5DD73134B7FE90272D6E644E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D602399DFBE78D9E325E2FD /* Assets.xcassets */; };
 		65959DE874A252B4341CB060 /* ManageFeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA21421125A16812D6815E /* ManageFeedsView.swift */; };
 		664458B2090B4F4F075E125D /* JournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B2FC2F32D71F065BB94DA3 /* JournalApp.swift */; };
+		6F088A5AEE55494C7947395F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B11800C471845C1E93545 /* Theme.swift */; };
 		726E2BDEC0363FC1A23D0AAD /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409A12C7017D00F584C499DF /* EntryDetailView.swift */; };
 		844DF1D2B31BE048837E9B2A /* EntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286BB5BF361BF084AB417E5 /* EntryListView.swift */; };
 		A341D4049163091A05408131 /* InkpressMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08473F37E2167E26583B80C /* InkpressMacApp.swift */; };
@@ -26,6 +27,7 @@
 		C031F90F94A411853E067D59 /* UpvoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F49BC6821B601EA8ECDFE /* UpvoteButton.swift */; };
 		D0A422350DBED4AD26329279 /* AtomFeedParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D618F75CD0D4C5B4BBCC223 /* AtomFeedParserTests.swift */; };
 		DB8D13B635949509602FFCC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29B9530A60D6C424502F145 /* Assets.xcassets */; };
+		DBF898A3C159EF1F4E516BA2 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B11800C471845C1E93545 /* Theme.swift */; };
 		E84CA41D7192C38A6B4BBFFB /* AtomFeedParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D618F75CD0D4C5B4BBCC223 /* AtomFeedParserTests.swift */; };
 		ED49EAACFA2A62AA0AAF567C /* ScreenshotCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AFC48B26A5664C3A03261 /* ScreenshotCapture.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,7 @@
 		E08473F37E2167E26583B80C /* InkpressMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkpressMacApp.swift; sourceTree = "<group>"; };
 		E099194237BF0D71FD3C6424 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		EEC44D06947275059DED3B30 /* JournalFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalFeedService.swift; sourceTree = "<group>"; };
+		F37B11800C471845C1E93545 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		F6EA21421125A16812D6815E /* ManageFeedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFeedsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +132,7 @@
 			children = (
 				E099194237BF0D71FD3C6424 /* Feed.swift */,
 				B38ACDB28857F0E41D3C492E /* JournalEntry.swift */,
+				F37B11800C471845C1E93545 /* Theme.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,6 +246,7 @@
 				55232F726D603975C789905C /* JournalFeedService.swift in Sources */,
 				B08328162A3AE54CD4CC05A4 /* ManageFeedsView.swift in Sources */,
 				ED49EAACFA2A62AA0AAF567C /* ScreenshotCapture.swift in Sources */,
+				DBF898A3C159EF1F4E516BA2 /* Theme.swift in Sources */,
 				C031F90F94A411853E067D59 /* UpvoteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +263,7 @@
 				5D7EBE7D411C4B9B8E890D29 /* JournalEntry.swift in Sources */,
 				BD71979F992F2F9CFF17813A /* JournalFeedService.swift in Sources */,
 				65959DE874A252B4341CB060 /* ManageFeedsView.swift in Sources */,
+				6F088A5AEE55494C7947395F /* Theme.swift in Sources */,
 				34463D6FC9DD49B4DEB0F0E7 /* UpvoteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

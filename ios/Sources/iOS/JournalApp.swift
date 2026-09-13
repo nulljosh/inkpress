@@ -13,6 +13,7 @@ struct JournalApp: App {
     var body: some Scene {
         WindowGroup {
             EntryListView()
+            .tint(.inkpressAccent)
             .shareApp("https://inkpress.heyitsmejosh.com")
         }
     }
