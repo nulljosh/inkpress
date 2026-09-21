@@ -4,11 +4,11 @@ Name: Inkpress
 
 Tagline (40): Every feed you follow, in one clean list
 
-Description (150): An RSS and Atom reader with no algorithm, no account and no tracking. Add any blog or news feed and read every entry in order. Free on iPhone and Mac.
+Description (150): An RSS and Atom reader with no algorithm, no account and no tracking. Add any blog or news feed and read every entry in order. $0.99 on iPhone and Mac, free on the web.
 
 Topics: News, Productivity, Privacy
 
-Pricing: Free.
+Pricing: $0.99 upfront on the App Store (iPhone and Mac). Free on the web.
 
 Links
 Web: https://inkpress.heyitsmejosh.com
@@ -21,4 +21,4 @@ Hi, I'm Josh, I built Inkpress.
 
 I follow forty blogs and I was reading none of them, because they were scattered across tabs and newsletters. Inkpress is the plain version of a feed reader. Add a URL, entries show up in order, read ones cache on your Mac. No account, no algorithm deciding what you see, nothing phoned home.
 
-Free. Happy to answer anything.
+$0.99 upfront on the App Store, free on the web. Happy to answer anything.
