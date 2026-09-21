@@ -25,6 +25,15 @@ Backend (CMS/CRM pivot): Supabase tables (`inkpress_posts`, `inkpress_contacts`)
 | `web/read.html` | Static HTML web reader: feed list, entry detail, CORS proxy fetch, no build step |
 | `web/style.css` | Web reader styling |
 | `web/read.js` | Web reader logic: fetch feeds, parse, render |
+| `functions/feed.js` | Cloudflare Worker CORS proxy: accepts feed URLs, validates (https-only, blocks private hosts), fetches with 5MB cap, caches for 5min, only readable from inkpress origin |
+| `test.mjs` | Unit tests for feed proxy: validates security guards (https-only, loopback blocking, wildcard-CORS rejection, size cap) |
+| `watchos/InkpressWatchApp.swift` | watchOS app entry point with window group |
+| `watchos/ContentView.swift` | watchOS feed reader: compact feed list, limited entry detail view |
+| `watchos/Models/Feed.swift` | Feed model for watchOS (mirrors iOS model) |
+| `watchos/Services/FeedService.swift` | watchOS feed fetching service, uses same CORS proxy as web reader |
+| `Package.swift` + `tui/main.swift` | SwiftPM target for CLI reader: accepts feed URL, parses RSS/Atom via XMLParser, renders titles in terminal (static render, single invocation) |
+| `scripts/capture-mac-shots.sh` | Fastlane integration: captures App Store screenshots on macOS via UI automation |
+| `scripts/check-links.py` | Link validation: scans all HTML files in `web/` and verifies internal hrefs/src attributes resolve (blocks broken links from reaching the published site) |
 
 ## Backend (future)
 
