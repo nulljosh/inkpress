@@ -19,6 +19,11 @@ func feedParserDemo() {
     assert(a[0].title == "Test Entry", "atom title mismatch: \(a[0].title)")
     assert(a[0].url == "https://journal.heyitsmejosh.com/2026/06/26/week/", "atom url mismatch")
 
+    let multiLink = atom.replacingOccurrences(of: "<published>", with:
+        "<link href=\"https://example.com/feed.xml\" rel=\"self\"/><link href=\"https://example.com/comments\" rel=\"replies\"/><published>")
+    assert(FeedParser.parse(data: Data(multiLink.utf8))[0].url == a[0].url,
+           "self and replies links must not replace the article URL")
+
     let rss = """
     <?xml version="1.0"?>
     <rss version="2.0"><channel>

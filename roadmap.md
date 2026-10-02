@@ -183,3 +183,6 @@ bookrank, homeward.
 
 ## TUI pilot (2026-09-05)
 - `inkpress-tui` SwiftPM target (SwiftTUI). `swift build && ./.build/debug/inkpress-tui <feed-url>` fetches through the CORS proxy and lists item titles via Foundation's XMLParser. Needs a real TTY.
+
+## Bugs fixed
+- [x] Keep Atom article links when self or replies links follow them. Run `tools/check-feed-parser.sh`.

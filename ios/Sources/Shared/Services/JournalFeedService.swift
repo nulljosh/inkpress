@@ -85,7 +85,9 @@ final class FeedParser: NSObject, XMLParserDelegate {
         if elementName == "entry" || elementName == "item" {
             inItem = true; title = ""; link = ""; date = ""; content = ""
             mediaSrc = ""; enclosureSrc = ""
-        } else if elementName == "link", inItem, let href = attributeDict["href"] {
+        } else if elementName == "link", inItem,
+                  attributeDict["rel"] == nil || attributeDict["rel"] == "alternate",
+                  let href = attributeDict["href"] {
             // Atom links carry the URL in the href attribute.
             link = href
         } else if inItem, elementName == "media:thumbnail" || elementName == "media:content" {
