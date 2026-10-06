@@ -186,3 +186,6 @@ bookrank, homeward.
 
 ## Bugs fixed
 - [x] Keep Atom article links when self or replies links follow them. Run `tools/check-feed-parser.sh`.
+
+## Ingested 2026-10-05
+- [ ] QA
