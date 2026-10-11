@@ -11,7 +11,7 @@ Topics: News, Productivity, Privacy
 Pricing: $0.99 upfront on the App Store (iPhone and Mac). Free on the web.
 
 Links
-Web: https://inkpress.heyitsmejosh.com
+Web: https://inkpress.jaybulb.com
 App Store: https://apps.apple.com/app/id6787759999
 GitHub: https://github.com/nulljosh/inkpress
 
