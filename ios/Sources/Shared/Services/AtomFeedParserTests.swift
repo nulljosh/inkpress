@@ -8,7 +8,7 @@ func feedParserDemo() {
     <feed xmlns="http://www.w3.org/2005/Atom">
       <entry>
         <title>Test Entry</title>
-        <link href="https://journal.heyitsmejosh.com/2026/06/26/week/" rel="alternate" type="text/html" />
+        <link href="https://journal.jaybulb.com/2026/06/26/week/" rel="alternate" type="text/html" />
         <published>2026-06-26T09:00:00-07:00</published>
         <content type="html">&lt;p&gt;Hello&lt;/p&gt;</content>
       </entry>
@@ -17,7 +17,7 @@ func feedParserDemo() {
     let a = FeedParser.parse(data: Data(atom.utf8))
     assert(a.count == 1, "atom: expected 1 entry, got \(a.count)")
     assert(a[0].title == "Test Entry", "atom title mismatch: \(a[0].title)")
-    assert(a[0].url == "https://journal.heyitsmejosh.com/2026/06/26/week/", "atom url mismatch")
+    assert(a[0].url == "https://journal.jaybulb.com/2026/06/26/week/", "atom url mismatch")
 
     let multiLink = atom.replacingOccurrences(of: "<published>", with:
         "<link href=\"https://example.com/feed.xml\" rel=\"self\"/><link href=\"https://example.com/comments\" rel=\"replies\"/><published>")

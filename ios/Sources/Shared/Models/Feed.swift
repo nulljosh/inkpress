@@ -28,7 +28,7 @@ final class FeedStore: ObservableObject {
     /// only title and URL cross over.
     /// Not in `seedFeeds`: this is a public app, users don't need the author's personal blog
     /// by default. Still addable manually or via `unsubscribedSeeds`.
-    static let journalFeed = Feed(title: "Journal", url: "https://journal.heyitsmejosh.com/feed.xml")
+    static let journalFeed = Feed(title: "Journal", url: "https://journal.jaybulb.com/feed.xml")
 
     static let seedFeeds: [Feed] = [
         Feed(title: "CBC", url: "https://www.cbc.ca/webfeed/rss/rss-topstories"),

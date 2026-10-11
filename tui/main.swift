@@ -31,7 +31,7 @@ final class TitleExtractor: NSObject, XMLParserDelegate {
 let args = CommandLine.arguments.dropFirst()
 guard let feedURL = args.first,
       let encoded = feedURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-      let proxyURL = URL(string: "https://inkpress.heyitsmejosh.com/feed?url=\(encoded)") else {
+      let proxyURL = URL(string: "https://inkpress.jaybulb.com/feed?url=\(encoded)") else {
     print("usage: inkpress-tui <feed-url>")
     exit(1)
 }

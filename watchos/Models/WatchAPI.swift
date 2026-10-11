@@ -37,10 +37,10 @@ final class WatchAPI: @unchecked Sendable {
     // MARK: - Feeds
 
     /// Same default subscription iOS seeds first (`FeedStore.seedFeeds[0]`) — the user's own
-    /// journal.heyitsmejosh.com blog. The watch stays scoped to that single real "journal"
+    /// journal.jaybulb.com blog. The watch stays scoped to that single real "journal"
     /// rather than mirroring all 16 curated news feeds, which don't fit a watch face.
     static let defaultFeeds: [WatchFeed] = [
-        WatchFeed(title: "Journal", url: "https://journal.heyitsmejosh.com/feed.xml")
+        WatchFeed(title: "Journal", url: "https://journal.jaybulb.com/feed.xml")
     ]
 
     var feeds: [WatchFeed] {

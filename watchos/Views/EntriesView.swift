@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// Watch-face equivalent of iOS's EntryListView — latest entries from the subscribed
-/// feeds (default: the user's own journal.heyitsmejosh.com), newest first.
+/// feeds (default: the user's own journal.jaybulb.com), newest first.
 struct EntriesView: View {
     @State private var entries: [WatchEntry] = []
     @State private var isLoading = false

@@ -10,7 +10,7 @@ data class Feed(val title: String, val url: String)
 // (the blog's own feed plus curated news outlets), trimmed to a starter set --
 // full ManageFeedsView-style add/remove is not ported.
 val SEED_FEEDS = listOf(
-    Feed("Journal", "https://journal.heyitsmejosh.com/feed.xml"),
+    Feed("Journal", "https://journal.jaybulb.com/feed.xml"),
     Feed("Hacker News", "https://hnrss.org/frontpage"),
     Feed("BBC", "https://feeds.bbci.co.uk/news/rss.xml"),
 )
