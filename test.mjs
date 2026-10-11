@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import { onRequestGet } from "./functions/feed.js";
 
 const call = (url) =>
-  onRequestGet({ request: new Request(`https://inkpress.heyitsmejosh.com/feed?url=${encodeURIComponent(url)}`) });
+  onRequestGet({ request: new Request(`https://inkpress.jaybulb.com/feed?url=${encodeURIComponent(url)}`) });
 
 test("rejects non-https", async () => {
   assert.equal((await call("http://example.com/rss")).status, 400);
@@ -23,11 +23,11 @@ test("rejects a malformed url", async () => {
 
 test("never returns a wildcard CORS origin", async () => {
   const bad = await call("http://example.com/rss");
-  assert.equal(bad.headers.get("access-control-allow-origin"), "https://inkpress.heyitsmejosh.com");
+  assert.equal(bad.headers.get("access-control-allow-origin"), "https://inkpress.jaybulb.com");
 
   globalThis.fetch = async () => new Response("<rss/>", { headers: { "content-type": "application/xml" } });
   const ok = await call("https://example.com/rss");
-  assert.equal(ok.headers.get("access-control-allow-origin"), "https://inkpress.heyitsmejosh.com");
+  assert.equal(ok.headers.get("access-control-allow-origin"), "https://inkpress.jaybulb.com");
 });
 
 test("refuses a feed larger than the cap", async () => {

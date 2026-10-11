@@ -3,7 +3,7 @@
 // break the feature. Abuse is closed off at the other end instead: the response is only
 // readable from inkpress's own origin, so this cannot be used as a general proxy by
 // another site, and the body is capped so it cannot be used to pull large files.
-const ORIGIN = "https://inkpress.heyitsmejosh.com";
+const ORIGIN = "https://inkpress.jaybulb.com";
 const MAX_BYTES = 5 * 1024 * 1024;
 
 // Workers will not route to these, but a hostname can resolve to one and the check is
@@ -21,7 +21,7 @@ export async function onRequestGet({ request }) {
   let upstream;
   try {
     upstream = await fetch(u.toString(), {
-      headers: { "user-agent": "Inkpress/1.0 (+https://inkpress.heyitsmejosh.com)" },
+      headers: { "user-agent": "Inkpress/1.0 (+https://inkpress.jaybulb.com)" },
       cf: { cacheTtl: 300, cacheEverything: true },
       signal: AbortSignal.timeout(10000),
     });
