@@ -8,7 +8,7 @@ All your feeds, one timeline. An RSS and Atom reader for iOS, macOS, and Apple W
 
 Add any feed. Read everything in one stream, newest first.
 
-Live on the [App Store](https://apps.apple.com/app/id6787759999). Landing page at [inkpress.heyitsmejosh.com](https://inkpress.heyitsmejosh.com).
+Live on the [App Store](https://apps.apple.com/app/id6787759999). Landing page at [inkpress.jaybulb.com](https://inkpress.jaybulb.com).
 
 **Terminal:** `swift build && ./.build/debug/inkpress-tui <feed-url>` — see [tui/](tui/)
 
@@ -46,7 +46,7 @@ xcodebuild -scheme Inkpress -destination 'generic/platform=iOS Simulator' build
 
 A standalone watchOS companion lives in `watchos/` (sibling to `ios/`, its own
 target, `WKWatchOnly`, no iOS host app pairing). It shows the latest entries from
-your journal feed (defaults to `journal.heyitsmejosh.com/feed.xml`, same as
+your journal feed (defaults to `journal.jaybulb.com/feed.xml`, same as
 `FeedStore.seedFeeds[0]` on iOS), with the same upvote toggle as the iOS list, plus
 a Settings tab to paste an API token for a future personal API (nothing to
 authenticate against yet — entries load from public feeds without one).
